@@ -14,103 +14,79 @@ export type Database = {
   }
   public: {
     Tables: {
-      daily_moods: {
+      goals: {
         Row: {
+          category: string
           created_at: string
-          date: string
+          current_amount: number | null
+          deadline: string
           id: string
-          mood: number
+          name: string
+          target_amount: number
           updated_at: string
           user_id: string
         }
         Insert: {
+          category: string
           created_at?: string
-          date: string
+          current_amount?: number | null
+          deadline: string
           id?: string
-          mood: number
+          name: string
+          target_amount: number
           updated_at?: string
           user_id: string
         }
         Update: {
+          category?: string
           created_at?: string
-          date?: string
+          current_amount?: number | null
+          deadline?: string
           id?: string
-          mood?: number
+          name?: string
+          target_amount?: number
           updated_at?: string
           user_id?: string
         }
         Relationships: []
       }
-      daily_task_completions: {
+      investments: {
         Row: {
-          completed: boolean
+          amount: number
+          category: string
+          color: string | null
           created_at: string
           date: string
           id: string
-          task_id: string
+          is_recurring: boolean | null
+          name: string
+          type: string
           updated_at: string
           user_id: string
         }
         Insert: {
-          completed?: boolean
+          amount: number
+          category: string
+          color?: string | null
           created_at?: string
           date: string
           id?: string
-          task_id: string
+          is_recurring?: boolean | null
+          name: string
+          type: string
           updated_at?: string
           user_id: string
         }
         Update: {
-          completed?: boolean
+          amount?: number
+          category?: string
+          color?: string | null
           created_at?: string
           date?: string
           id?: string
-          task_id?: string
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      events: {
-        Row: {
-          client_uid: string | null
-          created_at: string
-          date: string
-          description: string | null
-          duration: string | null
-          id: string
-          notification: boolean
-          repeat: boolean
-          time: string
-          title: string
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          client_uid?: string | null
-          created_at?: string
-          date: string
-          description?: string | null
-          duration?: string | null
-          id?: string
-          notification?: boolean
-          repeat?: boolean
-          time: string
-          title: string
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          client_uid?: string | null
-          created_at?: string
-          date?: string
-          description?: string | null
-          duration?: string | null
-          id?: string
-          notification?: boolean
-          repeat?: boolean
-          time?: string
-          title?: string
+          is_recurring?: boolean | null
+          name?: string
+          type?: string
           updated_at?: string
           user_id?: string
         }
@@ -119,25 +95,22 @@ export type Database = {
       profiles: {
         Row: {
           created_at: string
-          full_name: string | null
           id: string
-          is_premium: boolean
+          name: string
           updated_at: string
           user_id: string
         }
         Insert: {
           created_at?: string
-          full_name?: string | null
           id?: string
-          is_premium?: boolean
+          name: string
           updated_at?: string
           user_id: string
         }
         Update: {
           created_at?: string
-          full_name?: string | null
           id?: string
-          is_premium?: boolean
+          name?: string
           updated_at?: string
           user_id?: string
         }
@@ -145,7 +118,6 @@ export type Database = {
       }
       subscribers: {
         Row: {
-          assinatura_ativa: boolean
           created_at: string
           email: string
           id: string
@@ -157,7 +129,6 @@ export type Database = {
           user_id: string | null
         }
         Insert: {
-          assinatura_ativa?: boolean
           created_at?: string
           email: string
           id?: string
@@ -169,7 +140,6 @@ export type Database = {
           user_id?: string | null
         }
         Update: {
-          assinatura_ativa?: boolean
           created_at?: string
           email?: string
           id?: string
@@ -182,80 +152,86 @@ export type Database = {
         }
         Relationships: []
       }
-      tasks: {
+      subscriptions: {
         Row: {
+          amount: number
           category: string
-          client_uid: string | null
           color: string | null
-          completed: boolean
           created_at: string
-          day_of_week: number[] | null
-          description: string | null
-          end_time: string | null
-          has_conflict: boolean
+          frequency: string
           id: string
+          is_active: boolean | null
+          is_recurring: boolean | null
           name: string
-          priority: boolean | null
-          time: string
+          next_payment: string
           updated_at: string
           user_id: string
         }
         Insert: {
+          amount: number
           category: string
-          client_uid?: string | null
           color?: string | null
-          completed?: boolean
           created_at?: string
-          day_of_week?: number[] | null
-          description?: string | null
-          end_time?: string | null
-          has_conflict?: boolean
+          frequency: string
           id?: string
+          is_active?: boolean | null
+          is_recurring?: boolean | null
           name: string
-          priority?: boolean | null
-          time: string
+          next_payment: string
           updated_at?: string
           user_id: string
         }
         Update: {
+          amount?: number
           category?: string
-          client_uid?: string | null
           color?: string | null
-          completed?: boolean
           created_at?: string
-          day_of_week?: number[] | null
-          description?: string | null
-          end_time?: string | null
-          has_conflict?: boolean
+          frequency?: string
           id?: string
+          is_active?: boolean | null
+          is_recurring?: boolean | null
           name?: string
-          priority?: boolean | null
-          time?: string
+          next_payment?: string
           updated_at?: string
           user_id?: string
         }
         Relationships: []
       }
-      user_operations: {
+      transactions: {
         Row: {
+          amount: number
+          category: string
           created_at: string
+          date: string
+          description: string
           id: string
-          operation_target: string
-          operation_type: string
+          is_recurring: boolean | null
+          type: string
+          updated_at: string
           user_id: string
         }
         Insert: {
+          amount: number
+          category: string
           created_at?: string
+          date: string
+          description: string
           id?: string
-          operation_target: string
-          operation_type: string
+          is_recurring?: boolean | null
+          type: string
+          updated_at?: string
           user_id: string
         }
         Update: {
+          amount?: number
+          category?: string
           created_at?: string
+          date?: string
+          description?: string
           id?: string
-          operation_target?: string
-          operation_type?: string
+          is_recurring?: boolean | null
+          type?: string
+          updated_at?: string
           user_id?: string
         }
         Relationships: []
@@ -265,18 +241,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      can_user_operate: {
-        Args: { user_uuid: string }
-        Returns: boolean
-      }
-      get_user_operation_count: {
-        Args: { user_uuid: string }
-        Returns: number
-      }
-      link_subscription_to_user: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never
