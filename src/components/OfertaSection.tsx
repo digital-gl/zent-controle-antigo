@@ -3,43 +3,72 @@ import { motion, useInView } from 'framer-motion';
 import { Check } from 'lucide-react';
 import ParallaxStars from './ParallaxStars';
 
-/* SVG chain path — a simple chain-link pattern */
-const ChainSVG = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 60 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {[0, 80, 160, 240, 320].map((y) => (
-      <g key={y}>
-        <rect x="12" y={y} width="36" height="50" rx="12" stroke="#D4A843" strokeWidth="6" fill="none" />
-        <rect x="18" y={y + 40} width="24" height="50" rx="10" stroke="#D4A843" strokeWidth="5" fill="none" opacity="0.6" />
+/* Thick horizontal chain — a series of interlocking oval links */
+const HorizontalChain = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
+  <svg className={className} style={style} viewBox="0 0 600 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    {[0, 70, 140, 210, 280, 350, 420, 490].map((x) => (
+      <g key={x}>
+        <rect x={x} y="8" width="55" height="44" rx="22" stroke="url(#chainGradH)" strokeWidth="8" fill="none" />
       </g>
     ))}
-  </svg>
-);
-
-/* SVG padlock */
-const PadlockSVG = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M30 60 V40 A30 30 0 0 1 90 40 V60"
-      stroke="url(#lockGrad)" strokeWidth="10" strokeLinecap="round" fill="none"
-    />
-    <rect x="15" y="55" width="90" height="75" rx="12" fill="url(#lockBodyGrad)" stroke="#D4A843" strokeWidth="3" />
-    <circle cx="60" cy="90" r="10" fill="#000D30" />
-    <rect x="56" y="95" width="8" height="18" rx="3" fill="#000D30" />
     <defs>
-      <linearGradient id="lockGrad" x1="30" y1="20" x2="90" y2="60">
-        <stop offset="0%" stopColor="#F5D87A" />
-        <stop offset="100%" stopColor="#7A5520" />
-      </linearGradient>
-      <linearGradient id="lockBodyGrad" x1="15" y1="55" x2="105" y2="130">
-        <stop offset="0%" stopColor="#D4A843" />
-        <stop offset="50%" stopColor="#F5D87A" />
+      <linearGradient id="chainGradH" x1="0" y1="0" x2="600" y2="60">
+        <stop offset="0%" stopColor="#7A5520" />
+        <stop offset="30%" stopColor="#F5D87A" />
+        <stop offset="50%" stopColor="#D4A843" />
+        <stop offset="70%" stopColor="#F5D87A" />
         <stop offset="100%" stopColor="#7A5520" />
       </linearGradient>
     </defs>
   </svg>
 );
 
-const chainTransition = { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const };
+/* Diagonal chain — vertical links for crossing effect */
+const VerticalChain = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
+  <svg className={className} style={style} viewBox="0 0 60 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    {[0, 70, 140, 210, 280, 350, 420, 490].map((y) => (
+      <g key={y}>
+        <rect x="8" y={y} width="44" height="55" rx="22" stroke="url(#chainGradV)" strokeWidth="8" fill="none" />
+      </g>
+    ))}
+    <defs>
+      <linearGradient id="chainGradV" x1="0" y1="0" x2="60" y2="600">
+        <stop offset="0%" stopColor="#7A5520" />
+        <stop offset="30%" stopColor="#F5D87A" />
+        <stop offset="50%" stopColor="#D4A843" />
+        <stop offset="70%" stopColor="#F5D87A" />
+        <stop offset="100%" stopColor="#7A5520" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
+/* Large padlock SVG */
+const PadlockSVG = () => (
+  <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="lockShackle" x1="20" y1="0" x2="80" y2="50">
+        <stop offset="0%" stopColor="#F5D87A" />
+        <stop offset="50%" stopColor="#D4A843" />
+        <stop offset="100%" stopColor="#7A5520" />
+      </linearGradient>
+      <linearGradient id="lockBody" x1="10" y1="45" x2="90" y2="115">
+        <stop offset="0%" stopColor="#D4A843" />
+        <stop offset="40%" stopColor="#F5D87A" />
+        <stop offset="100%" stopColor="#7A5520" />
+      </linearGradient>
+    </defs>
+    {/* Shackle */}
+    <path d="M25 50 V30 A25 25 0 0 1 75 30 V50" stroke="url(#lockShackle)" strokeWidth="10" strokeLinecap="round" fill="none" />
+    {/* Body */}
+    <rect x="10" y="45" width="80" height="65" rx="10" fill="url(#lockBody)" stroke="#7A5520" strokeWidth="2" />
+    {/* Keyhole */}
+    <circle cx="50" cy="73" r="9" fill="#000D30" />
+    <rect x="46" y="78" width="8" height="16" rx="3" fill="#000D30" />
+  </svg>
+);
+
+const chainFallTransition = { duration: 0.9, ease: [0.45, 0, 0.55, 1] as const };
 
 const OfertaSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -55,7 +84,6 @@ const OfertaSection = () => {
       <ParallaxStars speed={1} />
 
       <div className="max-w-3xl mx-auto relative z-10 w-full">
-        {/* Wrapper for card + overlays */}
         <div className="relative">
           {/* === OFFER CARD === */}
           <motion.div
@@ -65,13 +93,13 @@ const OfertaSection = () => {
               border: '1px solid rgba(212,168,67,0.3)',
               backdropFilter: 'blur(12px)',
             }}
-            initial={{ opacity: 0.5, scale: 0.98 }}
+            initial={{ opacity: 0.4, scale: 0.97 }}
             animate={isInView ? {
               opacity: 1,
               scale: 1,
-              boxShadow: '0 0 30px rgba(212,175,55,0.4)',
+              boxShadow: '0 0 40px rgba(212,175,55,0.4)',
             } : {}}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 1.2, delay: 0.8 }}
           >
             <div className="relative z-10 text-center flex flex-col items-center">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-8 gold-text">
@@ -108,65 +136,103 @@ const OfertaSection = () => {
 
               <a
                 href="#"
-                className="cta-button text-sm sm:text-base inline-block whitespace-nowrap transition-transform duration-200 hover:scale-105"
+                className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center transition-transform duration-200 hover:scale-105"
               >
                 QUERO ACESSAR MEU DIAGNÓSTICO AGORA
               </a>
             </div>
           </motion.div>
 
-          {/* === CHAINS OVERLAY === */}
-          {/* Left chain */}
+          {/* === CHAINS CROSSING THE CARD === */}
+
+          {/* Horizontal chain top */}
           <motion.div
-            className="absolute top-0 left-4 sm:left-8 h-full w-[60px] z-20 pointer-events-none"
-            initial={{ y: 0, rotate: 0, opacity: 0.8 }}
-            animate={isInView ? { y: 300, rotate: 15, opacity: 0 } : {}}
-            transition={chainTransition}
+            className="absolute top-[20%] left-[-10%] right-[-10%] h-[50px] z-20 pointer-events-none"
+            initial={{ y: 0, opacity: 1 }}
+            animate={isInView ? { y: 350, rotate: 8, opacity: 0 } : {}}
+            transition={{ ...chainFallTransition, delay: 0.3 }}
           >
-            <ChainSVG className="w-full h-full" />
+            <HorizontalChain className="w-full h-full" />
           </motion.div>
 
-          {/* Right chain */}
+          {/* Horizontal chain bottom */}
           <motion.div
-            className="absolute top-0 right-4 sm:right-8 h-full w-[60px] z-20 pointer-events-none"
-            initial={{ y: 0, rotate: 0, opacity: 0.8 }}
-            animate={isInView ? { y: 300, rotate: -15, opacity: 0 } : {}}
-            transition={chainTransition}
+            className="absolute top-[60%] left-[-10%] right-[-10%] h-[50px] z-20 pointer-events-none"
+            initial={{ y: 0, opacity: 1 }}
+            animate={isInView ? { y: 300, rotate: -6, opacity: 0 } : {}}
+            transition={{ ...chainFallTransition, delay: 0.4 }}
           >
-            <ChainSVG className="w-full h-full" />
+            <HorizontalChain className="w-full h-full" />
           </motion.div>
 
-          {/* Diagonal chain left-top to right-bottom */}
+          {/* Diagonal chain top-left to bottom-right */}
           <motion.div
-            className="absolute -top-4 -left-4 w-[80px] z-20 pointer-events-none"
-            style={{ transform: 'rotate(35deg)', transformOrigin: 'top left' }}
-            initial={{ y: 0, opacity: 0.7 }}
+            className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center"
+            style={{ transform: 'rotate(35deg)' }}
+            initial={{ y: 0, opacity: 1 }}
             animate={isInView ? { y: 400, opacity: 0 } : {}}
-            transition={{ ...chainTransition, delay: 0.1 }}
+            transition={{ ...chainFallTransition, delay: 0.2 }}
           >
-            <ChainSVG className="w-full" style={{ height: '500px' }} />
+            <VerticalChain className="h-[140%] w-[50px]" />
           </motion.div>
 
-          {/* Diagonal chain right-top to left-bottom */}
+          {/* Diagonal chain top-right to bottom-left */}
           <motion.div
-            className="absolute -top-4 -right-4 w-[80px] z-20 pointer-events-none"
-            style={{ transform: 'rotate(-35deg)', transformOrigin: 'top right' }}
-            initial={{ y: 0, opacity: 0.7 }}
+            className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center"
+            style={{ transform: 'rotate(-35deg)' }}
+            initial={{ y: 0, opacity: 1 }}
             animate={isInView ? { y: 400, opacity: 0 } : {}}
-            transition={{ ...chainTransition, delay: 0.1 }}
+            transition={{ ...chainFallTransition, delay: 0.2 }}
           >
-            <ChainSVG className="w-full" style={{ height: '500px' }} />
+            <VerticalChain className="h-[140%] w-[50px]" />
           </motion.div>
 
-          {/* Padlock center */}
+          {/* Vertical chain left */}
+          <motion.div
+            className="absolute top-[-10%] bottom-[-10%] left-[15%] w-[50px] z-20 pointer-events-none"
+            initial={{ y: 0, opacity: 1 }}
+            animate={isInView ? { y: 350, rotate: 12, opacity: 0 } : {}}
+            transition={{ ...chainFallTransition, delay: 0.35 }}
+          >
+            <VerticalChain className="w-full h-full" />
+          </motion.div>
+
+          {/* Vertical chain right */}
+          <motion.div
+            className="absolute top-[-10%] bottom-[-10%] right-[15%] w-[50px] z-20 pointer-events-none"
+            initial={{ y: 0, opacity: 1 }}
+            animate={isInView ? { y: 350, rotate: -12, opacity: 0 } : {}}
+            transition={{ ...chainFallTransition, delay: 0.35 }}
+          >
+            <VerticalChain className="w-full h-full" />
+          </motion.div>
+
+          {/* === PADLOCK CENTER === */}
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
             initial={{ scale: 1, opacity: 1 }}
-            animate={isInView ? { scale: 2, opacity: 0 } : {}}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            animate={isInView ? { scale: 2.5, opacity: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
           >
-            <PadlockSVG className="w-24 h-28 sm:w-32 sm:h-36" />
+            <div
+              className="p-3 rounded-xl"
+              style={{
+                background: 'radial-gradient(circle, rgba(212,168,67,0.3) 0%, transparent 70%)',
+                filter: 'drop-shadow(0 0 20px rgba(212,168,67,0.6))',
+              }}
+            >
+              <PadlockSVG />
+            </div>
           </motion.div>
+
+          {/* Dark overlay that lifts when unlocked */}
+          <motion.div
+            className="absolute inset-0 rounded-2xl z-[15] pointer-events-none"
+            style={{ background: 'rgba(0,0,5,0.5)' }}
+            initial={{ opacity: 1 }}
+            animate={isInView ? { opacity: 0 } : {}}
+            transition={{ duration: 1, delay: 0.6 }}
+          />
         </div>
       </div>
     </section>
