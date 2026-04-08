@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { useTheme, getSectionBg } from '@/contexts/ThemeContext';
+import ParallaxStars from './ParallaxStars';
 
 const OfertaSection = () => {
-  const { theme } = useTheme();
-  const bg = getSectionBg(theme, 6);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -17,8 +15,16 @@ const OfertaSection = () => {
   }, []);
 
   return (
-    <section id="oferta" className={`${bg} py-12 md:py-20 px-5 md:px-20`} ref={sectionRef}>
-      <div className="max-w-3xl mx-auto">
+    <section
+      id="oferta"
+      className="relative py-12 md:py-20 px-5 md:px-20 overflow-hidden"
+      ref={sectionRef}
+      style={{ background: '#000005' }}
+    >
+      {/* Parallax stars background */}
+      <ParallaxStars speed={1} />
+
+      <div className="max-w-3xl mx-auto relative z-10">
         <div
           className="rounded-2xl p-8 sm:p-12 relative overflow-hidden"
           style={{
