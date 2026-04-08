@@ -1,71 +1,32 @@
-import { Zap } from "lucide-react";
+import { Instagram, Youtube, MessageCircle } from 'lucide-react';
+import logoImg from '@/assets/logo-marsili.png';
 
-const footerLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sintomas", href: "#sintomas" },
-  { label: "Método", href: "#metodo" },
-  { label: "Autoridade", href: "#autoridade" },
-  { label: "Oferta", href: "#oferta" },
-];
-
-export const Footer = () => (
-  <footer className="py-16 bg-brutal-charcoal border-t-2 border-black">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-        {/* Brand */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-brutal-yellow rounded-sm flex items-center justify-center border-2 border-black">
-              <Zap className="w-5 h-5 text-brutal-charcoal" />
-            </div>
-            <span className="text-xl font-extrabold text-white tracking-tighter font-heading">SINERGIA</span>
-          </div>
-          <p className="text-sm text-brutal-sage/60 leading-relaxed">
-            Protocolo de engenharia comportamental para líderes de alto nível.
-          </p>
+const Footer = () => {
+  return (
+    <footer className="py-10 px-5 md:px-20 text-center" style={{ background: '#020B18' }}>
+      <div className="max-w-4xl mx-auto">
+        <img src={logoImg} alt="Lucas Marsili" className="w-16 h-16 rounded-full mx-auto mb-6 object-cover" style={{ border: '2px solid #D4A843' }} />
+        <div className="flex justify-center gap-4 mb-6">
+          {[Instagram, Youtube, MessageCircle].map((Icon, i) => (
+            <a
+              key={i}
+              href="#"
+              className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
+              style={{ border: '1px solid rgba(212, 168, 67, 0.4)', color: '#D4A843' }}
+            >
+              <Icon className="w-5 h-5" />
+            </a>
+          ))}
         </div>
-
-        {/* Links */}
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-brutal-sage font-bold mb-4">Navegação</p>
-          <div className="space-y-2">
-            {footerLinks.map((link) => (
-              <a key={link.href} href={link.href} className="block text-sm text-brutal-sage/60 hover:text-brutal-yellow transition-colors">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Legal */}
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-brutal-sage font-bold mb-4">Legal</p>
-          <p className="text-xs text-brutal-sage/40 leading-relaxed">
-            Este produto não substitui aconselhamento médico. Os resultados dependem da aplicação técnica do protocolo.
-          </p>
-        </div>
-
-        {/* Social */}
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-brutal-sage font-bold mb-4">Social</p>
-          <div className="flex gap-3">
-            {["IG", "YT", "LI"].map((s) => (
-              <div
-                key={s}
-                className="w-10 h-10 bg-[#272727] border border-brutal-sage/20 rounded-sm flex items-center justify-center text-xs font-bold text-brutal-sage/60 hover:bg-brutal-yellow hover:text-brutal-charcoal hover:border-black transition-all cursor-pointer"
-              >
-                {s}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="border-t border-brutal-sage/10 pt-8 text-center">
-        <p className="text-xs text-brutal-sage/40">
-          Copy por Lucas Marsili · Lançado por BM Coproduções · Todos os Direitos Reservados
+        <p className="text-[#607080] text-sm mb-1">Copy por Lucas Marsili</p>
+        <p className="text-[#607080] text-sm mb-1">Lançado por BM Coproduções</p>
+        <p className="text-[#607080] text-sm mb-4">Todos os direitos reservados 2026</p>
+        <p className="text-[#607080]/60 text-xs max-w-xl mx-auto leading-relaxed">
+          Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Após sair do Facebook, a responsabilidade é dos termos desta página.
         </p>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
+
+export default Footer;
