@@ -21,7 +21,6 @@ const GarantiaSection = () => {
   return (
     <section className={`${bg} py-12 md:py-20 px-5 md:px-20`} ref={ref}>
       <div className="max-w-3xl mx-auto flex flex-col items-center">
-        {/* 3D Animated Shield */}
         <div
           className="mb-8 transition-all duration-1000"
           style={{
@@ -51,64 +50,27 @@ const GarantiaSection = () => {
                 </feMerge>
               </filter>
             </defs>
-            {/* Shield outline */}
-            <path
-              d="M60 6 L108 30 L108 80 C108 105 84 130 60 142 C36 130 12 105 12 80 L12 30 Z"
-              fill="url(#shieldGold)"
-              filter="url(#shieldGlow)"
-            />
-            {/* Shield inner */}
-            <path
-              d="M60 14 L101 35 L101 78 C101 100 79 123 60 134 C41 123 19 100 19 78 L19 35 Z"
-              fill="url(#shieldInner)"
-            />
-            {/* Checkmark */}
-            <path
-              d="M42 68 L55 81 L78 53"
-              stroke="url(#shieldGold)"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-            {/* 7 dias text */}
-            <text x="60" y="108" textAnchor="middle" fill="#D4A843" fontSize="15" fontWeight="bold" fontFamily="Inter">7 dias</text>
+            <path d="M60 6 L108 30 L108 80 C108 105 84 130 60 142 C36 130 12 105 12 80 L12 30 Z" fill="url(#shieldGold)" filter="url(#shieldGlow)" />
+            <path d="M60 14 L101 35 L101 78 C101 100 79 123 60 134 C41 123 19 100 19 78 L19 35 Z" fill="url(#shieldInner)" />
+            <path d="M42 68 L55 81 L78 53" stroke="url(#shieldGold)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <text x="60" y="108" textAnchor="middle" fill="#D4A843" fontSize="13" fontWeight="bold" fontFamily="Inter">100%</text>
           </svg>
         </div>
 
         <h2 className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center ${titleClass}`}>
-          Garantia incondicional de 7 dias
+          LIBERDADE OU REEMBOLSO INTEGRAL.
         </h2>
 
-        {/* Shield-shaped card */}
         <div
-          className="relative w-full max-w-md"
-          style={{
-            clipPath: 'polygon(50% 0%, 100% 12%, 100% 65%, 50% 100%, 0% 65%, 0% 12%)',
-          }}
+          className={`rounded-lg p-6 sm:p-8 text-center ${isWhite ? 'bg-[#F5F7FA] border border-[#D4A843]/30' : 'bg-card-dark gold-border'}`}
         >
-          <div
-            className="px-8 pt-12 pb-16 text-center"
-            style={{
-              background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 50%, #0A1E4A 100%)',
-            }}
-          >
-            <p className={`text-base sm:text-lg leading-relaxed ${isWhite ? 'text-[#0A1628]/80' : 'text-[#A8B8C8]'}`}>
-              Se por qualquer motivo o diagnóstico não fizer sentido para você ou não entregar o que foi prometido, devolvemos 100% do seu investimento. Sem perguntas. Sem burocracia.
-            </p>
-            <p className="gold-text font-display text-lg font-semibold mt-4">
-              Você não tem nada a perder e tudo a descobrir.
-            </p>
-          </div>
+          <p className={`text-base sm:text-lg leading-relaxed mb-4 ${isWhite ? 'text-[#0A1628]/80' : 'text-[#A8B8C8]'}`}>
+            Eu confio tanto na precisão técnica deste protocolo que o risco é 100% meu. Se após acessar o diagnóstico você não obtiver a clareza prometida sobre os seus bloqueios, basta enviar um e-mail. Devolveremos todo o seu investimento imediatamente, sem perguntas.
+          </p>
+          <p className="gold-text font-display text-lg font-semibold">
+            O único risco real é você continuar a pilotar a sua empresa no escuro.
+          </p>
         </div>
-        {/* Gold border outline underneath */}
-        <div
-          className="w-full max-w-md -mt-1"
-          style={{
-            height: '2px',
-            background: 'linear-gradient(90deg, transparent, #F5D87A 30%, #D4A843 50%, #F5D87A 70%, transparent)',
-          }}
-        />
       </div>
     </section>
   );

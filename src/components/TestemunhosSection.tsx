@@ -3,16 +3,16 @@ import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
 
 const testimonials = [
   {
-    name: 'Rodrigo M., empresário, 42 anos',
-    text: 'Achei que o problema era minha empresa. Depois do diagnóstico entendi que era um padrão que eu carregava desde antes de empreender. Finalmente fez sentido.',
+    name: 'Depoimento 1',
+    text: '"A clareza que este diagnóstico me trouxe vale cem vezes o investimento. Eu finalmente joguei luz no que me travava no escuro."',
   },
   {
-    name: 'André L., CEO, 38 anos',
-    text: 'Eu já tinha feito terapia, coaching, retiro espiritual. Nada tocava onde o diagnóstico tocou. Em minutos, vi com clareza o que me travava há anos.',
+    name: 'Depoimento 2',
+    text: '"Eu achava que o problema era a empresa. Depois do diagnóstico entendi que era um padrão que eu carregava desde antes de empreender."',
   },
   {
-    name: 'Carlos H., empresário, 47 anos',
-    text: 'Pensei que era burnout. Que era a pressão do mercado. O diagnóstico me mostrou que a raiz era outra, e pela primeira vez senti que podia sair daquele ciclo.',
+    name: 'Depoimento 3',
+    text: '"Em minutos, vi com clareza o que me travava há anos. Nenhuma terapia ou coaching tinha tocado nesse ponto."',
   },
 ];
 
@@ -50,11 +50,10 @@ const TestemunhosSection = () => {
     <section className={`${bg} py-12 md:py-20 px-5 md:px-20`}>
       <div className="max-w-6xl mx-auto">
         <h2 className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 ${titleClass}`}>
-          O que acontece quando a Porta Neural abre
+          LÍDERES QUE REABRIRAM A PORTA.
         </h2>
 
         <div className="relative">
-          {/* Left arrow */}
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}
@@ -69,7 +68,6 @@ const TestemunhosSection = () => {
             </button>
           )}
 
-          {/* Scrollable track */}
           <div
             ref={scrollRef}
             className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
@@ -91,7 +89,6 @@ const TestemunhosSection = () => {
             ))}
           </div>
 
-          {/* Right arrow */}
           {canScrollRight && (
             <button
               onClick={() => scroll('right')}

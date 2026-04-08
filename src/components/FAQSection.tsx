@@ -1,30 +1,27 @@
 import { useState } from 'react';
-import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
+import { useTheme, getSectionBg } from '@/contexts/ThemeContext';
 
 const faqs = [
-  { q: 'Isso é para mim se eu já fiz terapia?', a: 'Sim. A maioria das pessoas que fazem o diagnóstico já passaram por terapia convencional. O método da Porta Neural trabalha em uma camada que a terapia tradicional normalmente não acessa.' },
-  { q: 'Preciso ter algum conhecimento prévio?', a: 'Nenhum. O diagnóstico é guiado e estruturado para qualquer pessoa entender. Você segue o processo e recebe o resultado.' },
-  { q: 'Quanto tempo leva para fazer o diagnóstico?', a: 'O diagnóstico pode ser concluído em uma sessão. Você tem acesso vitalício para revisitar quando quiser.' },
-  { q: 'Isso tem relação com religião?', a: 'O método é desenvolvido para pessoas que têm fé, mas não depende de denominação. Lucas trabalha com a integração entre mente e espiritualidade de forma respeitosa e não dogmática.' },
-  { q: 'Como vou receber o acesso?', a: 'Imediatamente após a confirmação do pagamento. Você recebe o acesso por e-mail em menos de dois minutos.' },
+  { q: 'Como recebo o acesso?', a: 'Imediatamente após a confirmação do pagamento, todo o material é enviado para o seu e-mail.' },
+  { q: 'Isso é algum tipo de terapia longa?', a: 'Não. É uma auditoria técnica. Não vamos passar meses falando do seu passado. Vamos identificar a trava subconsciente e ensinar-lhe o caminho biológico para reabrir a porta.' },
+  { q: 'Quanto tempo leva para aplicar?', a: 'O protocolo foi desenhado para a agenda de um líder de alto nível. Você consome e aplica em poucos minutos.' },
+  { q: 'E se a minha religião não permitir hipnose?', a: 'A Hipnose Clínica e a PNL utilizadas no protocolo são puramente científicas e biológicas, voltadas para o foco e a neuroplasticidade. Não envolvem misticismo, respeitando integralmente as suas convicções cristãs e o seu mandato de Governo.' },
 ];
 
 const FAQSection = () => {
   const { theme } = useTheme();
   const bg = getSectionBg(theme, 8);
-  const titleClass = getTitleClass(theme, 8);
-  const isWhite = false; // index 8 = even = dark
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className={`${bg} py-12 md:py-20 px-5 md:px-20`}>
       <div className="max-w-3xl mx-auto">
         <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 gold-text">
-          Perguntas frequentes
+          PERGUNTAS FREQUENTES
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="rounded-lg gold-border overflow-hidden" style={{ background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)' }}>
+            <div key={i} className="rounded-lg gold-border overflow-hidden bg-card-dark">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full text-left px-6 py-4 flex items-center justify-between"
@@ -34,7 +31,7 @@ const FAQSection = () => {
               </button>
               <div
                 className="overflow-hidden transition-all duration-300"
-                style={{ maxHeight: openIndex === i ? '200px' : '0', opacity: openIndex === i ? 1 : 0 }}
+                style={{ maxHeight: openIndex === i ? '300px' : '0', opacity: openIndex === i ? 1 : 0 }}
               >
                 <p className="px-6 pb-4 text-[#A8B8C8] text-sm sm:text-base leading-relaxed">{faq.a}</p>
               </div>
