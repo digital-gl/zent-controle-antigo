@@ -24,25 +24,22 @@ export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 sm:py-32 bg-background">
+    <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-5xl font-bold text-foreground tracking-tight mb-12 text-center">
-          PERGUNTAS <span className="text-cyber">FREQUENTES</span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-brutal-charcoal tracking-tighter font-heading mb-12 text-center">
+          PERGUNTAS <span className="bg-brutal-yellow px-2">FREQUENTES</span>
         </h2>
 
         <div className="space-y-3">
           {faqs.map((faq, i) => (
-            <div
-              key={faq.q}
-              className="glass-strong rounded-glass overflow-hidden gold-border-subtle"
-            >
+            <div key={faq.q} className="border-brutal rounded-xl overflow-hidden shadow-brutal bg-white">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between p-6 text-left"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-muted transition-colors"
               >
-                <span className="text-base sm:text-lg font-bold text-foreground pr-4">{faq.q}</span>
+                <span className="text-base sm:text-lg font-extrabold text-brutal-charcoal font-heading pr-4">{faq.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-cyber shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-brutal-charcoal shrink-0 transition-transform duration-300 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 />
@@ -52,7 +49,7 @@ export const FAQSection = () => {
                   openIndex === i ? "max-h-60 pb-6" : "max-h-0"
                 }`}
               >
-                <p className="px-6 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                <p className="px-6 text-sm text-brutal-charcoal/70 leading-relaxed">{faq.a}</p>
               </div>
             </div>
           ))}

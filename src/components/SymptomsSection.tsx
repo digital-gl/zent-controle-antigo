@@ -19,14 +19,14 @@ const cards = [
 ];
 
 export const SymptomsSection = () => (
-  <section id="sintomas" className="py-24 sm:py-32 bg-background relative">
+  <section id="sintomas" className="py-20 sm:py-28 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16 max-w-3xl mx-auto">
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight mb-6">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brutal-charcoal tracking-tighter mb-6 font-heading">
           O SEU PASSADO NÃO RESOLVIDO É A SUA{" "}
-          <span className="text-cyber">PRISÃO NO PRESENTE.</span>
+          <span className="bg-brutal-yellow px-2">PRISÃO NO PRESENTE.</span>
         </h2>
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+        <p className="text-base sm:text-lg text-brutal-charcoal/70 leading-relaxed">
           Se a sua Porta Neural está fechada, você não está no comando; você está apenas a reagir ao peso do que ficou trancado. O seu corpo envia os sinais:
         </p>
       </div>
@@ -35,13 +35,13 @@ export const SymptomsSection = () => (
         {cards.map((card) => (
           <div
             key={card.title}
-            className="glass-strong rounded-glass p-8 hover:scale-[1.02] transition-all duration-300 group gold-border-subtle"
+            className="bg-brutal-yellow border-brutal rounded-xl p-8 shadow-brutal-lg hover:translate-x-1 hover:translate-y-1 hover:shadow-brutal transition-all duration-200"
           >
-            <div className="w-16 h-16 rounded-full bg-cyber flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <card.icon className="w-8 h-8 text-primary-foreground" />
+            <div className="w-14 h-14 bg-brutal-charcoal rounded-lg border-brutal flex items-center justify-center mb-6">
+              <card.icon className="w-7 h-7 text-brutal-yellow" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">{card.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-brutal-charcoal tracking-tighter mb-4 font-heading">{card.title}</h3>
+            <p className="text-sm text-brutal-charcoal/70 leading-relaxed">{card.text}</p>
           </div>
         ))}
       </div>
