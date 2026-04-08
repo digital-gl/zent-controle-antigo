@@ -20,9 +20,9 @@ const Footer = () => {
         </div>
         <p className="text-[#607080] text-sm mb-1">Copy por Lucas Marsili</p>
         <p className="text-[#607080] text-sm mb-1">Lançado por BM Coproduções</p>
-        <p className="text-[#607080] text-sm mb-4">Todos os direitos reservados 2026</p>
+        <p className="text-[#607080] text-sm mb-4">Todos os Direitos reservados</p>
         <p className="text-[#607080]/60 text-xs max-w-xl mx-auto leading-relaxed">
-          Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Após sair do Facebook, a responsabilidade é dos termos desta página.
+          Aviso Legal: Este produto não substitui aconselhamento médico. Os resultados dependem da aplicação técnica do protocolo.
         </p>
       </div>
     </footer>
