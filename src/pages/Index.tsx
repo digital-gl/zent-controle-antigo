@@ -9,9 +9,9 @@ import AutoridadeSection from '@/components/AutoridadeSection';
 import TestemunhosSection from '@/components/TestemunhosSection';
 import OfertaSection from '@/components/OfertaSection';
 import GarantiaSection from '@/components/GarantiaSection';
-import { FAQSection } from '@/components/FAQSection';
+import FAQSection from '@/components/FAQSection';
 import CTAFinalSection from '@/components/CTAFinalSection';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
 import SectionSeparator from '@/components/SectionSeparator';
 
