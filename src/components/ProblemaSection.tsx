@@ -1,4 +1,5 @@
 import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
+import LuminousCard from './LuminousCard';
 
 const ProblemaSection = () => {
   const { theme } = useTheme();
@@ -26,6 +27,10 @@ const ProblemaSection = () => {
             <p className="text-center text-base sm:text-lg font-medium text-[#F0F4F8] leading-relaxed">
               Você precisa de <span className="gold-text font-bold">Sinergia</span> — um protocolo técnico para realizar uma varredura mental, identificar o curto-circuito e religar a chave do seu governo executivo.
             </p>
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <LuminousCard />
           </div>
         </div>
       </div>
