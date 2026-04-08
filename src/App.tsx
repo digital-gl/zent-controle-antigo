@@ -1,27 +1,35 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
-
-const queryClient = new QueryClient();
+import { TickerBar } from "./components/TickerBar";
+import { Navbar } from "./components/Navbar";
+import { HeroSection } from "./components/HeroSection";
+import { SocialProofBar } from "./components/SocialProofBar";
+import { SymptomsSection } from "./components/SymptomsSection";
+import { TickerBar2 } from "./components/TickerBar2";
+import { MechanismSection } from "./components/MechanismSection";
+import { AuthoritySection } from "./components/AuthoritySection";
+import { TestimonialsSection } from "./components/TestimonialsSection";
+import { OfferSection } from "./components/OfferSection";
+import { GuaranteeSection } from "./components/GuaranteeSection";
+import { FAQSection } from "./components/FAQSection";
+import { FinalCTA } from "./components/FinalCTA";
+import { Footer } from "./components/Footer";
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <div className="min-h-screen">
+    <TickerBar />
+    <Navbar />
+    <HeroSection />
+    <SocialProofBar />
+    <SymptomsSection />
+    <TickerBar2 />
+    <MechanismSection />
+    <AuthoritySection />
+    <TestimonialsSection />
+    <OfferSection />
+    <GuaranteeSection />
+    <FAQSection />
+    <FinalCTA />
+    <Footer />
+  </div>
 );
 
 export default App;
