@@ -1,22 +1,30 @@
-import { HeroCarousel } from "./components/HeroCarousel";
+import { TickerBar } from "./components/TickerBar";
 import { Navbar } from "./components/Navbar";
-import { AboutSection } from "./components/AboutSection";
-import { ServicesSection } from "./components/ServicesSection";
+import { HeroSection } from "./components/HeroSection";
+import { SymptomsSection } from "./components/SymptomsSection";
+import { TickerBar2 } from "./components/TickerBar2";
+import { MechanismSection } from "./components/MechanismSection";
+import { AuthoritySection } from "./components/AuthoritySection";
 import { TestimonialsSection } from "./components/TestimonialsSection";
-import { ContactSection } from "./components/ContactSection";
+import { OfferSection } from "./components/OfferSection";
+import { GuaranteeSection } from "./components/GuaranteeSection";
+import { FAQSection } from "./components/FAQSection";
 import { Footer } from "./components/Footer";
-import { WhatsAppButton } from "./components/WhatsAppButton";
 
 const App = () => (
   <div className="min-h-screen bg-background">
+    <TickerBar />
     <Navbar />
-    <HeroCarousel />
-    <AboutSection />
-    <ServicesSection />
+    <HeroSection />
+    <SymptomsSection />
+    <TickerBar2 />
+    <MechanismSection />
+    <AuthoritySection />
     <TestimonialsSection />
-    <ContactSection />
+    <OfferSection />
+    <GuaranteeSection />
+    <FAQSection />
     <Footer />
-    <WhatsAppButton />
   </div>
 );
 
