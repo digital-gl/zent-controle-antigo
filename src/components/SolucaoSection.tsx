@@ -1,7 +1,36 @@
 import { useRef, useEffect, useCallback } from 'react';
-import { Globe, ArrowRight, Instagram, Twitter } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Zap, Settings, Brain } from 'lucide-react';
 
 const VIDEO_URL = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4';
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const staggerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.2 } },
+};
+
+const cards = [
+  {
+    Icon: Zap,
+    title: 'Fim da Névoa Mental',
+    text: 'O cortisol acumulado é processado. A velocidade de decisão que te fez grande está de volta.',
+  },
+  {
+    Icon: Settings,
+    title: 'Governo da Identidade',
+    text: 'Você para de reagir aos traumas e começa a decidir baseado na sua visão estratégica.',
+  },
+  {
+    Icon: Brain,
+    title: 'Integração Subconsciente',
+    text: 'A autossabotagem agressiva é desmontada na raiz biológica, trazendo clareza total.',
+  },
+];
 
 const SolucaoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -60,7 +89,7 @@ const SolucaoSection = () => {
 
   return (
     <section className="min-h-screen overflow-hidden relative flex flex-col">
-      {/* Background video */}
+      {/* Background video — untouched */}
       <video
         ref={videoRef}
         src={VIDEO_URL}
@@ -72,68 +101,82 @@ const SolucaoSection = () => {
         style={{ opacity: 0 }}
       />
 
-      {/* Navbar */}
-      <nav className="relative z-20 px-6 py-6">
-        <div className="liquid-glass rounded-full max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center">
-            <Globe className="w-6 h-6 text-white" />
-            <span className="text-white font-semibold text-lg ml-2">Asme</span>
-            <div className="hidden md:flex items-center gap-8 ml-8">
-              {['Features', 'Pricing', 'About'].map((link) => (
-                <a key={link} href="#" className="text-white/80 hover:text-white text-sm font-medium transition-colors">
-                  {link}
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="text-white text-sm font-medium">Sign Up</a>
-            <button className="liquid-glass rounded-full px-6 py-2 text-white text-sm font-medium">
-              Login
-            </button>
-          </div>
-        </div>
-      </nav>
+      {/* === OVERLAY UI === */}
+      <div className="relative z-10 flex-1 flex flex-col">
+        {/* Reading protection layer */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1128]/80 via-[#0A1128]/50 to-[#0A1128]/90 pointer-events-none" />
 
-      {/* Hero content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-12 text-center -translate-y-[20%]">
-        <h2 className="text-7xl md:text-8xl lg:text-9xl text-white tracking-tight whitespace-nowrap font-display">
-          Know it then <em className="italic">all</em>.
-        </h2>
-
-        {/* Email input */}
-        <div className="max-w-xl w-full mt-10">
-          <div className="liquid-glass rounded-full pl-6 pr-2 py-2 flex items-center gap-3">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-white/40 text-sm"
-            />
-            <button className="bg-white rounded-full p-3 text-black shrink-0">
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        <p className="text-white text-sm leading-relaxed px-4 mt-4 max-w-lg">
-          Stay updated with the latest news and insights. Subscribe to our newsletter today and never miss out on exciting updates.
-        </p>
-
-        <button className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:bg-white/5 transition-colors mt-6">
-          Manifesto
-        </button>
-      </div>
-
-      {/* Social icons footer */}
-      <div className="relative z-10 flex justify-center gap-4 pb-12">
-        {[Instagram, Twitter, Globe].map((Icon, i) => (
-          <button
-            key={i}
-            className="liquid-glass rounded-full p-4 text-white/80 hover:text-white hover:bg-white/5 transition-all"
+        {/* Content */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-20">
+          {/* Headline */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: 'easeOut' }}
+            className="text-white text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider text-center"
+            style={{ textShadow: '0 4px 20px rgba(0,0,0,0.7)' }}
           >
-            <Icon className="w-5 h-5" />
-          </button>
-        ))}
+            A Reabertura Sistêmica.
+          </motion.h2>
+
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+            className="text-white/70 text-lg md:text-xl font-normal mt-6 max-w-3xl text-center"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
+          >
+            Quando a Porta Neural se abre, o Governo é restaurado. Você sai do piloto automático do medo e recupera a sua percepção ampliada.
+          </motion.p>
+
+          {/* Cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={staggerVariants}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl mx-auto"
+          >
+            {cards.map(({ Icon, title, text }) => (
+              <motion.div
+                key={title}
+                variants={cardVariants}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center"
+              >
+                <Icon className="w-12 h-12 mb-4 text-blue-400" />
+                <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
+                <p className="text-white/70 text-sm">{text}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Transition text */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-white text-center text-lg mt-16 mb-8 max-w-2xl"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
+          >
+            Você não precisa de mais força. Você precisa de Sinergia. É hora de religar a chave.
+          </motion.p>
+
+          {/* CTA Button */}
+          <motion.a
+            href="https://pay.hotmart.com/W99444821H?checkoutMode=10"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, boxShadow: '0px 0px 30px rgba(212,175,55,0.4)' }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-black font-bold py-4 px-8 rounded-full uppercase tracking-wider text-base md:text-lg whitespace-nowrap inline-block"
+          >
+            QUERO REABRIR A PORTA E RECUPERAR O GOVERNO
+          </motion.a>
+        </div>
       </div>
     </section>
   );
