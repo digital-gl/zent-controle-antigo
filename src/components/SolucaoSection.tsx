@@ -89,7 +89,7 @@ const SolucaoSection = () => {
 
   return (
     <section className="min-h-screen overflow-hidden relative flex flex-col">
-      {/* Background video — untouched */}
+      {/* Background video */}
       <video
         ref={videoRef}
         src={VIDEO_URL}
@@ -108,14 +108,14 @@ const SolucaoSection = () => {
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-20">
-          {/* Headline */}
+          {/* Headline — golden */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="text-white text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider text-center"
-            style={{ textShadow: '0 4px 20px rgba(0,0,0,0.7)' }}
+            className="gold-text text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider text-center"
+            style={{ textShadow: '0 4px 20px rgba(212,168,67,0.4)' }}
           >
             A Reabertura Sistêmica.
           </motion.h2>
@@ -144,10 +144,19 @@ const SolucaoSection = () => {
               <motion.div
                 key={title}
                 variants={cardVariants}
-                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center"
+                className="bg-white/5 backdrop-blur-md border rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center"
+                style={{ borderColor: 'rgba(212,168,67,0.3)' }}
               >
-                <Icon className="w-12 h-12 mb-4 text-blue-400" />
-                <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
+                <div
+                  className="w-12 h-12 mb-4 flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(135deg, #0113B7, #001A5E)',
+                    borderRadius: '12px',
+                  }}
+                >
+                  <Icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="gold-text font-bold text-xl mb-2">{title}</h3>
                 <p className="text-white/70 text-sm">{text}</p>
               </motion.div>
             ))}
