@@ -22,7 +22,7 @@ const OfertaSection = () => {
         <div
           className="rounded-2xl p-8 sm:p-12 relative overflow-hidden"
           style={{
-            background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 50%, #0A1E4A 100%)',
+            background: 'linear-gradient(145deg, #000D30 0%, #002A90 50%, #000D30 100%)',
             border: '2px solid transparent',
             borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
             boxShadow: '0 0 40px rgba(212, 168, 67, 0.15)',

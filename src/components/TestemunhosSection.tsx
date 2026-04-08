@@ -60,7 +60,7 @@ const TestemunhosSection = () => {
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all"
               style={{
                 background: 'linear-gradient(135deg, #D4A843, #F5D87A)',
-                color: '#040D2E',
+                color: '#000005',
                 boxShadow: '0 0 15px rgba(212, 168, 67, 0.4)',
               }}
             >
@@ -95,7 +95,7 @@ const TestemunhosSection = () => {
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all"
               style={{
                 background: 'linear-gradient(135deg, #D4A843, #F5D87A)',
-                color: '#040D2E',
+                color: '#000005',
                 boxShadow: '0 0 15px rgba(212, 168, 67, 0.4)',
               }}
             >

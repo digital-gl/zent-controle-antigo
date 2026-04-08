@@ -3,7 +3,7 @@ import logoImg from '@/assets/logo-marsili.png';
 
 const Footer = () => {
   return (
-    <footer className="py-10 px-5 md:px-20 text-center" style={{ background: '#040D2E' }}>
+    <footer className="py-10 px-5 md:px-20 text-center" style={{ background: '#000005' }}>
       <div className="max-w-4xl mx-auto">
         <img src={logoImg} alt="Lucas Marsili" className="w-16 h-16 rounded-full mx-auto mb-6 object-cover" style={{ border: '2px solid #D4A843' }} />
         <div className="flex justify-center gap-4 mb-6">
