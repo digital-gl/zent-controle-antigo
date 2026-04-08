@@ -181,7 +181,7 @@ const SolucaoSection = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05, boxShadow: '0px 0px 30px rgba(212,175,55,0.4)' }}
             transition={{ duration: 0.3 }}
-            className="bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-black font-bold py-4 px-8 rounded-full uppercase tracking-wider text-base md:text-lg whitespace-nowrap inline-block"
+            className="bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-black font-bold rounded-full uppercase tracking-wider w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center"
           >
             QUERO REABRIR A PORTA E RECUPERAR O GOVERNO
           </motion.a>
