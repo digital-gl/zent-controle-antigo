@@ -24,6 +24,10 @@ const DorSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const [lockVisible, setLockVisible] = useState(false);
+  const [cardsExited, setCardsExited] = useState(0);
+
+  // Cards animate out first, then door closes
+  const allCardsExited = cardsExited >= cards.length;
 
   return (
     <section
@@ -49,90 +53,116 @@ const DorSection = () => {
         Se a sua Porta Neural está fechada, você não está no comando; você está apenas a reagir ao peso do que ficou trancado. O seu corpo envia os sinais:
       </p>
 
-      {/* 3D Door Container */}
-      <div className="relative w-[280px] sm:w-[340px] h-[380px] sm:h-[440px] mb-16" style={{ perspective: '1000px' }}>
-        {/* Door frame */}
-        <div
-          className="absolute inset-0 rounded-t-[2rem] border-2"
-          style={{
-            borderColor: 'rgba(212,168,67,0.4)',
-            background: 'linear-gradient(180deg, #000D30 0%, #000005 100%)',
-          }}
-        />
-
-        {/* Left door */}
-        <motion.div
-          className="absolute left-0 top-0 w-1/2 h-full rounded-tl-[2rem] origin-left"
-          style={{
-            background: 'linear-gradient(135deg, #D4A843 0%, #7A5520 30%, #F5D87A 50%, #7A5520 70%, #D4A843 100%)',
-            boxShadow: 'inset -4px 0 12px rgba(0,0,0,0.5), inset 2px 0 8px rgba(245,216,122,0.3)',
-          }}
-          initial={{ rotateY: -90 }}
-          animate={isInView ? { rotateY: 0 } : {}}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
-          onAnimationComplete={() => setLockVisible(true)}
-        >
-          {/* Door panel detail */}
+      {/* Door + Cards Container */}
+      <div className="relative w-[280px] sm:w-[340px] mb-16 flex flex-col items-center">
+        {/* 3D Door Container */}
+        <div className="relative w-full h-[380px] sm:h-[440px]" style={{ perspective: '1000px' }}>
+          {/* Door frame */}
           <div
-            className="absolute inset-4 rounded-tl-[1.5rem] border"
-            style={{ borderColor: 'rgba(122,85,32,0.5)' }}
-          />
-          {/* Handle */}
-          <div
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-10 rounded-full"
-            style={{ background: 'linear-gradient(180deg, #F5D87A, #7A5520)' }}
-          />
-        </motion.div>
-
-        {/* Right door */}
-        <motion.div
-          className="absolute right-0 top-0 w-1/2 h-full rounded-tr-[2rem] origin-right"
-          style={{
-            background: 'linear-gradient(225deg, #D4A843 0%, #7A5520 30%, #F5D87A 50%, #7A5520 70%, #D4A843 100%)',
-            boxShadow: 'inset 4px 0 12px rgba(0,0,0,0.5), inset -2px 0 8px rgba(245,216,122,0.3)',
-          }}
-          initial={{ rotateY: 90 }}
-          animate={isInView ? { rotateY: 0 } : {}}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
-        >
-          <div
-            className="absolute inset-4 rounded-tr-[1.5rem] border"
-            style={{ borderColor: 'rgba(122,85,32,0.5)' }}
-          />
-          <div
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-2 h-10 rounded-full"
-            style={{ background: 'linear-gradient(180deg, #F5D87A, #7A5520)' }}
-          />
-        </motion.div>
-
-        {/* Lock icon appearing after doors close */}
-        <motion.div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-          initial={{ scale: 1.4, opacity: 0 }}
-          animate={lockVisible ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
-          <div
-            className="p-4 rounded-full"
+            className="absolute inset-0 rounded-t-[2rem] border-2"
             style={{
-              background: 'radial-gradient(circle, #D4A843 0%, #7A5520 100%)',
-              boxShadow: '0 0 30px rgba(212,168,67,0.6), 0 0 60px rgba(212,168,67,0.3)',
+              borderColor: 'rgba(212,168,67,0.4)',
+              background: 'linear-gradient(180deg, #000D30 0%, #000005 100%)',
+            }}
+          />
+
+          {/* Stacked cards inside the door (visible before they animate out) */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 z-[5] overflow-hidden rounded-t-[2rem]">
+            {cards.map((card, i) => (
+              <motion.div
+                key={i}
+                className="w-[85%] rounded-lg p-3 bg-card-dark gold-border"
+                initial={{ opacity: 1, y: 0 }}
+                animate={isInView ? { opacity: 0, y: 200 + i * 40 } : {}}
+                transition={{
+                  duration: 1.2,
+                  delay: 0.3 + i * 0.5,
+                  ease: 'easeInOut',
+                }}
+                onAnimationComplete={() => {
+                  setCardsExited((prev) => prev + 1);
+                }}
+              >
+                <div className="text-xl mb-1">{card.icon}</div>
+                <h3 className="gold-text font-display text-sm font-bold">{card.title}</h3>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Left door — starts open, closes after cards exit */}
+          <motion.div
+            className="absolute left-0 top-0 w-1/2 h-full rounded-tl-[2rem] origin-left z-[6]"
+            style={{
+              background: 'linear-gradient(135deg, #D4A843 0%, #7A5520 30%, #F5D87A 50%, #7A5520 70%, #D4A843 100%)',
+              boxShadow: 'inset -4px 0 12px rgba(0,0,0,0.5), inset 2px 0 8px rgba(245,216,122,0.3)',
+            }}
+            initial={{ rotateY: -90 }}
+            animate={allCardsExited ? { rotateY: 0 } : { rotateY: -90 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            onAnimationComplete={() => {
+              if (allCardsExited) setLockVisible(true);
             }}
           >
-            <Lock size={40} color="#000D30" strokeWidth={2.5} />
-          </div>
-        </motion.div>
+            <div
+              className="absolute inset-4 rounded-tl-[1.5rem] border"
+              style={{ borderColor: 'rgba(122,85,32,0.5)' }}
+            />
+            <div
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-10 rounded-full"
+              style={{ background: 'linear-gradient(180deg, #F5D87A, #7A5520)' }}
+            />
+          </motion.div>
+
+          {/* Right door — starts open, closes after cards exit */}
+          <motion.div
+            className="absolute right-0 top-0 w-1/2 h-full rounded-tr-[2rem] origin-right z-[6]"
+            style={{
+              background: 'linear-gradient(225deg, #D4A843 0%, #7A5520 30%, #F5D87A 50%, #7A5520 70%, #D4A843 100%)',
+              boxShadow: 'inset 4px 0 12px rgba(0,0,0,0.5), inset -2px 0 8px rgba(245,216,122,0.3)',
+            }}
+            initial={{ rotateY: 90 }}
+            animate={allCardsExited ? { rotateY: 0 } : { rotateY: 90 }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+          >
+            <div
+              className="absolute inset-4 rounded-tr-[1.5rem] border"
+              style={{ borderColor: 'rgba(122,85,32,0.5)' }}
+            />
+            <div
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-2 h-10 rounded-full"
+              style={{ background: 'linear-gradient(180deg, #F5D87A, #7A5520)' }}
+            />
+          </motion.div>
+
+          {/* Lock icon after doors close */}
+          <motion.div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            initial={{ scale: 1.4, opacity: 0 }}
+            animate={lockVisible ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <div
+              className="p-4 rounded-full"
+              style={{
+                background: 'radial-gradient(circle, #D4A843 0%, #7A5520 100%)',
+                boxShadow: '0 0 30px rgba(212,168,67,0.6), 0 0 60px rgba(212,168,67,0.3)',
+              }}
+            >
+              <Lock size={40} color="#000D30" strokeWidth={2.5} />
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Cards */}
+      {/* Cards in final positions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
         {cards.map((card, i) => (
           <motion.div
             key={i}
             className="rounded-lg p-6 bg-card-dark gold-border"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: -60 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1.8 + i * 0.2 }}
+            transition={{ duration: 1, delay: 0.3 + i * 0.5 + 0.8, ease: 'easeOut' }}
           >
             <div className="text-3xl mb-4">{card.icon}</div>
             <h3 className="gold-text font-display text-xl font-bold mb-3">{card.title}</h3>

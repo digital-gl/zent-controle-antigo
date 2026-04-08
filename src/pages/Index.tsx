@@ -35,11 +35,12 @@ const Index = () => {
         <Hero />
         <SectionSeparator />
         <DorSection />
-        <SolucaoSection />
         <SectionSeparator />
         <Ticker items={tickerMid} />
         <SectionSeparator />
         <ProblemaSection />
+        <SectionSeparator />
+        <SolucaoSection />
         <SectionSeparator />
         <AutoridadeSection />
         <SectionSeparator />
