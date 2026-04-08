@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -61,13 +61,12 @@
     --ring: 42 65% 55%;
     --radius: 0.5rem;
 
-    --blue-deep: #040D2E;
-    --blue-midnight: #0A1E4A;
-    --blue-dark: #0D2E6B;
-    --blue-mid: #12408A;
-    --blue-vivid: #1856B0;
-    --blue-bright: #2070CC;
-    --blue-electric: #2888E0;
+    --blue-abyss: #000005;
+    --blue-deep: #000410;
+    --blue-midnight: #000D30;
+    --blue-dark: #001A5E;
+    --blue-mid: #002A90;
+    --blue-vivid: #0113B7;
 
     --gold-light: #F5D87A;
     --gold-mid: #D4A843;
@@ -126,27 +125,27 @@
 
 /* Backgrounds */
 .bg-dark-radial {
-  background: radial-gradient(ellipse at center, #0D2E6B 0%, #0A1E4A 45%, #040D2E 100%);
+  background: radial-gradient(ellipse at center, #001A5E 0%, #000D30 45%, #000005 100%);
 }
 
 .bg-dark-linear {
-  background: linear-gradient(135deg, #040D2E 0%, #0D2E6B 50%, #040D2E 100%);
+  background: linear-gradient(135deg, #000005 0%, #001A5E 50%, #000005 100%);
 }
 
 .bg-card-dark {
-  background: linear-gradient(145deg, #0A1E4A 0%, #12408A 100%);
+  background: linear-gradient(145deg, #000D30 0%, #002A90 100%);
 }
 
 .bg-dark-alt1 {
-  background: radial-gradient(ellipse at top left, #12408A 0%, #0A1E4A 50%, #040D2E 100%);
+  background: radial-gradient(ellipse at top left, #002A90 0%, #000D30 50%, #000005 100%);
 }
 
 .bg-dark-alt2 {
-  background: radial-gradient(ellipse at bottom right, #0D2E6B 0%, #040D2E 60%, #0A1E4A 100%);
+  background: radial-gradient(ellipse at bottom right, #001A5E 0%, #000005 60%, #000D30 100%);
 }
 
 .bg-dark-alt3 {
-  background: linear-gradient(180deg, #040D2E 0%, #12408A 50%, #040D2E 100%);
+  background: linear-gradient(180deg, #000005 0%, #002A90 50%, #000005 100%);
 }
 
 /* CTA Button */
@@ -194,7 +193,7 @@
 
 /* Font display */
 .font-display {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Instrument Serif', serif;
 }
 
 /* White section styles */
@@ -219,7 +218,7 @@
 
 /* Skeleton loader */
 .skeleton-gold {
-  background: linear-gradient(90deg, #0A1E4A 25%, #12408A 50%, #0A1E4A 75%);
+  background: linear-gradient(90deg, #000D30 25%, #002A90 50%, #000D30 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s infinite;
 }

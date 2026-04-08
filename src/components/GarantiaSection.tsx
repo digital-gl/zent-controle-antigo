@@ -39,8 +39,8 @@ const GarantiaSection = () => {
                 <stop offset="100%" stopColor="#A07830" />
               </linearGradient>
               <linearGradient id="shieldInner" x1="0" y1="0" x2="120" y2="150" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0A1E4A" />
-                <stop offset="100%" stopColor="#12408A" />
+                <stop offset="0%" stopColor="#000D30" />
+                <stop offset="100%" stopColor="#002A90" />
               </linearGradient>
               <filter id="shieldGlow">
                 <feGaussianBlur stdDeviation="3" result="blur" />
