@@ -3,6 +3,7 @@ import Ticker from '@/components/Ticker';
 import Hero from '@/components/Hero';
 import DorSection from '@/components/DorSection';
 import ProblemaSection from '@/components/ProblemaSection';
+import SolucaoSection from '@/components/SolucaoSection';
 import AutoridadeSection from '@/components/AutoridadeSection';
 import TestemunhosSection from '@/components/TestemunhosSection';
 import OfertaSection from '@/components/OfertaSection';
@@ -34,6 +35,7 @@ const Index = () => {
         <Hero />
         <SectionSeparator />
         <DorSection />
+        <SolucaoSection />
         <SectionSeparator />
         <Ticker items={tickerMid} />
         <SectionSeparator />
