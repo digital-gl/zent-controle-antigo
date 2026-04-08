@@ -1,4 +1,5 @@
 import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
+import LuminousCard from './LuminousCard';
 
 const ProblemaSection = () => {
   const { theme } = useTheme();
