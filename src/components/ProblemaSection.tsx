@@ -53,8 +53,8 @@ const ProblemaSection = () => {
                 className="rounded-lg overflow-hidden gold-border cursor-pointer transition-all duration-300"
                 style={{
                   background: isOpen
-                    ? 'linear-gradient(145deg, #0A3060 0%, #062040 100%)'
-                    : 'linear-gradient(145deg, #041628 0%, #0A3060 100%)',
+                    ? 'linear-gradient(145deg, #12408A 0%, #0D2E6B 100%)'
+                    : 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)',
                   boxShadow: isOpen ? '0 0 20px rgba(212, 168, 67, 0.2)' : 'none',
                 }}
                 onClick={() => setActiveIndex(isOpen ? null : i)}
@@ -66,7 +66,7 @@ const ProblemaSection = () => {
                       background: isOpen
                         ? 'linear-gradient(135deg, #D4A843 0%, #F5D87A 100%)'
                         : 'rgba(212, 168, 67, 0.15)',
-                      color: isOpen ? '#020B18' : '#D4A843',
+                      color: isOpen ? '#040D2E' : '#D4A843',
                     }}
                   >
                     {i + 1}
@@ -99,7 +99,7 @@ const ProblemaSection = () => {
 
         <div
           className="rounded-lg p-6 sm:p-8 gold-border"
-          style={{ background: 'linear-gradient(145deg, #041628 0%, #0A3060 100%)' }}
+          style={{ background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)' }}
         >
           <p className="text-center text-base sm:text-lg font-medium text-[#F0F4F8] leading-relaxed">
             Seu problema não é falta de esforço. É que você está preso em padrões internos com crenças limitantes e autossabotadoras que operam abaixo do nível da sua consciência.

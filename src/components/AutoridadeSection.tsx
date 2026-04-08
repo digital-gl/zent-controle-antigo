@@ -33,7 +33,7 @@ const AutoridadeSection = () => {
             {/* Card 1 */}
             <div
               className="rounded-lg p-5 gold-border"
-              style={{ background: 'linear-gradient(145deg, #041628 0%, #0A3060 100%)' }}
+              style={{ background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)' }}
             >
               <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed">
                 Lucas Marsili é especialista em restauração emocional, mental e espiritual. Trabalha com empresários e profissionais que chegaram ao limite por dentro, mas ainda sustentam o mundo por fora.
@@ -42,7 +42,7 @@ const AutoridadeSection = () => {
             {/* Card 2 */}
             <div
               className="rounded-lg p-5 gold-border"
-              style={{ background: 'linear-gradient(145deg, #041628 0%, #0A3060 100%)' }}
+              style={{ background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)' }}
             >
               <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed">
                 Seu método combina hipnoterapia clínica e PNL para conduzir o cliente ao estado de abertura da Porta Neural, o ponto onde os fragmentos entram em sinergia, a clareza mental retorna e aquilo que estava bloqueado se torna visível e trabalhável.
@@ -51,7 +51,7 @@ const AutoridadeSection = () => {
             {/* Card 3 */}
             <div
               className="rounded-lg p-5 gold-border"
-              style={{ background: 'linear-gradient(145deg, #041628 0%, #0A3060 100%)' }}
+              style={{ background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)' }}
             >
               <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed">
                 Não ensina produtividade. Não vende motivação. Atua na raiz do que está quebrando a pessoa, não nos sintomas de fora.
@@ -61,7 +61,7 @@ const AutoridadeSection = () => {
             <div
               className="rounded-lg p-5 mt-2"
               style={{
-                background: 'linear-gradient(145deg, #041628 0%, #0A3060 100%)',
+                background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)',
                 border: '2px solid transparent',
                 borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
               }}

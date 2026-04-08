@@ -6,34 +6,34 @@
 
 @layer base {
   :root {
-    --background: 216 90% 5%;
+    --background: 225 85% 10%;
     --foreground: 210 30% 95%;
-    --card: 214 80% 8%;
+    --card: 225 75% 15%;
     --card-foreground: 210 30% 95%;
-    --popover: 214 80% 8%;
+    --popover: 225 75% 15%;
     --popover-foreground: 210 30% 95%;
     --primary: 42 65% 55%;
     --primary-foreground: 216 90% 5%;
-    --secondary: 214 70% 13%;
+    --secondary: 225 70% 20%;
     --secondary-foreground: 210 30% 95%;
-    --muted: 214 50% 15%;
+    --muted: 225 50% 22%;
     --muted-foreground: 210 20% 65%;
     --accent: 42 65% 55%;
     --accent-foreground: 216 90% 5%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 42 50% 40%;
-    --input: 214 50% 20%;
+    --input: 225 50% 25%;
     --ring: 42 65% 55%;
     --radius: 0.5rem;
 
-    --blue-deep: #020B18;
-    --blue-midnight: #041628;
-    --blue-dark: #062040;
-    --blue-mid: #0A3060;
-    --blue-vivid: #0D4A8A;
-    --blue-bright: #1060B0;
-    --blue-electric: #1A7FD4;
+    --blue-deep: #040D2E;
+    --blue-midnight: #0A1E4A;
+    --blue-dark: #0D2E6B;
+    --blue-mid: #12408A;
+    --blue-vivid: #1856B0;
+    --blue-bright: #2070CC;
+    --blue-electric: #2888E0;
 
     --gold-light: #F5D87A;
     --gold-mid: #D4A843;
@@ -92,27 +92,27 @@
 
 /* Backgrounds */
 .bg-dark-radial {
-  background: radial-gradient(ellipse at center, #062040 0%, #041628 45%, #020B18 100%);
+  background: radial-gradient(ellipse at center, #0D2E6B 0%, #0A1E4A 45%, #040D2E 100%);
 }
 
 .bg-dark-linear {
-  background: linear-gradient(135deg, #020B18 0%, #062040 50%, #020B18 100%);
+  background: linear-gradient(135deg, #040D2E 0%, #0D2E6B 50%, #040D2E 100%);
 }
 
 .bg-card-dark {
-  background: linear-gradient(145deg, #041628 0%, #0A3060 100%);
+  background: linear-gradient(145deg, #0A1E4A 0%, #12408A 100%);
 }
 
 .bg-dark-alt1 {
-  background: radial-gradient(ellipse at top left, #0A3060 0%, #041628 50%, #020B18 100%);
+  background: radial-gradient(ellipse at top left, #12408A 0%, #0A1E4A 50%, #040D2E 100%);
 }
 
 .bg-dark-alt2 {
-  background: radial-gradient(ellipse at bottom right, #062040 0%, #020B18 60%, #041628 100%);
+  background: radial-gradient(ellipse at bottom right, #0D2E6B 0%, #040D2E 60%, #0A1E4A 100%);
 }
 
 .bg-dark-alt3 {
-  background: linear-gradient(180deg, #020B18 0%, #0A3060 50%, #020B18 100%);
+  background: linear-gradient(180deg, #040D2E 0%, #12408A 50%, #040D2E 100%);
 }
 
 /* CTA Button */
@@ -185,7 +185,7 @@
 
 /* Skeleton loader */
 .skeleton-gold {
-  background: linear-gradient(90deg, #041628 25%, #0A3060 50%, #041628 75%);
+  background: linear-gradient(90deg, #0A1E4A 25%, #12408A 50%, #0A1E4A 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s infinite;
 }

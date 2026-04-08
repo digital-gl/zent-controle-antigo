@@ -37,7 +37,7 @@ const tickerMid = [
 const Index = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen" style={{ background: '#020B18' }}>
+      <div className="min-h-screen" style={{ background: '#040D2E' }}>
         <ThemeSelector />
         <Ticker items={tickerTop} />
         <Hero />

@@ -24,7 +24,7 @@ const FAQSection = () => {
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="rounded-lg gold-border overflow-hidden" style={{ background: 'linear-gradient(145deg, #041628 0%, #0A3060 100%)' }}>
+            <div key={i} className="rounded-lg gold-border overflow-hidden" style={{ background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 100%)' }}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full text-left px-6 py-4 flex items-center justify-between"

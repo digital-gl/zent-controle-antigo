@@ -40,8 +40,8 @@ const GarantiaSection = () => {
                 <stop offset="100%" stopColor="#A07830" />
               </linearGradient>
               <linearGradient id="shieldInner" x1="0" y1="0" x2="120" y2="150" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#041628" />
-                <stop offset="100%" stopColor="#0A3060" />
+                <stop offset="0%" stopColor="#0A1E4A" />
+                <stop offset="100%" stopColor="#12408A" />
               </linearGradient>
               <filter id="shieldGlow">
                 <feGaussianBlur stdDeviation="3" result="blur" />
@@ -90,7 +90,7 @@ const GarantiaSection = () => {
           <div
             className="px-8 pt-12 pb-16 text-center"
             style={{
-              background: 'linear-gradient(145deg, #041628 0%, #0A3060 50%, #041628 100%)',
+              background: 'linear-gradient(145deg, #0A1E4A 0%, #12408A 50%, #0A1E4A 100%)',
             }}
           >
             <p className={`text-base sm:text-lg leading-relaxed ${isWhite ? 'text-[#0A1628]/80' : 'text-[#A8B8C8]'}`}>

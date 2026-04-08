@@ -3,12 +3,12 @@ interface TickerProps {
 }
 
 const Ticker = ({ items }: TickerProps) => {
-  const separator = <span className="mx-4 text-xs" style={{ color: '#020B18' }}>◆</span>;
+  const separator = <span className="mx-4 text-xs" style={{ color: '#040D2E' }}>◆</span>;
   
   const renderItems = () =>
     items.map((item, i) => (
       <span key={i} className="flex items-center shrink-0">
-        <span className="text-xs sm:text-sm uppercase tracking-widest whitespace-nowrap font-medium" style={{ color: '#020B18' }}>
+        <span className="text-xs sm:text-sm uppercase tracking-widest whitespace-nowrap font-medium" style={{ color: '#040D2E' }}>
           {item}
         </span>
         {separator}
@@ -26,8 +26,8 @@ const Ticker = ({ items }: TickerProps) => {
       <div
         className="w-full"
         style={{
-          borderTop: '2px solid #020B18',
-          borderBottom: '2px solid #020B18',
+          borderTop: '2px solid #040D2E',
+          borderBottom: '2px solid #040D2E',
         }}
       >
         <div className="py-3.5 overflow-hidden">

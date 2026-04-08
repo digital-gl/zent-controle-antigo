@@ -16,7 +16,7 @@ const StickyBar = () => {
       className="fixed bottom-0 left-0 right-0 z-[9999] sticky-bar-enter flex items-center justify-between px-5 md:px-10"
       style={{
         height: '64px',
-        background: 'linear-gradient(135deg, #020B18 0%, #041628 50%, #020B18 100%)',
+        background: 'linear-gradient(135deg, #040D2E 0%, #0A1E4A 50%, #040D2E 100%)',
         borderTop: '1px solid rgba(212, 168, 67, 0.5)',
       }}
     >
