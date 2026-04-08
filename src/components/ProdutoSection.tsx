@@ -84,7 +84,7 @@ const ProdutoSection = () => {
             className="absolute inset-0 rounded-full"
             style={{
               borderRadius: '50%',
-              background: 'linear-gradient(145deg, #041628, #0A3060) padding-box, linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) border-box',
+              background: 'linear-gradient(145deg, #0A1E4A, #12408A) padding-box, linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) border-box',
               border: '3px solid transparent',
               boxShadow: '0 0 30px rgba(212, 168, 67, 0.2)',
             }}
@@ -119,7 +119,7 @@ const ProdutoSection = () => {
                       background: activeItem === i
                         ? 'linear-gradient(135deg, #D4A843, #F5D87A)'
                         : 'rgba(212, 168, 67, 0.15)',
-                      color: activeItem === i ? '#020B18' : '#D4A843',
+                      color: activeItem === i ? '#040D2E' : '#D4A843',
                       boxShadow: activeItem === i ? '0 0 20px rgba(212, 168, 67, 0.5)' : 'none',
                       border: '2px solid rgba(212, 168, 67, 0.4)',
                     }}

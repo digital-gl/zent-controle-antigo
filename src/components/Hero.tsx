@@ -35,11 +35,11 @@ const Hero = () => {
               />
               <div
                 className="price-badge absolute -bottom-4 -right-4 rounded-lg px-4 py-3 text-center gold-border"
-                style={{ background: 'linear-gradient(135deg, #020B18 0%, #041628 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #040D2E 0%, #0A1E4A 100%)' }}
               >
                 <p className="text-xs" style={{ color: '#D4A843' }}>Por apenas</p>
                 <p className="text-2xl font-bold gold-text">R$ 49</p>
-                <p className="text-xs" style={{ color: '#1A7FD4' }}>Acesso Imediato</p>
+                <p className="text-xs" style={{ color: '#2888E0' }}>Acesso Imediato</p>
               </div>
             </div>
           </div>
@@ -75,11 +75,11 @@ const Hero = () => {
             />
             <div
               className="price-badge absolute bottom-2 right-[-20px] rounded-lg px-4 py-3 text-center gold-border"
-              style={{ background: 'linear-gradient(135deg, #020B18 0%, #041628 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #040D2E 0%, #0A1E4A 100%)' }}
             >
               <p className="text-xs" style={{ color: '#D4A843' }}>Por apenas</p>
               <p className="text-2xl font-bold gold-text">R$ 49</p>
-              <p className="text-xs" style={{ color: '#1A7FD4' }}>Acesso Imediato</p>
+              <p className="text-xs" style={{ color: '#2888E0' }}>Acesso Imediato</p>
             </div>
           </div>
         </div>
