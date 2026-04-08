@@ -4,31 +4,32 @@
 
 @layer base {
   :root {
-    --background: 225 80% 8%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 100%;
-    --card: 225 70% 12%;
+    --card: 0 0% 9%;
     --card-foreground: 0 0% 100%;
-    --popover: 225 70% 12%;
+    --popover: 0 0% 9%;
     --popover-foreground: 0 0% 100%;
-    --primary: 45 100% 50%;
-    --primary-foreground: 225 80% 8%;
-    --secondary: 225 60% 18%;
+    --primary: 52 97% 63%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 225 50% 20%;
-    --muted-foreground: 220 15% 65%;
-    --accent: 45 100% 50%;
-    --accent-foreground: 225 80% 8%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 52 97% 63%;
+    --accent-foreground: 0 0% 4%;
     --destructive: 0 80% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 45 60% 35%;
-    --input: 225 60% 18%;
-    --ring: 45 100% 50%;
-    --radius: 0.75rem;
-    --gold: 45 100% 50%;
-    --gold-light: 43 100% 70%;
-    --gold-dark: 40 80% 38%;
-    --navy: 225 80% 8%;
-    --navy-light: 225 60% 18%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 52 97% 63%;
+    --radius: 2rem;
+
+    --cyber-yellow: 52 97% 63%;
+    --onyx: 0 0% 4%;
+    --charcoal: 0 0% 9%;
+    --deep-gray: 0 0% 15%;
+    --glass-white: 0 0% 100%;
   }
 
   * {
@@ -42,41 +43,61 @@
 }
 
 @layer utilities {
-  .text-gold {
-    color: hsl(var(--gold));
+  .glass {
+    background: hsla(0, 0%, 100%, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsla(0, 0%, 100%, 0.15);
   }
-  .text-gold-light {
-    color: hsl(var(--gold-light));
+
+  .glass-strong {
+    background: hsla(0, 0%, 100%, 0.12);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
   }
-  .bg-gold {
-    background-color: hsl(var(--gold));
+
+  .gold-border-subtle {
+    border: 1px solid hsl(var(--cyber-yellow) / 0.3);
   }
-  .bg-navy {
-    background-color: hsl(var(--navy));
+
+  .text-cyber {
+    color: hsl(var(--cyber-yellow));
   }
-  .bg-navy-light {
-    background-color: hsl(var(--navy-light));
+
+  .bg-cyber {
+    background-color: hsl(var(--cyber-yellow));
   }
-  .border-gold {
-    border-color: hsl(var(--gold));
+
+  .liquid-section {
+    border-radius: 0 0 120px 40px;
   }
-  .gradient-gold {
-    background: linear-gradient(135deg, hsl(40 80% 38%), hsl(45 100% 50%), hsl(43 100% 70%));
+
+  .liquid-section-alt {
+    border-radius: 40px 120px 0 0;
   }
-  .gradient-gold-text {
-    background: linear-gradient(135deg, hsl(40 90% 45%), hsl(45 100% 55%), hsl(43 100% 70%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+
+  .pill {
+    border-radius: 9999px;
   }
-  .gold-border-frame {
-    border: 2px solid hsl(var(--gold) / 0.4);
-    border-radius: 1rem;
-    box-shadow: 0 0 20px hsl(var(--gold) / 0.1), inset 0 0 20px hsl(var(--gold) / 0.05);
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
   }
-  .gold-glow {
-    box-shadow: 0 0 30px hsl(var(--gold) / 0.3);
+
+  .ticker-scroll {
+    animation: ticker 20s linear infinite;
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 html {
@@ -84,12 +105,12 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(var(--navy));
+  background: hsl(var(--onyx));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--gold) / 0.4);
-  border-radius: 4px;
+  background: hsl(var(--cyber-yellow) / 0.3);
+  border-radius: 3px;
 }

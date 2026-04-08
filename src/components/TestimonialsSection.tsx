@@ -1,49 +1,50 @@
-import { Star, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carlos M.",
-    role: "Aluno da Mentoria",
-    text: "Em 3 meses de mentoria, já estou operando com consistência. O método Smart Money mudou minha forma de ver o mercado.",
+    text: "A clareza que este diagnóstico me trouxe vale cem vezes o investimento. Eu finalmente joguei luz no que me travava no escuro.",
+    name: "C.R.",
+    role: "CEO, Setor Financeiro",
   },
   {
-    name: "Ana P.",
-    role: "Sócia-Investidora",
-    text: "Comecei com R$ 500 e hoje meus rendimentos mensais superam qualquer aplicação tradicional. Recomendo de olhos fechados.",
+    text: "Achei que era burnout, mas era algo muito mais profundo. O protocolo me mostrou exatamente onde estava o curto-circuito.",
+    name: "M.A.",
+    role: "Empresário, 15 anos de mercado",
   },
   {
-    name: "Roberto S.",
-    role: "Aluno e Investidor",
-    text: "A transparência é o diferencial. Acompanho tudo pelo app diariamente. Já indiquei para toda minha família.",
+    text: "Minha relação com a família mudou em semanas. Eu não sabia que a armadura do trabalho estava me sufocando em casa.",
+    name: "R.S.",
+    role: "Diretor Executivo",
   },
 ];
 
 export const TestimonialsSection = () => (
-  <section id="resultados" className="py-20 sm:py-28 bg-card">
+  <section id="resultados" className="py-24 sm:py-32 bg-background">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-4xl font-bold gradient-gold-text mb-4">Resultados e Testemunhos</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-          Veja o que nossos alunos e sócios dizem sobre a experiência
-        </p>
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight mb-4">
+          LÍDERES QUE REABRIRAM{" "}
+          <span className="text-cyber">A PORTA.</span>
+        </h2>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
         {testimonials.map((t) => (
-          <div key={t.name} className="gold-border-frame p-6 bg-background flex flex-col">
-            <Quote className="w-8 h-8 text-gold/40 mb-4" />
+          <div key={t.name} className="glass-strong rounded-glass p-8 flex flex-col gold-border-subtle">
+            <Quote className="w-8 h-8 text-cyber/40 mb-6" />
             <p className="text-muted-foreground text-sm leading-relaxed flex-1 italic">"{t.text}"</p>
-            <div className="mt-6 pt-4 border-t border-border/30">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                ))}
-              </div>
+            <div className="mt-6 pt-4 border-t border-border/20">
               <p className="font-bold text-foreground">{t.name}</p>
-              <p className="text-xs text-gold">{t.role}</p>
+              <p className="text-xs text-cyber">{t.role}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <p className="text-lg sm:text-xl italic text-cyber/80 max-w-2xl mx-auto">
+          "A clareza que este diagnóstico me trouxe vale cem vezes o investimento. Eu finalmente joguei luz no que me travava no escuro."
+        </p>
       </div>
     </div>
   </section>

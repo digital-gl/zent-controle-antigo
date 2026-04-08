@@ -1,17 +1,14 @@
-import eagleLogo from "@/assets/eagle-logo.png";
-
 export const Footer = () => (
-  <footer className="bg-card border-t border-border/30 py-10">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <img src={eagleLogo} alt="Forex Comunidade" className="h-8 w-8" />
-          <span className="font-bold gradient-gold-text">FOREX COMUNIDADE DE TRADERS</span>
-        </div>
-        <p className="text-sm text-muted-foreground text-center">
-          © {new Date().getFullYear()} Washington Venâncio | Forex Comunidade de Traders. Todos os direitos reservados.
-        </p>
-      </div>
+  <footer className="py-12 bg-card border-t border-border/10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <p className="text-xl font-bold text-cyber tracking-tight">SINERGIA</p>
+      <p className="text-sm text-foreground/60">Lucas Marsili</p>
+      <p className="text-xs text-muted-foreground max-w-xl mx-auto leading-relaxed">
+        Aviso Legal: Este produto não substitui aconselhamento médico. Os resultados dependem da aplicação técnica do protocolo.
+      </p>
+      <p className="text-xs text-muted-foreground">
+        Copy por Lucas Marsili · Lançado por BM Coproduções · Todos os Direitos Reservados
+      </p>
     </div>
   </footer>
 );
