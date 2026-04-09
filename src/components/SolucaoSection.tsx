@@ -89,7 +89,7 @@ const SolucaoSection = () => {
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1128]/80 via-[#0A1128]/50 to-[#0A1128]/90 pointer-events-none" />
 
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-20">
+        <div className="relative z-10 flex-1 flex flex-col items-center px-6 pt-10 pb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,13 +106,13 @@ const SolucaoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-            className="text-white/70 text-lg md:text-xl font-normal mt-6 max-w-3xl text-center"
+            className="text-white/70 text-lg md:text-xl font-normal mt-4 max-w-3xl text-center"
             style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
           >
             Quando a Porta Neural se abre, o Governo é restaurado. Você sai do piloto automático do medo e recupera a sua percepção ampliada.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 w-full max-w-6xl mx-auto">
             {cards.map(({ title, text }, i) => (
               <motion.div
                 key={title}
@@ -136,12 +136,14 @@ const SolucaoSection = () => {
             ))}
           </div>
 
+          <div className="flex-1" />
+
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-white text-center text-lg mt-16 mb-8 max-w-2xl"
+            className="text-white text-center text-lg mt-20 mb-8 max-w-2xl"
             style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
           >
             Você não precisa de mais força. Você precisa de Sinergia. É hora de religar a chave.
@@ -155,7 +157,7 @@ const SolucaoSection = () => {
             transition={{ duration: 0.3 }}
             className="bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-black font-bold rounded-full uppercase tracking-wider w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center"
           >
-            QUERO REABRIR A PORTA E RECUPERAR O GOVERNO
+            QUERO ABRIR A PORTA
           </motion.a>
         </div>
       </div>
