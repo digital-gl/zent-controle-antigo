@@ -95,7 +95,7 @@ const SolucaoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="gold-text text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider text-center"
+            className="gold-text md:text-7xl lg:text-8xl font-bold uppercase tracking-wider text-center text-3xl"
             style={{ textShadow: '0 4px 20px rgba(212,168,67,0.4)' }}
           >
             A Reabertura Sistêmica.
