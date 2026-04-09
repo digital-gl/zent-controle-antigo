@@ -17,6 +17,7 @@ const Hero = () => {
             <span className="gold-text">PORTA NEURAL.</span>
           </h1>
 
+          {/* Mobile image */}
           <div className="flex-shrink-0 relative mb-6 md:hidden">
             <div className="relative">
               {!imgLoaded && (
@@ -36,11 +37,22 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Mobile CTA below image */}
+          <div className="flex flex-col items-center w-full md:hidden mb-4">
+            <a
+              href="#oferta"
+              className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base leading-tight text-center flex items-center justify-center"
+            >
+              QUERO ABRIR A PORTA E ME DESACORRENTAR
+            </a>
+          </div>
+
           <p className="text-[#A8B8C8] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 mb-8">
             O seu cérebro fechou a porta para te salvar do colapso, mas deixou as tensões e os traumas lá dentro. Hoje, esse entulho emocional é um sabotador silencioso que força decisões erradas e drena a sua energia vital.
           </p>
 
-          <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-auto">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex flex-col items-center md:items-start gap-3 w-full md:w-auto">
             <a
               href="#oferta"
               className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center"

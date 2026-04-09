@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
 
 const testimonials = [
@@ -74,18 +75,22 @@ const TestemunhosSection = () => {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonials.map((t, i) => (
-              <div
+              <motion.div
                 key={i}
                 className={`snap-center shrink-0 w-[85vw] md:w-[400px] rounded-lg p-6 ${
                   isWhite ? 'bg-[#F5F7FA] border border-[#D4A843]/30' : 'bg-card-dark gold-border'
                 }`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="gold-text text-3xl mb-4 font-display">"</div>
                 <p className={`text-base leading-relaxed mb-6 ${isWhite ? 'text-[#0A1628]/80' : 'text-[#A8B8C8]'}`}>
                   {t.text}
                 </p>
                 <p className="gold-text text-sm font-semibold">{t.name}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 

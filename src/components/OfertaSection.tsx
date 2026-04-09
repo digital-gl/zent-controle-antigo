@@ -3,7 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { Check } from 'lucide-react';
 import ParallaxStars from './ParallaxStars';
 
-/* Thick horizontal chain — a series of interlocking oval links */
 const HorizontalChain = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
   <svg className={className} style={style} viewBox="0 0 600 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     {[0, 70, 140, 210, 280, 350, 420, 490].map((x) => (
@@ -23,7 +22,6 @@ const HorizontalChain = ({ className, style }: { className?: string; style?: Rea
   </svg>
 );
 
-/* Diagonal chain — vertical links for crossing effect */
 const VerticalChain = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
   <svg className={className} style={style} viewBox="0 0 60 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     {[0, 70, 140, 210, 280, 350, 420, 490].map((y) => (
@@ -43,7 +41,6 @@ const VerticalChain = ({ className, style }: { className?: string; style?: React
   </svg>
 );
 
-/* Large padlock SVG */
 const PadlockSVG = () => (
   <svg width="100" height="120" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -58,17 +55,20 @@ const PadlockSVG = () => (
         <stop offset="100%" stopColor="#7A5520" />
       </linearGradient>
     </defs>
-    {/* Shackle */}
     <path d="M25 50 V30 A25 25 0 0 1 75 30 V50" stroke="url(#lockShackle)" strokeWidth="10" strokeLinecap="round" fill="none" />
-    {/* Body */}
     <rect x="10" y="45" width="80" height="65" rx="10" fill="url(#lockBody)" stroke="#7A5520" strokeWidth="2" />
-    {/* Keyhole */}
     <circle cx="50" cy="73" r="9" fill="#000D30" />
     <rect x="46" y="78" width="8" height="16" rx="3" fill="#000D30" />
   </svg>
 );
 
 const chainFallTransition = { duration: 0.9, ease: [0.45, 0, 0.55, 1] as const };
+
+const bullets = [
+  'O Protocolo de Diagnóstico: O guia prático para identificar a trava.',
+  'O Mapeamento de Padrões: Como expor os seus autossabotadores invisíveis.',
+  'Aulas de Sinergia Mental: A base da PNL e Hipnose para preparar o reset.',
+];
 
 const OfertaSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -85,9 +85,8 @@ const OfertaSection = () => {
 
       <div className="max-w-3xl mx-auto relative z-10 w-full">
         <div className="relative">
-          {/* === OFFER CARD === */}
           <motion.div
-            className="rounded-2xl p-8 sm:p-12 relative overflow-hidden"
+            className="rounded-2xl p-6 sm:p-8 relative overflow-hidden"
             style={{
               background: 'linear-gradient(145deg, #000D30 0%, #001A5E 50%, #000D30 100%)',
               border: '1px solid rgba(212,168,67,0.3)',
@@ -102,35 +101,35 @@ const OfertaSection = () => {
             transition={{ duration: 1.2, delay: 0.8 }}
           >
             <div className="relative z-10 text-center flex flex-col items-center">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-8 gold-text">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4 gold-text">
                 O MAPA DA SUA LIBERTAÇÃO POR APENAS R$ 49.
               </h2>
 
-              <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed mb-8">
+              <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed mb-4">
                 Você está a um passo de descobrir exatamente o que está trancado no seu subconsciente.
               </p>
 
-              <div className="text-left w-full max-w-md space-y-4 mb-10">
-                <p className="text-sm sm:text-base font-medium mb-4 gold-text">
+              <div className="w-full max-w-md space-y-2 mb-4">
+                <p className="text-sm sm:text-base font-medium mb-2 gold-text text-left">
                   O que você recebe com acesso imediato:
                 </p>
-                {[
-                  'O Protocolo de Diagnóstico: O guia prático para identificar a trava.',
-                  'O Mapeamento de Padrões: Como expor os seus autossabotadores invisíveis.',
-                  'Aulas de Sinergia Mental: A base da PNL e Hipnose para preparar o reset.',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <Check className="mt-1 flex-shrink-0" size={18} color="#D4A843" />
-                    <p className="text-[#A8B8C8] text-sm sm:text-base leading-relaxed">{item}</p>
+                {bullets.map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg p-3 flex items-start gap-3 bg-card-dark gold-border"
+                  >
+                    <Check className="mt-0.5 flex-shrink-0" size={16} color="#D4A843" />
+                    <p className="text-[#A8B8C8] text-sm leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mb-8">
+              <div className="mb-4">
                 <p className="text-[#607080] text-sm line-through mb-1">De R$ 197,00</p>
-                <p className="font-display font-bold gold-text mb-1" style={{ fontSize: 'clamp(2.5rem, 6vw, 3.75rem)' }}>
+                <p className="font-display font-bold gold-text mb-0" style={{ fontSize: 'clamp(2.5rem, 6vw, 3.75rem)' }}>
                   POR APENAS R$ 49,00
                 </p>
+                <p className="gold-text text-sm font-semibold mb-1">Na semana de Lançamento</p>
                 <p className="text-[#607080] text-sm">Pagamento único · Acesso imediato</p>
               </div>
 
@@ -138,14 +137,12 @@ const OfertaSection = () => {
                 href="#"
                 className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center transition-transform duration-200 hover:scale-105"
               >
-                QUERO ACESSAR MEU DIAGNÓSTICO AGORA
+                QUERO ACESSAR MEU DIAGNÓSTICO
               </a>
             </div>
           </motion.div>
 
-          {/* === CHAINS CROSSING THE CARD === */}
-
-          {/* Horizontal chain top */}
+          {/* Chains */}
           <motion.div
             className="absolute top-[20%] left-[-10%] right-[-10%] h-[50px] z-20 pointer-events-none"
             initial={{ y: 0, opacity: 1 }}
@@ -155,7 +152,6 @@ const OfertaSection = () => {
             <HorizontalChain className="w-full h-full" />
           </motion.div>
 
-          {/* Horizontal chain bottom */}
           <motion.div
             className="absolute top-[60%] left-[-10%] right-[-10%] h-[50px] z-20 pointer-events-none"
             initial={{ y: 0, opacity: 1 }}
@@ -165,7 +161,6 @@ const OfertaSection = () => {
             <HorizontalChain className="w-full h-full" />
           </motion.div>
 
-          {/* Diagonal chain top-left to bottom-right */}
           <motion.div
             className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center"
             style={{ transform: 'rotate(35deg)' }}
@@ -176,7 +171,6 @@ const OfertaSection = () => {
             <VerticalChain className="h-[140%] w-[50px]" />
           </motion.div>
 
-          {/* Diagonal chain top-right to bottom-left */}
           <motion.div
             className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center"
             style={{ transform: 'rotate(-35deg)' }}
@@ -187,7 +181,6 @@ const OfertaSection = () => {
             <VerticalChain className="h-[140%] w-[50px]" />
           </motion.div>
 
-          {/* Vertical chain left */}
           <motion.div
             className="absolute top-[-10%] bottom-[-10%] left-[15%] w-[50px] z-20 pointer-events-none"
             initial={{ y: 0, opacity: 1 }}
@@ -197,7 +190,6 @@ const OfertaSection = () => {
             <VerticalChain className="w-full h-full" />
           </motion.div>
 
-          {/* Vertical chain right */}
           <motion.div
             className="absolute top-[-10%] bottom-[-10%] right-[15%] w-[50px] z-20 pointer-events-none"
             initial={{ y: 0, opacity: 1 }}
@@ -207,7 +199,6 @@ const OfertaSection = () => {
             <VerticalChain className="w-full h-full" />
           </motion.div>
 
-          {/* === PADLOCK CENTER === */}
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
             initial={{ scale: 1, opacity: 1 }}
@@ -225,7 +216,6 @@ const OfertaSection = () => {
             </div>
           </motion.div>
 
-          {/* Dark overlay that lifts when unlocked */}
           <motion.div
             className="absolute inset-0 rounded-2xl z-[15] pointer-events-none"
             style={{ background: 'rgba(0,0,5,0.5)' }}

@@ -26,7 +26,6 @@ const DorSection = () => {
   const [lockVisible, setLockVisible] = useState(false);
   const [cardsExited, setCardsExited] = useState(0);
 
-  // Cards animate out first, then door closes
   const allCardsExited = cardsExited >= cards.length;
 
   return (
@@ -35,7 +34,6 @@ const DorSection = () => {
       className="relative min-h-screen py-16 md:py-24 px-5 md:px-20 flex flex-col items-center justify-center overflow-hidden"
       style={{ background: '#000005' }}
     >
-      {/* Headline */}
       <motion.h2
         className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-12 max-w-4xl"
         style={{
@@ -53,11 +51,8 @@ const DorSection = () => {
         Se a sua Porta Neural está fechada, você não está no comando; você está apenas a reagir ao peso do que ficou trancado. O seu corpo envia os sinais:
       </p>
 
-      {/* Door + Cards Container */}
       <div className="relative w-[280px] sm:w-[340px] mb-16 flex flex-col items-center">
-        {/* 3D Door Container */}
         <div className="relative w-full h-[380px] sm:h-[440px]" style={{ perspective: '1000px' }}>
-          {/* Door frame */}
           <div
             className="absolute inset-0 rounded-t-[2rem] border-2"
             style={{
@@ -66,7 +61,6 @@ const DorSection = () => {
             }}
           />
 
-          {/* Stacked cards inside the door (visible before they animate out) */}
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 z-[5] overflow-hidden rounded-t-[2rem]">
             {cards.map((card, i) => (
               <motion.div
@@ -75,8 +69,8 @@ const DorSection = () => {
                 initial={{ opacity: 1, y: 0 }}
                 animate={isInView ? { opacity: 0, y: 200 + i * 40 } : {}}
                 transition={{
-                  duration: 1.2,
-                  delay: 0.3 + i * 0.5,
+                  duration: 2.0,
+                  delay: 0.5 + i * 0.8,
                   ease: 'easeInOut',
                 }}
                 onAnimationComplete={() => {
@@ -89,7 +83,6 @@ const DorSection = () => {
             ))}
           </div>
 
-          {/* Left door — starts open, closes after cards exit */}
           <motion.div
             className="absolute left-0 top-0 w-1/2 h-full rounded-tl-[2rem] origin-left z-[6]"
             style={{
@@ -113,7 +106,6 @@ const DorSection = () => {
             />
           </motion.div>
 
-          {/* Right door — starts open, closes after cards exit */}
           <motion.div
             className="absolute right-0 top-0 w-1/2 h-full rounded-tr-[2rem] origin-right z-[6]"
             style={{
@@ -134,9 +126,9 @@ const DorSection = () => {
             />
           </motion.div>
 
-          {/* Lock icon after doors close */}
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            className="absolute z-10"
+            style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
             initial={{ scale: 1.4, opacity: 0 }}
             animate={lockVisible ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -154,7 +146,6 @@ const DorSection = () => {
         </div>
       </div>
 
-      {/* Cards in final positions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
         {cards.map((card, i) => (
           <motion.div
@@ -162,7 +153,7 @@ const DorSection = () => {
             className="rounded-lg p-6 bg-card-dark gold-border"
             initial={{ opacity: 0, y: -60 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, delay: 0.3 + i * 0.5 + 0.8, ease: 'easeOut' }}
+            transition={{ duration: 1, delay: 0.5 + i * 0.8 + 1.0, ease: 'easeOut' }}
           >
             <div className="text-3xl mb-4">{card.icon}</div>
             <h3 className="gold-text font-display text-xl font-bold mb-3">{card.title}</h3>

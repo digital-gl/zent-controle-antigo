@@ -25,7 +25,7 @@ const ProblemaSection = () => {
             className={`rounded-lg p-6 sm:p-8 gold-border ${isWhite ? 'bg-[#F5F7FA]' : 'bg-card-dark'}`}
           >
             <p className="text-center text-base sm:text-lg font-medium text-[#F0F4F8] leading-relaxed">
-              Você precisa de <span className="gold-text font-bold">Sinergia</span> — um protocolo técnico para realizar uma varredura mental, identificar o curto-circuito e religar a chave do seu governo executivo.
+              Você precisa de <span className="gold-text font-bold">Sinergia</span>, um protocolo técnico para realizar uma varredura mental, identificar o curto-circuito e religar a chave do seu governo executivo.
             </p>
           </div>
 
