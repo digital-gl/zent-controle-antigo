@@ -40,14 +40,14 @@ const LuminousCard = () => {
           </svg>
         </div>
         <div className="lc-bottom">
-          <h4>{active ? 'LUZ JOGADA.' : 'ILUMINE O SEU'}</h4>
+          <h4>{active ? 'LUZ JOGADA.' : 'ILUMINE O SEU SUBCONSCIENTE!'}</h4>
           <p>
             {active ? (
               <span style={{ color: '#F5D87A', fontWeight: 600, textShadow: '0 0 10px rgba(212,168,67,0.5)' }}>
                 A PORTA PODE SER ABERTA.
               </span>
             ) : (
-              <>SUBCONSCIENTE!<br />CLIQUE PARA ILUMINAR.</>
+              <span className="lc-blink-gold">CLIQUE PARA ILUMINAR.</span>
             )}
           </p>
           <div

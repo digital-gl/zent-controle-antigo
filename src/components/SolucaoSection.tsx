@@ -1,32 +1,18 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Settings, Brain } from 'lucide-react';
 
 const VIDEO_URL = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_074625_a81f018a-956b-43fb-9aee-4d1508e30e6a.mp4';
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const staggerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } },
-};
-
 const cards = [
   {
-    Icon: Zap,
     title: 'Fim da Névoa Mental',
     text: 'O cortisol acumulado é processado. A velocidade de decisão que te fez grande está de volta.',
   },
   {
-    Icon: Settings,
     title: 'Governo da Identidade',
     text: 'Você para de reagir aos traumas e começa a decidir baseado na sua visão estratégica.',
   },
   {
-    Icon: Brain,
     title: 'Integração Subconsciente',
     text: 'A autossabotagem agressiva é desmontada na raiz biológica, trazendo clareza total.',
   },
@@ -89,7 +75,6 @@ const SolucaoSection = () => {
 
   return (
     <section className="min-h-screen overflow-hidden relative flex flex-col">
-      {/* Background video */}
       <video
         ref={videoRef}
         src={VIDEO_URL}
@@ -101,14 +86,10 @@ const SolucaoSection = () => {
         style={{ opacity: 0 }}
       />
 
-      {/* === OVERLAY UI === */}
       <div className="relative z-10 flex-1 flex flex-col">
-        {/* Reading protection layer */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1128]/80 via-[#0A1128]/50 to-[#0A1128]/90 pointer-events-none" />
 
-        {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 py-20">
-          {/* Headline — golden */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +101,6 @@ const SolucaoSection = () => {
             A Reabertura Sistêmica.
           </motion.h2>
 
-          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -132,37 +112,30 @@ const SolucaoSection = () => {
             Quando a Porta Neural se abre, o Governo é restaurado. Você sai do piloto automático do medo e recupera a sua percepção ampliada.
           </motion.p>
 
-          {/* Cards */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl mx-auto"
-          >
-            {cards.map(({ Icon, title, text }) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full max-w-6xl mx-auto">
+            {cards.map(({ title, text }, i) => (
               <motion.div
                 key={title}
-                variants={cardVariants}
-                className="bg-white/5 backdrop-blur-md border rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center"
-                style={{ borderColor: 'rgba(212,168,67,0.3)' }}
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 1.2, delay: 0.3 + i * 0.25, ease: 'easeOut' }}
+                className="bg-white/5 backdrop-blur-md border rounded-2xl p-8 flex flex-col items-center text-center"
+                style={{
+                  borderColor: 'rgba(212,168,67,0.3)',
+                  boxShadow: '0 0 0px rgba(212,168,67,0)',
+                }}
+                whileHover={{
+                  boxShadow: '0 0 25px rgba(212,168,67,0.3)',
+                  backgroundColor: 'rgba(255,255,255,0.1)',
+                }}
               >
-                <div
-                  className="w-12 h-12 mb-4 flex items-center justify-center"
-                  style={{
-                    background: 'linear-gradient(135deg, #0113B7, #001A5E)',
-                    borderRadius: '12px',
-                  }}
-                >
-                  <Icon className="w-7 h-7 text-white" />
-                </div>
                 <h3 className="gold-text font-bold text-xl mb-2">{title}</h3>
                 <p className="text-white/70 text-sm">{text}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
-          {/* Transition text */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -174,7 +147,6 @@ const SolucaoSection = () => {
             Você não precisa de mais força. Você precisa de Sinergia. É hora de religar a chave.
           </motion.p>
 
-          {/* CTA Button */}
           <motion.a
             href="https://pay.hotmart.com/W99444821H?checkoutMode=10"
             target="_blank"
