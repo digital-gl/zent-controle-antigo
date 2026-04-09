@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import lucasImg from '@/assets/lucas-terno.jpg';
+import lucasImg from '@/assets/lucas-terno-hero.jpg';
 
 const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
