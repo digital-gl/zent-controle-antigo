@@ -26,6 +26,9 @@ const Hero = () => {
               <img
                 src={lucasImg}
                 alt="Lucas Marsili"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className={`w-[240px] rounded-lg object-cover ${imgLoaded ? 'block' : 'hidden'}`}
                 style={{
                   border: '3px solid transparent',
@@ -64,9 +67,12 @@ const Hero = () => {
 
         <div className="flex-shrink-0 relative hidden md:block order-2">
           <img
-            src={lucasImg}
-            alt="Lucas Marsili"
-            className="w-[280px] rounded-lg object-cover"
+              src={lucasImg}
+              alt="Lucas Marsili"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-[280px] rounded-lg object-cover"
             style={{
               border: '3px solid transparent',
               borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
