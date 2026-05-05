@@ -5,7 +5,7 @@ const faqs = [
   { q: 'Como recebo o acesso?', a: 'Imediatamente após a confirmação do pagamento, todo o material é enviado para o seu e-mail.' },
   { q: 'Isso é algum tipo de terapia longa?', a: 'Não. É uma auditoria técnica. Não vamos passar meses falando do seu passado. Vamos identificar a trava subconsciente e ensinar-lhe o caminho biológico para reabrir a porta.' },
   { q: 'Quanto tempo leva para aplicar?', a: 'O protocolo foi desenhado para a agenda de um líder de alto nível. Você consome e aplica em poucos minutos.' },
-  { q: 'E se a minha religião não permitir hipnose?', a: 'A Hipnose Clínica e a PNL utilizadas no protocolo são puramente científicas e biológicas, voltadas para o foco e a neuroplasticidade. Não envolvem misticismo, respeitando integralmente as suas convicções cristãs e o seu mandato de Governo.' },
+  { q: 'E se a minha religião não permitir hipnose?', a: 'A Hipnose Clínica e a PNL utilizadas no protocolo são puramente científicas e biológicas, voltadas para o foco e a neuroplasticidade. Não envolvem misticismo, respeitando integralmente as suas convicções religiosas.' },
 ];
 
 const FAQSection = () => {

@@ -1,13 +1,13 @@
 import { useRef } from 'react';
-import lucasImg from '@/assets/lucas-terno.jpg';
+const lucasImg = "https://imgur.com/24b1neH.jpg";
 import { motion, useInView } from 'framer-motion';
 import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
 
 const credentials = [
-  { label: 'Rigor Acadêmico', text: 'Mestre pela USP com vivência e especialização em Londres.' },
+  { label: 'Rigor Acadêmico', text: 'Mestre pela USP em Direito Empresarial com várias especializações multidisciplinares' },
   { label: 'Certificação Global', text: 'Hipnoterapeuta Clínico associado à HYA (The International Hypnosis Association, EUA).' },
   { label: 'Expertise Técnica', text: 'Practitioner em PNL, focado no desmonte de bloqueios subconscientes profundos.' },
-  { label: 'Visão de Campo', text: 'Como empresário e advogado, Lucas compreende a pressão real e biológica de quem gere patrimônios e vidas.' },
+  { label: 'Visão de Campo', text: 'Como empresário e advogado há 25 anos, Lucas compreende a pressão real e biológica de quem gere patrimônios e vidas.' },
 ];
 
 const AutoridadeSection = () => {

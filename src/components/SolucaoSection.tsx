@@ -150,9 +150,11 @@ const SolucaoSection = () => {
           </motion.p>
 
           <motion.a
-            href="https://pay.hotmart.com/W99444821H?checkoutMode=10"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#oferta"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             whileHover={{ scale: 1.05, boxShadow: '0px 0px 30px rgba(212,175,55,0.4)' }}
             transition={{ duration: 0.3 }}
             className="bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-black font-bold rounded-full uppercase tracking-wider w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center"

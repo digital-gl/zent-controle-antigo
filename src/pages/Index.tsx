@@ -14,7 +14,7 @@ import StickyBar from '@/components/StickyBar';
 import SectionSeparator from '@/components/SectionSeparator';
 
 const tickerTop = [
-  'ERRO DE HARDWARE MENTAL',
+  'ERRO DE SOFTWARE MENTAL',
   'OCLUSÃO COGNITIVA',
   'FADIGA DE DECISÃO',
   'DESTRAVE A PORTA NEURAL',
