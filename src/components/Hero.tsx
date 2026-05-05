@@ -20,25 +20,23 @@ const Hero = () => {
           </h1>
 
           {/* Mobile image */}
-          <div className="flex-shrink-0 relative mb-6 md:hidden">
-            <div className="relative">
+          <div className="flex-shrink-0 relative mb-6 md:hidden w-full -mx-[8px] overflow-hidden">
+            <div className="relative w-full aspect-[4/5]">
               {!imgLoaded && (
-                <div className="skeleton-gold w-[240px] h-[320px] rounded-lg" />
+                <div className="skeleton-gold w-full h-full" />
               )}
               <img
-                src={lucasImg}
+                src={HERO_MOBILE_IMG}
                 alt="Lucas Marsili"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className={`w-[240px] rounded-lg object-cover ${imgLoaded ? 'block' : 'hidden'}`}
-                style={{
-                  border: '3px solid transparent',
-                  borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
-                  boxShadow: '0 0 20px rgba(212, 168, 67, 0.3)',
-                }}
+                className={`w-full h-full object-cover ${imgLoaded ? 'block' : 'hidden'}`}
                 onLoad={() => setImgLoaded(true)}
               />
+              {/* Smoked effect top and bottom */}
+              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0B0D11] to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0B0D11] to-transparent pointer-events-none" />
             </div>
           </div>
 
@@ -69,12 +67,12 @@ const Hero = () => {
 
         <div className="flex-shrink-0 relative hidden md:block order-2">
           <img
-              src={lucasImg}
-              alt="Lucas Marsili"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="w-[280px] rounded-lg object-cover"
+            src={HERO_DESKTOP_IMG}
+            alt="Lucas Marsili"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="w-[280px] rounded-lg object-cover"
             style={{
               border: '3px solid transparent',
               borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
