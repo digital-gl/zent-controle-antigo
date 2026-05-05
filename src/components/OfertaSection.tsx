@@ -105,9 +105,6 @@ const OfertaSection = () => {
                 O MAPA DA SUA LIBERTAÇÃO
               </h2>
 
-              <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed mb-4">
-                Você está a um passo de descobrir exatamente o que está trancado no seu subconsciente.
-              </p>
 
               <div className="w-full max-w-md space-y-2 mb-4">
                 <p className="text-sm sm:text-base font-medium mb-2 gold-text text-left">
