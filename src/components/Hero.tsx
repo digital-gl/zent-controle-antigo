@@ -25,9 +25,9 @@ const Hero = () => {
                 <div className="skeleton-gold w-full h-full" />
               )}
               <img
-                src={HERO_MOBILE_IMG}
+                src={HERO_IMG}
                 alt="Lucas Marsili"
-                loading="eager"
+                loading="lazy"
                 fetchPriority="high"
                 decoding="async"
                 className={`w-full h-full object-cover ${imgLoaded ? 'block' : 'hidden'}`}
