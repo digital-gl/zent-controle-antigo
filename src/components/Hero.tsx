@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const HERO_IMG = "https://i.imgur.com/qBlHQE3.jpeg";
+const HERO_IMG = "https://i.imgur.com/CuMB4Sp.jpeg";
 
 const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -33,15 +33,9 @@ const Hero = () => {
                 loading="lazy"
                 fetchPriority="high"
                 decoding="async"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl border-2 border-[#D4A843]/50 shadow-[0_0_15px_rgba(212,168,67,0.3)]"
                 onLoad={() => setImgLoaded(true)}
               />
-              {/* Smoked effect for mobile integrated with background */}
-              <div className="absolute inset-0 shadow-[inset_0_0_40px_10px_#0B0D11] rounded-2xl pointer-events-none" />
-              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-t-2xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-b-2xl pointer-events-none" />
-              <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-l-2xl pointer-events-none" />
-              <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-r-2xl pointer-events-none" />
             </div>
           </div>
 
@@ -78,14 +72,8 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="w-[320px] lg:w-[450px] h-full object-cover rounded-3xl"
+              className="w-[320px] lg:w-[450px] h-full object-cover rounded-3xl border-2 border-[#D4A843]/50 shadow-[0_0_30px_rgba(212,168,67,0.3)]"
             />
-            {/* Smoked effect for desktop integrated with background */}
-            <div className="absolute inset-0 shadow-[inset_0_0_80px_30px_#0B0D11] rounded-3xl pointer-events-none" />
-            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-t-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-b-3xl pointer-events-none" />
-            <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-l-3xl pointer-events-none" />
-            <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-r-3xl pointer-events-none" />
           </div>
         </div>
       </div>
