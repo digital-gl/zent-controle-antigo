@@ -23,9 +23,9 @@ const Hero = () => {
 
           {/* Mobile image */}
           <div className="flex-shrink-0 relative mb-6 md:hidden w-full -mx-[8px] overflow-hidden">
-            <div className="relative w-full aspect-[4/5]">
+            <div className="relative w-[85%] mx-auto aspect-[4/5]">
               {!imgLoaded && (
-                <div className="skeleton-gold w-full h-full" />
+                <div className="skeleton-gold w-full h-full rounded-2xl" />
               )}
               <img
                 src={HERO_IMG}
@@ -33,9 +33,15 @@ const Hero = () => {
                 loading="lazy"
                 fetchPriority="high"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-2xl"
                 onLoad={() => setImgLoaded(true)}
               />
+              {/* Smoked effect for mobile integrated with background */}
+              <div className="absolute inset-0 shadow-[inset_0_0_40px_10px_#0B0D11] rounded-2xl pointer-events-none" />
+              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-t-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-b-2xl pointer-events-none" />
+              <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-l-2xl pointer-events-none" />
+              <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[#0B0D11]/90 via-[#0B0D11]/40 to-transparent rounded-r-2xl pointer-events-none" />
             </div>
           </div>
 
@@ -72,8 +78,14 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="w-[320px] lg:w-[450px] h-full object-cover"
+              className="w-[320px] lg:w-[450px] h-full object-cover rounded-3xl"
             />
+            {/* Smoked effect for desktop integrated with background */}
+            <div className="absolute inset-0 shadow-[inset_0_0_80px_30px_#0B0D11] rounded-3xl pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-t-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-b-3xl pointer-events-none" />
+            <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-l-3xl pointer-events-none" />
+            <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0B0D11]/80 via-[#0B0D11]/30 to-transparent rounded-r-3xl pointer-events-none" />
           </div>
         </div>
       </div>

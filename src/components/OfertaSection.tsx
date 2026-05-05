@@ -102,7 +102,7 @@ const OfertaSection = () => {
           >
             <div className="relative z-10 text-center flex flex-col items-center">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-4 gold-text">
-                O MAPA DA SUA LIBERTAÇÃO POR APENAS R$ 49.
+                O MAPA DA SUA LIBERTAÇÃO
               </h2>
 
               <p className="text-[#A8B8C8] text-base sm:text-lg leading-relaxed mb-4">
@@ -130,7 +130,6 @@ const OfertaSection = () => {
                   POR APENAS R$ 49,00
                 </p>
                 <p className="gold-text text-sm font-semibold mb-1">Na semana de Lançamento</p>
-                <p className="text-[#607080] text-sm">Pagamento único · Acesso imediato</p>
               </div>
 
               <a
@@ -139,6 +138,7 @@ const OfertaSection = () => {
               >
                 QUERO ACESSAR MEU DIAGNÓSTICO
               </a>
+              <p className="text-[#607080] text-sm mt-4">Pagamento único · Acesso imediato</p>
             </div>
           </motion.div>
 
