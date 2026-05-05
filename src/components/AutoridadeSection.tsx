@@ -33,11 +33,16 @@ const AutoridadeSection = () => {
             <img
               src={lucasImg}
               alt="Lucas Marsili"
-              className="w-[220px] sm:w-[260px] rounded-lg object-cover"
+              className="w-[220px] sm:w-[260px] rounded-2xl object-cover relative z-10"
               style={{
-                border: '3px solid transparent',
-                borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
                 boxShadow: '0 0 20px rgba(212, 168, 67, 0.3)',
+              }}
+            />
+            <div 
+              className="absolute inset-0 rounded-2xl -m-[3px]"
+              style={{
+                background: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520)',
+                zIndex: 0
               }}
             />
           </div>

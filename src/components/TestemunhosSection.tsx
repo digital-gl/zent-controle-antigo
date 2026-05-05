@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
-import { Volume2 } from 'lucide-react';
+import { Volume2, Pause, Play } from 'lucide-react';
 
 const TestemunhosSection = () => {
   const { theme } = useTheme();
@@ -10,6 +10,7 @@ const TestemunhosSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const TestemunhosSection = () => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           if (videoRef.current) {
-            videoRef.current.play().catch(error => {
+            videoRef.current.play().then(() => setIsPlaying(true)).catch(error => {
               console.log("Autoplay prevented:", error);
             });
           }
@@ -42,6 +43,18 @@ const TestemunhosSection = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
     }
   };
 
@@ -87,6 +100,14 @@ const TestemunhosSection = () => {
           </AnimatePresence>
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
+          
+          <button 
+            onClick={togglePlay}
+            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-gold/30 flex items-center justify-center text-gold z-30 transition-transform active:scale-95"
+            aria-label={isPlaying ? "Pausar" : "Reproduzir"}
+          >
+            {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} className="ml-0.5" fill="currentColor" />}
+          </button>
         </div>
       </div>
     </section>
