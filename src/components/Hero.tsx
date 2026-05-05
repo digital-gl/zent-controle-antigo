@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const HERO_IMG = "https://imgur.com/qBlHQE3.jpg";
+const HERO_IMG = "https://i.imgur.com/qBlHQE3.jpeg";
 
 const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -30,7 +30,7 @@ const Hero = () => {
                 loading="lazy"
                 fetchPriority="high"
                 decoding="async"
-                className={`w-full h-full object-cover ${imgLoaded ? 'block' : 'hidden'}`}
+                className="w-full h-full object-cover"
                 onLoad={() => setImgLoaded(true)}
               />
               {/* Smoked effect top and bottom */}
