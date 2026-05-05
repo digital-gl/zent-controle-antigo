@@ -11,7 +11,7 @@ const ProblemaSection = () => {
     <section className={`${bg} py-12 md:py-20 px-5 md:px-20`}>
       <div className="max-w-4xl mx-auto">
         <h2 className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 ${titleClass}`}>
-          O ERRO NÃO É DE ESTRATÉGIA. É DE HARDWARE.
+          O ERRO NÃO É DE ESTRATÉGIA. É DE SOFTWARE.
         </h2>
 
         <div className={`space-y-6 text-base sm:text-lg leading-relaxed ${isWhite ? 'text-[#0A1628]/80' : 'text-[#A8B8C8]'}`}>
