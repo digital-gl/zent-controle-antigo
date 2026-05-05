@@ -64,20 +64,23 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex-shrink-0 relative hidden md:block order-2">
-          <img
-            src={HERO_DESKTOP_IMG}
-            alt="Lucas Marsili"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="w-[280px] rounded-lg object-cover"
-            style={{
-              border: '3px solid transparent',
-              borderImage: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520) 1',
-              boxShadow: '0 0 20px rgba(212, 168, 67, 0.3)',
-            }}
-          />
+        <div className="flex-shrink-0 relative hidden md:block order-2 overflow-hidden rounded-lg">
+          <div className="relative">
+            <img
+              src={HERO_IMG}
+              alt="Lucas Marsili"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-[320px] lg:w-[400px] object-cover"
+            />
+            {/* Smoked effect for desktop (All sides) */}
+            <div className="absolute inset-0 shadow-[inset_0_0_40px_30px_#0B0D11] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#0B0D11] to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#0B0D11] to-transparent pointer-events-none" />
+            <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#0B0D11] to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#0B0D11] to-transparent pointer-events-none" />
+          </div>
         </div>
       </div>
     </section>
