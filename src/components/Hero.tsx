@@ -23,7 +23,7 @@ const Hero = () => {
 
           {/* Mobile image */}
           <div className="flex-shrink-0 relative mb-6 md:hidden w-full -mx-[8px] overflow-hidden">
-            <div className="relative w-[85%] mx-auto aspect-[4/5]">
+            <div className="relative w-[70%] mx-auto aspect-[4/5]">
               {!imgLoaded && (
                 <div className="skeleton-gold w-full h-full rounded-2xl" />
               )}
@@ -72,7 +72,7 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="w-[320px] lg:w-[450px] h-full object-cover rounded-3xl border-2 border-[#D4A843]/50 shadow-[0_0_30px_rgba(212,168,67,0.3)]"
+              className="w-[280px] lg:w-[380px] h-full object-cover rounded-3xl border-2 border-[#D4A843]/50 shadow-[0_0_30px_rgba(212,168,67,0.3)]"
             />
           </div>
         </div>
