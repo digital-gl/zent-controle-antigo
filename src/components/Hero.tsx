@@ -30,7 +30,7 @@ const Hero = () => {
                 loading="lazy"
                 fetchPriority="high"
                 decoding="async"
-                className={`w-full h-full object-cover ${imgLoaded ? 'block' : 'hidden'}`}
+                className="w-full h-full object-cover"
                 onLoad={() => setImgLoaded(true)}
               />
               {/* Smoked effect top and bottom */}
