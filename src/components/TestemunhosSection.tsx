@@ -22,91 +22,27 @@ const TestemunhosSection = () => {
   const bg = getSectionBg(theme, 5);
   const titleClass = getTitleClass(theme, 5);
   const isWhite = theme === 'light';
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 10);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const el = scrollRef.current;
-    if (el) el.addEventListener('scroll', checkScroll);
-    return () => { if (el) el.removeEventListener('scroll', checkScroll); };
-  }, []);
-
-  const scroll = (dir: 'left' | 'right') => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const amount = el.clientWidth * 0.85;
-    el.scrollBy({ left: dir === 'left' ? -amount : amount, behavior: 'smooth' });
-  };
 
   return (
     <section className={`${bg} py-12 md:py-20 px-5 md:px-20`}>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <h2 className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 ${titleClass}`}>
           LÍDERES QUE REABRIRAM A PORTA.
         </h2>
 
-        <div className="relative">
-          {canScrollLeft && (
-            <button
-              onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all"
-              style={{
-                background: 'linear-gradient(135deg, #D4A843, #F5D87A)',
-                color: '#000005',
-                boxShadow: '0 0 15px rgba(212, 168, 67, 0.4)',
-              }}
-            >
-              ‹
-            </button>
-          )}
-
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={i}
-                className={`snap-center shrink-0 w-[85vw] md:w-[400px] rounded-lg p-6 ${
-                  isWhite ? 'bg-[#F5F7FA] border border-[#D4A843]/30' : 'bg-card-dark gold-border'
-                }`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <div className="gold-text text-3xl mb-4 font-display">"</div>
-                <p className={`text-base leading-relaxed mb-6 ${isWhite ? 'text-[#0A1628]/80' : 'text-[#A8B8C8]'}`}>
-                  {t.text}
-                </p>
-                <p className="gold-text text-sm font-semibold">{t.name}</p>
-              </motion.div>
-            ))}
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden gold-border shadow-2xl">
+          <img 
+            src="https://imgur.com/ab37tiS.jpg" 
+            alt="VSL"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          {/* If the user provides a real video ID later, this can be an iframe or video tag */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/20 transition-colors cursor-pointer group">
+            <div className="w-20 h-20 flex items-center justify-center rounded-full bg-gold/90 text-black group-hover:scale-110 transition-transform">
+              <span className="ml-1 text-3xl">▶</span>
+            </div>
           </div>
-
-          {canScrollRight && (
-            <button
-              onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all"
-              style={{
-                background: 'linear-gradient(135deg, #D4A843, #F5D87A)',
-                color: '#000005',
-                boxShadow: '0 0 15px rgba(212, 168, 67, 0.4)',
-              }}
-            >
-              ›
-            </button>
-          )}
         </div>
       </div>
     </section>
