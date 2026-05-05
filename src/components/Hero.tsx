@@ -6,7 +6,7 @@ const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
-    <section className="bg-dark-radial py-12 md:py-20 md:px-20 px-[8px] pt-[20px]">
+    <section className="bg-dark-radial py-12 md:py-0 md:px-20 px-[8px] pt-[20px] flex items-center min-h-[600px] md:min-h-[800px]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1">
           <p className="gold-text text-xs sm:text-sm uppercase tracking-widest mb-4 font-semibold">
@@ -34,8 +34,12 @@ const Hero = () => {
                 onLoad={() => setImgLoaded(true)}
               />
               {/* Smoked effect top and bottom */}
-              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0B0D11] to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0B0D11] to-transparent pointer-events-none" />
+              <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0B0D11] via-[#0B0D11]/60 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/60 to-transparent pointer-events-none" />
+              
+              {/* Improved side smoked effects for mobile */}
+              <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#0B0D11] to-transparent pointer-events-none" />
+              <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[#0B0D11] to-transparent pointer-events-none" />
             </div>
           </div>
 
@@ -64,22 +68,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex-shrink-0 relative hidden md:block order-2 overflow-hidden rounded-lg">
-          <div className="relative">
+        <div className="flex-shrink-0 relative hidden md:block order-2 overflow-hidden self-stretch">
+          <div className="relative h-full">
             <img
               src={HERO_IMG}
               alt="Lucas Marsili"
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="w-[320px] lg:w-[400px] object-cover"
+              className="w-[320px] lg:w-[450px] h-full object-cover"
             />
-            {/* Smoked effect for desktop (All sides) */}
-            <div className="absolute inset-0 shadow-[inset_0_0_40px_30px_#0B0D11] pointer-events-none" />
-            <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-[#0B0D11] to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#0B0D11] to-transparent pointer-events-none" />
-            <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#0B0D11] to-transparent pointer-events-none" />
-            <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#0B0D11] to-transparent pointer-events-none" />
+            {/* Smoked effect for desktop (All sides) - Improved */}
+            <div className="absolute inset-0 shadow-[inset_0_0_100px_40px_#0B0D11] pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0B0D11] to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0B0D11] to-transparent pointer-events-none" />
+            <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0B0D11] to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0B0D11] to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
