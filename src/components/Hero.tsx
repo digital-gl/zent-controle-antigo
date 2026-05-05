@@ -36,13 +36,6 @@ const Hero = () => {
                 className="w-full h-full object-cover"
                 onLoad={() => setImgLoaded(true)}
               />
-              {/* Smoked effect top and bottom */}
-              {/* Improved smoked effect for mobile */}
-              <div className="absolute inset-0 shadow-[inset_0_0_80px_20px_#0B0D11] pointer-events-none" />
-              <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
-              <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
-              <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
             </div>
           </div>
 
@@ -81,13 +74,6 @@ const Hero = () => {
               decoding="async"
               className="w-[320px] lg:w-[450px] h-full object-cover"
             />
-            {/* Smoked effect for desktop (All sides) - Improved */}
-            {/* Improved smoked effect for desktop (All sides) */}
-            <div className="absolute inset-0 shadow-[inset_0_0_120px_60px_#0B0D11] pointer-events-none" />
-            <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
-            <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
-            <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#0B0D11] via-[#0B0D11]/80 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
