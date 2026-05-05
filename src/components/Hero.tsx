@@ -13,9 +13,8 @@ const Hero = () => {
             Aviso para líderes e empresários de alto nível
           </p>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-[#F0F4F8]">
-            VOCÊ ESTÁ ACORRENTADO AO QUE FICOU TRANCADO ATRÁS DA SUA{' '}
-            <span className="gold-text">PORTA NEURAL.</span>
+          <h1 className="gold-text font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Você fez tudo certo. Por que o resultado ainda não chegou?
           </h1>
 
           {/* Mobile image */}
@@ -53,8 +52,8 @@ const Hero = () => {
             </a>
           </div>
 
-          <p className="text-[#A8B8C8] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 mb-8">
-            O seu cérebro fechou a porta para te salvar do colapso, mas deixou as tensões e os traumas lá dentro. Hoje, esse entulho emocional é um sabotador silencioso que força decisões erradas e drena a sua energia vital.
+          <p className="text-muted text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 mb-8">
+            Não é falta de fé, estratégia, nem culpa do mercado. É a sua Porta Neural trancada, e ela foi você mesmo quem fechou. E ela precisa ser aberta!
           </p>
 
           {/* Desktop CTA */}
