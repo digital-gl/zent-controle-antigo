@@ -130,7 +130,6 @@ const OfertaSection = () => {
                   POR APENAS R$ 49,00
                 </p>
                 <p className="gold-text text-sm font-semibold mb-1">Na semana de Lançamento</p>
-                <p className="text-[#607080] text-sm">Pagamento único · Acesso imediato</p>
               </div>
 
               <a
@@ -139,6 +138,7 @@ const OfertaSection = () => {
               >
                 QUERO ACESSAR MEU DIAGNÓSTICO
               </a>
+              <p className="text-[#607080] text-sm mt-4">Pagamento único · Acesso imediato</p>
             </div>
           </motion.div>
 
