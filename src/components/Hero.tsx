@@ -18,7 +18,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-[#F0F4F8] text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-xl mx-auto md:mx-0 mb-6">
-            Não é falta de fé, estratégia, nem culpa do mercado. É a sua Porta Neural trancada, que você mesmo a fechou. E agora ela precisa ser aberta!
+            Não é falta de fé, estratégia, nem culpa do mercado. É a sua Porta Neural trancada, que você a fechou. E agora ela precisa ser aberta!
           </p>
 
           {/* Mobile image */}
