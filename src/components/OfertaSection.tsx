@@ -124,7 +124,7 @@ const OfertaSection = () => {
               <div className="mb-4">
                 <p className="text-[#607080] text-sm line-through mb-1">De R$ 197,00</p>
                 <p className="font-display font-bold gold-text mb-0" style={{ fontSize: 'clamp(2.5rem, 6vw, 3.75rem)' }}>
-                  POR APENAS R$ 49,00
+                  POR APENAS R$ 47,00
                 </p>
                 <p className="gold-text text-sm font-semibold mb-1">Na semana de Lançamento</p>
               </div>
