@@ -42,9 +42,7 @@ const Hero = () => {
           {/* Mobile CTA below image */}
           <div className="flex flex-col items-center w-full md:hidden mb-4">
             <a
-              href="https://chk.eduzz.com/8017D61Q07"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#oferta"
               className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base leading-tight text-center flex items-center justify-center"
             >
               QUERO ABRIR A PORTA E ME DESACORRENTAR
