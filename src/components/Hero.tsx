@@ -42,7 +42,9 @@ const Hero = () => {
           {/* Mobile CTA below image */}
           <div className="flex flex-col items-center w-full md:hidden mb-4">
             <a
-              href="#oferta"
+              href="https://chk.eduzz.com/8017D61Q07"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base leading-tight text-center flex items-center justify-center"
             >
               QUERO ABRIR A PORTA E ME DESACORRENTAR
@@ -56,7 +58,9 @@ const Hero = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex flex-col items-center md:items-start gap-3 w-full md:w-auto">
             <a
-              href="#oferta"
+              href="https://chk.eduzz.com/8017D61Q07"
+              target="_blank"
+              rel="noopener noreferrer"
               className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center"
             >
               QUERO ABRIR A PORTA E ME DESACORRENTAR
