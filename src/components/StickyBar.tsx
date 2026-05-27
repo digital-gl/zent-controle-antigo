@@ -21,7 +21,7 @@ const StickyBar = () => {
       }}
     >
       <p className="gold-text text-sm sm:text-base font-medium hidden sm:block">
-        Diagnóstico da Porta Neural · R$ 49
+        Diagnóstico da Porta Neural · R$ 47
       </p>
       <a href="#oferta" className="cta-button w-[90%] max-w-md mx-auto px-4 py-2.5 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center sm:mx-0">
         QUERO ACESSAR AGORA
