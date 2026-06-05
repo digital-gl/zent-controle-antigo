@@ -81,7 +81,7 @@ const SolucaoSection = () => {
         muted
         autoPlay
         playsInline
-        preload="auto"
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover object-bottom"
         style={{ opacity: 0 }}
       />

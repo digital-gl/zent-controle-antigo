@@ -33,6 +33,7 @@ const AutoridadeSection = () => {
             <img
               src={lucasImg}
               alt="Lucas Marsili"
+              loading="lazy"
               className="w-[220px] sm:w-[260px] rounded-2xl object-cover relative z-10"
               style={{
                 boxShadow: '0 0 20px rgba(212, 168, 67, 0.3)',
@@ -53,7 +54,8 @@ const AutoridadeSection = () => {
                 key={i}
                 className={`rounded-lg p-5 ${isWhite ? 'bg-[#F5F7FA] border border-[#D4A843]/30' : 'bg-card-dark gold-border'}`}
                 initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.15, ease: 'easeOut' }}
               >
                 <p className="gold-text font-semibold text-sm uppercase tracking-wide mb-1">{item.label}</p>
