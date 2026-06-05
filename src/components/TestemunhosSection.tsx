@@ -74,6 +74,7 @@ const TestemunhosSection = () => {
             muted={isMuted}
             loop
             poster="https://i.imgur.com/ab37tiS.jpg"
+            preload="none"
           />
           
           <AnimatePresence>

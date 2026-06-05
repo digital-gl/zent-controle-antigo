@@ -1,17 +1,19 @@
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import Ticker from '@/components/Ticker';
-import Hero from '@/components/Hero';
-import DorSection from '@/components/DorSection';
-import ProblemaSection from '@/components/ProblemaSection';
-import SolucaoSection from '@/components/SolucaoSection';
-import AutoridadeSection from '@/components/AutoridadeSection';
-import TestemunhosSection from '@/components/TestemunhosSection';
-import OfertaSection from '@/components/OfertaSection';
-import GarantiaSection from '@/components/GarantiaSection';
-import FAQSection from '@/components/FAQSection';
-import Footer from '@/components/Footer';
-import StickyBar from '@/components/StickyBar';
-import SectionSeparator from '@/components/SectionSeparator';
+import { lazy, Suspense } from 'react';
+
+const Hero = lazy(() => import('@/components/Hero'));
+const DorSection = lazy(() => import('@/components/DorSection'));
+const ProblemaSection = lazy(() => import('@/components/ProblemaSection'));
+const SolucaoSection = lazy(() => import('@/components/SolucaoSection'));
+const AutoridadeSection = lazy(() => import('@/components/AutoridadeSection'));
+const TestemunhosSection = lazy(() => import('@/components/TestemunhosSection'));
+const OfertaSection = lazy(() => import('@/components/OfertaSection'));
+const GarantiaSection = lazy(() => import('@/components/GarantiaSection'));
+const FAQSection = lazy(() => import('@/components/FAQSection'));
+const Footer = lazy(() => import('@/components/Footer'));
+const StickyBar = lazy(() => import('@/components/StickyBar'));
+const SectionSeparator = lazy(() => import('@/components/SectionSeparator'));
 
 const tickerTop = [
   'ERRO DE SOFTWARE MENTAL',
@@ -32,28 +34,30 @@ const Index = () => {
     <ThemeProvider>
       <div className="min-h-screen" style={{ background: '#000005' }}>
         <Ticker items={tickerTop} />
-        <Hero />
-        <SectionSeparator />
-        <DorSection />
-        <SectionSeparator />
-        <Ticker items={tickerMid} />
-        <SectionSeparator />
-        <ProblemaSection />
-        <SectionSeparator />
-        <SolucaoSection />
-        <SectionSeparator />
-        <AutoridadeSection />
-        <SectionSeparator />
-        <TestemunhosSection />
-        <SectionSeparator />
-        <OfertaSection />
-        <SectionSeparator />
-        <GarantiaSection />
-        <SectionSeparator />
-        <FAQSection />
-        <SectionSeparator />
-        <Footer />
-        <StickyBar />
+        <Suspense fallback={<div className="h-screen bg-[#000005]" />}>
+          <Hero />
+          <SectionSeparator />
+          <DorSection />
+          <SectionSeparator />
+          <Ticker items={tickerMid} />
+          <SectionSeparator />
+          <ProblemaSection />
+          <SectionSeparator />
+          <SolucaoSection />
+          <SectionSeparator />
+          <AutoridadeSection />
+          <SectionSeparator />
+          <TestemunhosSection />
+          <SectionSeparator />
+          <OfertaSection />
+          <SectionSeparator />
+          <GarantiaSection />
+          <SectionSeparator />
+          <FAQSection />
+          <SectionSeparator />
+          <Footer />
+          <StickyBar />
+        </Suspense>
       </div>
     </ThemeProvider>
   );

@@ -40,8 +40,9 @@ const DorSection = () => {
           color: '#F0F4F8',
           textShadow: '0 0 40px rgba(240,244,248,0.15)',
         }}
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        initial={{ opacity: 0, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
         O SEU PASSADO NÃO RESOLVIDO É A SUA PRISÃO NO PRESENTE.
@@ -151,8 +152,9 @@ const DorSection = () => {
           <motion.div
             key={i}
             className="rounded-lg p-6 bg-card-dark gold-border"
-            initial={{ opacity: 0, y: -60 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 + i * 0.8 + 1.0, ease: 'easeOut' }}
           >
             <div className="text-3xl mb-4">{card.icon}</div>

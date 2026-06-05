@@ -69,7 +69,7 @@ const Hero = () => {
             <img
               src={HERO_IMG}
               alt="Lucas Marsili"
-              loading="eager"
+              loading="lazy"
               fetchPriority="high"
               decoding="async"
               className="w-[280px] lg:w-[380px] h-full object-cover rounded-3xl border-2 border-[#D4A843]/50 shadow-[0_0_30px_rgba(212,168,67,0.3)]"
