@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Brain } from 'lucide-react';
 import './LuminousCard.css';
 
 const LuminousCard = () => {
