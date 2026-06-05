@@ -49,8 +49,14 @@ const TestemunhosSection = () => {
   const togglePlay = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            setIsPlaying(true);
+          }).catch(error => {
+            console.error("Playback failed:", error);
+          });
+        }
       } else {
         videoRef.current.pause();
         setIsPlaying(false);
@@ -103,12 +109,20 @@ const TestemunhosSection = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40 pointer-events-none" />
           
           <button 
-            onClick={togglePlay}
-            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-sm border border-gold/30 flex items-center justify-center text-gold z-30 transition-transform active:scale-95"
+            onClick={(e) => {
+              e.stopPropagation();
+              togglePlay();
+            }}
+            className="absolute bottom-4 right-4 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 flex items-center justify-center text-gold z-30 transition-all active:scale-90 hover:bg-black/80"
             aria-label={isPlaying ? "Pausar" : "Reproduzir"}
           >
-            {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} className="ml-0.5" fill="currentColor" />}
+            {isPlaying ? <Pause size={24} fill="currentColor" /> : <Play size={24} className="ml-1" fill="currentColor" />}
           </button>
+          
+          <div 
+            className="absolute inset-0 z-10 cursor-pointer" 
+            onClick={togglePlay}
+          />
         </div>
       </div>
     </section>
