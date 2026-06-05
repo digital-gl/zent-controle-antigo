@@ -133,7 +133,7 @@ const OfertaSection = () => {
                 href="https://pay.hotmart.com/T105475732W?checkoutMode=10"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-button w-[90%] max-w-md mx-auto px-4 py-3 text-[11px] sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center transition-transform duration-200 hover:scale-105"
+                className="cta-button-green w-[90%] max-w-md mx-auto px-4 py-4 text-xs sm:text-sm md:text-base md:w-auto md:whitespace-nowrap leading-tight text-center flex items-center justify-center transition-transform duration-200 hover:scale-105 active:scale-95"
               >
                 QUERO ACESSAR MEU DIAGNÓSTICO
               </a>
