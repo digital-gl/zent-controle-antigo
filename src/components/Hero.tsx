@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const HERO_IMG = "https://i.imgur.com/CuMB4Sp.jpeg";
+const HERO_IMG = "https://i.imgur.com/yPgf5CO.jpeg";
 
 const Hero = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
