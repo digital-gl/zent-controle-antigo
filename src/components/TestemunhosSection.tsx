@@ -49,8 +49,14 @@ const TestemunhosSection = () => {
   const togglePlay = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            setIsPlaying(true);
+          }).catch(error => {
+            console.error("Playback failed:", error);
+          });
+        }
       } else {
         videoRef.current.pause();
         setIsPlaying(false);
