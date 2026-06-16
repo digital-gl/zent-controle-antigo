@@ -15,8 +15,11 @@ const MetodologiaSection = lazy(() => import("@/components/MetodologiaSection"))
 const AutoridadeSection = lazy(() => import("@/components/AutoridadeSection"));
 const DepoimentosSection = lazy(() => import("@/components/DepoimentosSection"));
 const OfertaSection = lazy(() => import("@/components/OfertaSection"));
+const ReferralProgramSection = lazy(() => import("@/components/ReferralProgramSection"));
+const CompanyTrustSection = lazy(() => import("@/components/CompanyTrustSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const Footer = lazy(() => import("@/components/Footer"));
+const FloatingCTA = lazy(() => import("@/components/FloatingCTA"));
 
 
 const MARQUEE_1 = [
@@ -74,12 +77,19 @@ const Index = () => {
         <SectionSeparator />
         <OfertaSection />
         <SectionSeparator />
+        <section id="indicacoes">
+          <ReferralProgramSection />
+        </section>
+        <CompanyTrustSection />
+        <SectionSeparator />
         <FAQSection />
         <SectionSeparator />
         <Footer />
+        <FloatingCTA />
       </Suspense>
     </div>
   );
 };
+
 
 export default Index;
