@@ -5,6 +5,9 @@ import MarqueeBand from "@/components/MarqueeBand";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const PainSection = lazy(() => import("@/components/PainSection"));
+const HowItWorksSection = lazy(() => import("@/components/HowItWorksSection"));
+const RevenueSourcesSection = lazy(() => import("@/components/RevenueSourcesSection"));
+const GoldenCardSection = lazy(() => import("@/components/GoldenCardSection"));
 const ResultadosSection = lazy(() => import("@/components/ResultadosSection"));
 const ParaQuemSection = lazy(() => import("@/components/ParaQuemSection"));
 const MetodologiaSection = lazy(() => import("@/components/MetodologiaSection"));
@@ -13,6 +16,7 @@ const DepoimentosSection = lazy(() => import("@/components/DepoimentosSection"))
 const OfertaSection = lazy(() => import("@/components/OfertaSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const Footer = lazy(() => import("@/components/Footer"));
+
 
 const MARQUEE_1 = [
   "💰 5% AO MÊS",
@@ -47,11 +51,16 @@ const Index = () => {
         <PainSection />
         <MarqueeBand items={MARQUEE_2} direction="right" />
         <SectionSeparator />
-
+        <HowItWorksSection />
+        <SectionSeparator />
+        <RevenueSourcesSection />
+        <SectionSeparator />
+        <GoldenCardSection />
         <SectionSeparator />
         <ResultadosSection />
         <SectionSeparator />
         <ParaQuemSection />
+
         <SectionSeparator />
         <MetodologiaSection />
         <SectionSeparator />
