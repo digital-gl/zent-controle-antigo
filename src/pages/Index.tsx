@@ -58,6 +58,9 @@ const Index = () => {
         <SectionSeparator />
         <GoldenCardSection />
         <SectionSeparator />
+        <InvestmentCalculator />
+        <SectionSeparator />
+
         <ResultadosSection />
         <SectionSeparator />
         <ParaQuemSection />
