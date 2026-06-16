@@ -7,11 +7,26 @@ import {
 } from "@/components/ui/accordion";
 
 const faq = [
-  { q: "Como funciona o modelo de sócio investidor?", a: "Você formaliza um contrato de sociedade com a The W. Seu capital passa a ser operado pela nossa mesa junto ao capital da casa, seguindo a mesma estratégia." },
-  { q: "Qual o aporte mínimo?", a: "O aporte mínimo é definido durante o onboarding, de acordo com o perfil do investidor e a vaga disponível." },
-  { q: "Como recebo os resultados?", a: "Você acompanha tudo em um dashboard ao vivo e recebe relatórios mensais detalhados de performance e risco." },
-  { q: "Existe garantia de rentabilidade?", a: "Nenhuma operação de mercado oferece garantia. O que entregamos é processo, gestão de risco e transparência total." },
-  { q: "Posso resgatar o capital quando quiser?", a: "As regras de resgate são definidas em contrato, com janelas claras para aporte e retirada." },
+  {
+    q: "Como funciona o contrato?",
+    a: "O contrato tem duração de 24 meses, é renovável ao final do prazo e permite reaportes a qualquer momento durante a vigência.",
+  },
+  {
+    q: "Como recebo meu rendimento?",
+    a: "A rentabilidade é creditada mensalmente conforme acordado em contrato. Você acompanha tudo de forma transparente.",
+  },
+  {
+    q: "Qual o investimento mínimo?",
+    a: "Aceitamos investimentos a partir de R$ 1.000. Quanto maior o aporte, maior a taxa de rentabilidade mensal.",
+  },
+  {
+    q: "Como funciona o programa de indicação?",
+    a: "Você recebe 10% sobre o primeiro aporte do seu indicado e +1% ao mês sobre o volume total de todos os seus indicados ativos, sem limite.",
+  },
+  {
+    q: "A empresa é registrada?",
+    a: "Sim. CNPJ 66.800.082/0001-67, W. Luis Venancio Gonzaga LTDA, Nome Fantasia The W Consultoria e Tecnologia, Sociedade Empresária Limitada, ativa desde maio de 2026.",
+  },
 ];
 
 const FAQSection = () => {
@@ -25,7 +40,7 @@ const FAQSection = () => {
           transition={{ duration: 0.6 }}
           className="font-display text-4xl md:text-5xl gold-text text-center mb-12"
         >
-          Perguntas frequentes.
+          Perguntas Frequentes
         </motion.h2>
 
         <Accordion type="single" collapsible className="space-y-3">
