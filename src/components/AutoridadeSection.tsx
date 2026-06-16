@@ -1,70 +1,78 @@
-import { useRef } from 'react';
-const lucasImg = "https://imgur.com/24b1neH.jpg";
-import { motion, useInView } from 'framer-motion';
-import { useTheme, getSectionBg, getTitleClass } from '@/contexts/ThemeContext';
+import { motion } from "framer-motion";
+
+const WASHINGTON = "https://i.imgur.com/IPOseke.jpeg";
 
 const credentials = [
-  { label: 'Rigor Acadêmico', text: 'Mestre pela USP em Direito Empresarial com várias especializações multidisciplinares' },
-  { label: 'Certificação Global', text: 'Hipnoterapeuta Clínico associado à HYA (The International Hypnosis Association, EUA).' },
-  { label: 'Expertise Técnica', text: 'Practitioner em PNL, focado no desmonte de bloqueios subconscientes profundos.' },
-  { label: 'Visão de Campo', text: 'Como empresário e advogado há 25 anos, Lucas compreende a pressão real e biológica de quem gere patrimônios e vidas.' },
+  "Mais de uma década operando o mercado financeiro",
+  "Fundador da The W Consultoria e Tecnologia",
+  "Mentor de centenas de traders e investidores",
+  "Especialista em gestão de risco e tecnologia aplicada",
 ];
 
 const AutoridadeSection = () => {
-  const { theme } = useTheme();
-  const bg = getSectionBg(theme, 4);
-  const titleClass = getTitleClass(theme, 4);
-  const isWhite = theme === 'light';
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
-
   return (
-    <section ref={sectionRef} className={`${bg} py-12 md:py-20 px-5 md:px-20`}>
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 ${titleClass}`}>
-          O AUDITOR DA SUA MENTE.
-        </h2>
-        <p className={`text-center mb-12 text-base sm:text-lg ${isWhite ? 'text-[#0A1628]/70' : 'text-[#A8B8C8]'}`}>
-          Lucas Marsili. Especialista em Engenharia Comportamental.
-        </p>
+    <section id="autoridade" className="bg-dark-radial py-20 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative mx-auto md:mx-0 w-[260px] sm:w-[320px]"
+        >
+          <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-[#0113B7]/30 to-[#D4A843]/30 blur-2xl" />
+          <img
+            src={WASHINGTON}
+            alt="Washington"
+            loading="lazy"
+            decoding="async"
+            className="relative w-full aspect-[4/5] object-cover rounded-3xl border-2 border-[#D4A843]/60 shadow-[0_0_30px_rgba(212,168,67,0.3)]"
+          />
+        </motion.div>
 
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div className="flex-shrink-0 relative">
-            <img
-              src={lucasImg}
-              alt="Lucas Marsili"
-              loading="lazy"
-              className="w-[220px] sm:w-[260px] rounded-2xl object-cover relative z-10"
-              style={{
-                boxShadow: '0 0 20px rgba(212, 168, 67, 0.3)',
-              }}
-            />
-            <div 
-              className="absolute inset-0 rounded-2xl -m-[3px]"
-              style={{
-                background: 'linear-gradient(135deg, #7A5520, #F5D87A, #D4A843, #F5D87A, #7A5520)',
-                zIndex: 0
-              }}
-            />
-          </div>
-
-          <div className="flex-1 space-y-4">
-            {credentials.map((item, i) => (
-              <motion.div
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-[#F5D87A] text-xs uppercase tracking-widest mb-3 font-semibold"
+          >
+            Quem está à frente
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="font-display text-4xl md:text-5xl gold-text mb-5"
+          >
+            Washington, fundador da The W.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-[#F0F4F8] text-base md:text-lg leading-relaxed mb-6"
+          >
+            Trader e empresário, Washington construiu a The W para unir o que faltava no mercado brasileiro: operação profissional, gestão de risco rígida e tecnologia que entrega previsibilidade ao investidor.
+          </motion.p>
+          <ul className="space-y-2">
+            {credentials.map((c, i) => (
+              <motion.li
                 key={i}
-                className={`rounded-lg p-5 ${isWhite ? 'bg-[#F5F7FA] border border-[#D4A843]/30' : 'bg-card-dark gold-border'}`}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 + i * 0.15, ease: 'easeOut' }}
+                transition={{ delay: 0.3 + i * 0.1, duration: 0.4 }}
+                className="flex gap-3 text-[#A8B8C8] text-sm"
               >
-                <p className="gold-text font-semibold text-sm uppercase tracking-wide mb-1">{item.label}</p>
-                <p className={`text-base leading-relaxed ${isWhite ? 'text-[#0A1628]' : 'text-[#A8B8C8]'}`}>
-                  {item.text}
-                </p>
-              </motion.div>
+                <span className="text-[#F5D87A]">›</span>
+                {c}
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

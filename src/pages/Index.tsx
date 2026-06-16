@@ -1,65 +1,41 @@
-import { ThemeProvider } from '@/contexts/ThemeContext';
-import Ticker from '@/components/Ticker';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import SectionSeparator from "@/components/SectionSeparator";
 
-const Hero = lazy(() => import('@/components/Hero'));
-const DorSection = lazy(() => import('@/components/DorSection'));
-const ProblemaSection = lazy(() => import('@/components/ProblemaSection'));
-const SolucaoSection = lazy(() => import('@/components/SolucaoSection'));
-const AutoridadeSection = lazy(() => import('@/components/AutoridadeSection'));
-const TestemunhosSection = lazy(() => import('@/components/TestemunhosSection'));
-const OfertaSection = lazy(() => import('@/components/OfertaSection'));
-const GarantiaSection = lazy(() => import('@/components/GarantiaSection'));
-const FAQSection = lazy(() => import('@/components/FAQSection'));
-const Footer = lazy(() => import('@/components/Footer'));
-const StickyBar = lazy(() => import('@/components/StickyBar'));
-const SectionSeparator = lazy(() => import('@/components/SectionSeparator'));
-
-const tickerTop = [
-  'ERRO DE SOFTWARE MENTAL',
-  'OCLUSÃO COGNITIVA',
-  'FADIGA DE DECISÃO',
-  'DESTRAVE A PORTA NEURAL',
-  'RECUPERE O GOVERNO',
-];
-
-const tickerMid = [
-  'IDENTIFIQUE A TRAVA',
-  'DESMONTE A AUTOSSABOTAGEM',
-  'RECUPERE O GOVERNO DO SEU SISTEMA',
-];
+const ResultadosSection = lazy(() => import("@/components/ResultadosSection"));
+const ParaQuemSection = lazy(() => import("@/components/ParaQuemSection"));
+const MetodologiaSection = lazy(() => import("@/components/MetodologiaSection"));
+const AutoridadeSection = lazy(() => import("@/components/AutoridadeSection"));
+const DepoimentosSection = lazy(() => import("@/components/DepoimentosSection"));
+const OfertaSection = lazy(() => import("@/components/OfertaSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen" style={{ background: '#000005' }}>
-        <Ticker items={tickerTop} />
-        <Suspense fallback={<div className="h-screen bg-[#000005]" />}>
-          <Hero />
-          <SectionSeparator />
-          <DorSection />
-          <SectionSeparator />
-          <Ticker items={tickerMid} />
-          <SectionSeparator />
-          <ProblemaSection />
-          <SectionSeparator />
-          <SolucaoSection />
-          <SectionSeparator />
-          <AutoridadeSection />
-          <SectionSeparator />
-          <TestemunhosSection />
-          <SectionSeparator />
-          <OfertaSection />
-          <SectionSeparator />
-          <GarantiaSection />
-          <SectionSeparator />
-          <FAQSection />
-          <SectionSeparator />
-          <Footer />
-          <StickyBar />
-        </Suspense>
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen" style={{ background: "#000005" }}>
+      <Navbar />
+      <Hero />
+      <Suspense fallback={<div className="h-32" />}>
+        <SectionSeparator />
+        <ResultadosSection />
+        <SectionSeparator />
+        <ParaQuemSection />
+        <SectionSeparator />
+        <MetodologiaSection />
+        <SectionSeparator />
+        <AutoridadeSection />
+        <SectionSeparator />
+        <DepoimentosSection />
+        <SectionSeparator />
+        <OfertaSection />
+        <SectionSeparator />
+        <FAQSection />
+        <SectionSeparator />
+        <Footer />
+      </Suspense>
+    </div>
   );
 };
 

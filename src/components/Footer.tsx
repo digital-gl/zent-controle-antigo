@@ -1,29 +1,30 @@
-import { Instagram, Youtube, MessageCircle } from 'lucide-react';
-import logoImg from '@/assets/logo-marsili.png';
+const LOGO = "https://i.imgur.com/mA7WzCc.png";
 
 const Footer = () => {
   return (
-    <footer className="py-10 px-5 md:px-20 text-center" style={{ background: '#000005' }}>
-      <div className="max-w-4xl mx-auto">
-        <img src="https://i.imgur.com/9wT3hxS.jpeg" alt="Lucas Marsili" loading="lazy" className="w-20 h-20 rounded-full mx-auto mb-6 object-cover" style={{ border: '2px solid #D4A843' }} />
-        <div className="flex justify-center gap-4 mb-6">
-          {[Instagram, Youtube, MessageCircle].map((Icon, i) => (
-            <a
-              key={i}
-              href="#"
-              className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
-              style={{ border: '1px solid rgba(212, 168, 67, 0.4)', color: '#D4A843' }}
-            >
-              <Icon className="w-5 h-5" />
-            </a>
-          ))}
+    <footer className="bg-[#000005] border-t border-[#D4A843]/20 py-10 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 items-center md:items-start justify-between">
+        <div className="flex items-center gap-3">
+          <img
+            src={LOGO}
+            alt="The W"
+            loading="lazy"
+            className="h-12 w-12 rounded-full border border-[#D4A843]/50"
+          />
+          <div>
+            <div className="font-display text-lg gold-text leading-none">The W</div>
+            <div className="text-[#A8B8C8] text-xs mt-1">Consultoria e Tecnologia</div>
+          </div>
         </div>
-        <p className="text-[#607080] text-sm mb-1">Copy por Lucas Marsili</p>
-        <p className="text-[#607080] text-sm mb-1">Lançado por BM Coproduções</p>
-        <p className="text-[#607080] text-sm mb-4">Todos os Direitos reservados</p>
-        <p className="text-[#607080]/60 text-xs max-w-xl mx-auto leading-relaxed">
-          Aviso Legal: Este produto não substitui aconselhamento médico. Os resultados dependem da aplicação técnica do protocolo.
-        </p>
+
+        <div className="text-[#A8B8C8] text-xs text-center md:text-right space-y-1">
+          <p>The W Consultoria e Tecnologia LTDA</p>
+          <p>CNPJ a definir</p>
+          <p className="max-w-md">
+            Investimentos envolvem riscos. Rentabilidade passada não representa garantia de rentabilidade futura.
+          </p>
+          <p>© {new Date().getFullYear()} The W. Todos os direitos reservados.</p>
+        </div>
       </div>
     </footer>
   );

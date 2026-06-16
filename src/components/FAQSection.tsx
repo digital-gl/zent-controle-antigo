@@ -1,43 +1,56 @@
-import { useState } from 'react';
-import { useTheme, getSectionBg } from '@/contexts/ThemeContext';
+import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-const faqs = [
-  { q: 'Como recebo o acesso?', a: 'Imediatamente após a confirmação do pagamento, todo o material é enviado para o seu e-mail.' },
-  { q: 'Isso é algum tipo de terapia longa?', a: 'Não. É uma auditoria técnica. Não vamos passar meses falando do seu passado. Vamos identificar a trava subconsciente e ensinar-lhe o caminho biológico para reabrir a porta.' },
-  { q: 'Quanto tempo leva para aplicar?', a: 'O protocolo foi desenhado para a agenda de um líder de alto nível. Você consome e aplica em poucos minutos.' },
-  { q: 'E se a minha religião não permitir hipnose?', a: 'A Hipnose Clínica e a PNL utilizadas no protocolo são puramente científicas e biológicas, voltadas para o foco e a neuroplasticidade. Não envolvem misticismo, respeitando integralmente as suas convicções religiosas.' },
+const faq = [
+  { q: "Como funciona o modelo de sócio investidor?", a: "Você formaliza um contrato de sociedade com a The W. Seu capital passa a ser operado pela nossa mesa junto ao capital da casa, seguindo a mesma estratégia." },
+  { q: "Qual o aporte mínimo?", a: "O aporte mínimo é definido durante o onboarding, de acordo com o perfil do investidor e a vaga disponível." },
+  { q: "Como recebo os resultados?", a: "Você acompanha tudo em um dashboard ao vivo e recebe relatórios mensais detalhados de performance e risco." },
+  { q: "Existe garantia de rentabilidade?", a: "Nenhuma operação de mercado oferece garantia. O que entregamos é processo, gestão de risco e transparência total." },
+  { q: "Posso resgatar o capital quando quiser?", a: "As regras de resgate são definidas em contrato, com janelas claras para aporte e retirada." },
 ];
 
 const FAQSection = () => {
-  const { theme } = useTheme();
-  const bg = getSectionBg(theme, 8);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
-    <section className={`${bg} py-12 md:py-20 px-5 md:px-20`}>
+    <section id="faq" className="bg-dark-radial py-20 px-4 md:px-8">
       <div className="max-w-3xl mx-auto">
-        <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 gold-text">
-          PERGUNTAS FREQUENTES
-        </h2>
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div key={i} className="rounded-lg gold-border overflow-hidden bg-card-dark">
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full text-left px-6 py-4 flex items-center justify-between"
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="font-display text-4xl md:text-5xl gold-text text-center mb-12"
+        >
+          Perguntas frequentes.
+        </motion.h2>
+
+        <Accordion type="single" collapsible className="space-y-3">
+          {faq.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08, duration: 0.4 }}
+            >
+              <AccordionItem
+                value={`item-${i}`}
+                className="liquid-glass rounded-xl px-5 border-none"
               >
-                <span className="text-[#F0F4F8] font-medium text-base sm:text-lg pr-4">{faq.q}</span>
-                <span className="gold-text text-xl shrink-0 transition-transform duration-300" style={{ transform: openIndex === i ? 'rotate(45deg)' : 'rotate(0)' }}>+</span>
-              </button>
-              <div
-                className="overflow-hidden transition-all duration-300"
-                style={{ maxHeight: openIndex === i ? '300px' : '0', opacity: openIndex === i ? 1 : 0 }}
-              >
-                <p className="px-6 pb-4 text-[#A8B8C8] text-sm sm:text-base leading-relaxed">{faq.a}</p>
-              </div>
-            </div>
+                <AccordionTrigger className="text-left text-[#F0F4F8] hover:text-[#F5D87A] font-display text-lg">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[#A8B8C8] text-sm leading-relaxed">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            </motion.div>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
