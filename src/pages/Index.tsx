@@ -8,6 +8,7 @@ const PainSection = lazy(() => import("@/components/PainSection"));
 const HowItWorksSection = lazy(() => import("@/components/HowItWorksSection"));
 const RevenueSourcesSection = lazy(() => import("@/components/RevenueSourcesSection"));
 const GoldenCardSection = lazy(() => import("@/components/GoldenCardSection"));
+const InvestmentCalculator = lazy(() => import("@/components/InvestmentCalculator"));
 const ResultadosSection = lazy(() => import("@/components/ResultadosSection"));
 const ParaQuemSection = lazy(() => import("@/components/ParaQuemSection"));
 const MetodologiaSection = lazy(() => import("@/components/MetodologiaSection"));
@@ -57,6 +58,9 @@ const Index = () => {
         <SectionSeparator />
         <GoldenCardSection />
         <SectionSeparator />
+        <InvestmentCalculator />
+        <SectionSeparator />
+
         <ResultadosSection />
         <SectionSeparator />
         <ParaQuemSection />
