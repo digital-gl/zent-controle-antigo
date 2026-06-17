@@ -14,7 +14,7 @@ const steps = [
   {
     n: "03",
     title: "Você Recebe",
-    desc: "Rentabilidade mensal de 5% a 8% depositada todo mês.",
+    desc: "Rentabilidade mensal de 5% depositada todo mês.",
   },
 ];
 
