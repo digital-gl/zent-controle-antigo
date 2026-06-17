@@ -21,6 +21,9 @@ const Footer = () => {
           src={LOGO}
           alt="The W Consultoria e Tecnologia"
           loading="lazy"
+          decoding="async"
+          width={64}
+          height={64}
           className="h-16 w-16 rounded-full border border-[#D4A843]/50 mx-auto mb-3 shadow-[0_0_18px_rgba(212,168,67,0.35)]"
         />
         <div className="font-display text-xl gold-text mb-1">The W</div>
