@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { User, Users, Wallet, BadgeDollarSign, Repeat } from "lucide-react";
 
 const CountUp = ({ to, prefix = "", suffix = "", duration = 1400 }: { to: number; prefix?: string; suffix?: string; duration?: number }) => {
   const ref = useRef<HTMLSpanElement>(null);
