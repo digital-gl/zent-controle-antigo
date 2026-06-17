@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { TrendingUp, ShieldCheck, Cpu } from "lucide-react";
 import ParallaxStars from "./ParallaxStars";
 
-const WASHINGTON = "https://i.imgur.com/IPOseke.jpeg";
+const WASHINGTON = "https://i.imgur.com/rrlzliG.jpeg";
 
 const bullets = [
   { Icon: TrendingUp, text: "Rentabilidade consistente operada por traders profissionais" },
