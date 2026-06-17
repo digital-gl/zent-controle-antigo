@@ -60,29 +60,46 @@ const Navbar = () => {
         </div>
       </div>
 
-      {open && (
-        <div className="md:hidden border-t border-[#D4A843]/20 bg-[#000005]/95 backdrop-blur-md">
-          <nav className="flex flex-col px-6 py-4 gap-3">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden overflow-hidden border-t border-[#D4A843]/20 bg-[#000005]/95 backdrop-blur-md"
+          >
+            <nav className="flex flex-col px-6 py-4 gap-3">
+              {links.map((l, i) => (
+                <motion.a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -16 }}
+                  transition={{ delay: 0.08 + i * 0.06, duration: 0.25 }}
+                  className="text-[#F0F4F8]/90 hover:text-[#F5D87A] text-base py-1.5"
+                >
+                  {l.label}
+                </motion.a>
+              ))}
+              <motion.a
+                href="#oferta"
                 onClick={() => setOpen(false)}
-                className="text-[#F0F4F8]/90 hover:text-[#F5D87A] text-base py-1.5"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.08 + links.length * 0.06, duration: 0.25 }}
+                className="cta-button text-center mt-2 sm:hidden"
               >
-                {l.label}
-              </a>
-            ))}
-            <a
-              href="#oferta"
-              onClick={() => setOpen(false)}
-              className="cta-button text-center mt-2 sm:hidden"
-            >
-              Quero Ser Sócio
-            </a>
-          </nav>
-        </div>
-      )}
+                Quero Ser Sócio
+              </motion.a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
