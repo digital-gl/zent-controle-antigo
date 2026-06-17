@@ -63,8 +63,8 @@ const Index = () => {
         <InvestmentCalculator />
         <SectionSeparator />
 
-        <ResultadosSection />
-        <SectionSeparator />
+        {/* <ResultadosSection />
+        <SectionSeparator /> */}
         <ParaQuemSection />
 
         <SectionSeparator />
