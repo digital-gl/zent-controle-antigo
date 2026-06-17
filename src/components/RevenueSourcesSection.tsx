@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { TrendingUp, Handshake, GraduationCap, Landmark, type LucideIcon } from "lucide-react";
+import revenueBg from "@/assets/revenue-bg.jpg";
+
 
 const sources: { n: string; Icon: LucideIcon; title: string; desc: string }[] = [
   {
