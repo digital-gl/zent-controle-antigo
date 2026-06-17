@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import ReferralProgramSection from "./ReferralProgramSection";
+
 
 const steps = [
   { n: "01", title: "Diagnóstico", text: "Entendemos seu perfil, objetivo e capital disponível para sociedade." },
@@ -36,6 +38,10 @@ const MetodologiaSection = () => {
               <p className="text-[#A8B8C8] text-sm leading-relaxed">{s.text}</p>
             </motion.div>
           ))}
+        </div>
+
+        <div id="indicacoes">
+          <ReferralProgramSection embedded />
         </div>
       </div>
     </section>

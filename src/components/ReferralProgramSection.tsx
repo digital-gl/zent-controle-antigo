@@ -30,16 +30,20 @@ const CountUp = ({ to, prefix = "", suffix = "", duration = 1400 }: { to: number
   );
 };
 
-const ReferralProgramSection = () => {
+const ReferralProgramSection = ({ embedded = false }: { embedded?: boolean }) => {
+  const Wrapper: any = embedded ? "div" : "section";
+  const wrapperProps = embedded
+    ? { className: "relative mt-16" }
+    : {
+        className: "relative py-20 md:py-28 overflow-hidden",
+        style: {
+          background: "#000D30",
+          backgroundImage:
+            "repeating-linear-gradient(45deg, rgba(212,168,67,0.04) 0px, rgba(212,168,67,0.04) 1px, transparent 1px, transparent 18px)",
+        },
+      };
   return (
-    <section
-      className="relative py-20 md:py-28 overflow-hidden"
-      style={{
-        background: "#000D30",
-        backgroundImage:
-          "repeating-linear-gradient(45deg, rgba(212,168,67,0.04) 0px, rgba(212,168,67,0.04) 1px, transparent 1px, transparent 18px)",
-      }}
-    >
+    <Wrapper {...wrapperProps}>
       <style>{`
         @keyframes ref-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
         @keyframes ref-spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
@@ -47,7 +51,7 @@ const ReferralProgramSection = () => {
         .ref-spin { animation: ref-spin 6s linear infinite; display:inline-block; }
       `}</style>
 
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className={embedded ? "relative z-10" : "container mx-auto px-4 max-w-6xl relative z-10"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -170,7 +174,7 @@ const ReferralProgramSection = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Wrapper>
   );
 };
 

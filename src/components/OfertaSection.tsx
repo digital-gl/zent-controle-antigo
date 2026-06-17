@@ -19,7 +19,7 @@ const OfertaSection = () => {
     <section id="oferta" className="relative overflow-hidden py-20 px-4 md:px-8" style={{ background: "#000005" }}>
       <div className="absolute inset-0 pointer-events-none">
         <EtherealShadow
-          color="rgba(212, 168, 67, 0.6)"
+          color="rgba(128, 128, 128, 1)"
           animation={{ scale: 100, speed: 90 }}
           noise={{ opacity: 0.5, scale: 1.2 }}
           sizing="fill"
