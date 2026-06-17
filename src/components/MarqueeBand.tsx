@@ -1,3 +1,5 @@
+import { TrendingUp } from "lucide-react";
+
 interface MarqueeBandProps {
   items: string[];
   direction?: "left" | "right";
@@ -36,11 +38,13 @@ const MarqueeBand = ({ items, direction = "left", duration = 40 }: MarqueeBandPr
         }}
       >
         {content.map((item, i) => (
-          <div key={i} className="flex items-center px-6 text-sm md:text-base font-bold tracking-wide" style={{ color: "#0A0A0F" }}>
+          <div
+            key={i}
+            className="flex items-center px-6 text-sm md:text-base font-bold tracking-wide"
+            style={{ color: "#0A0A0F" }}
+          >
             <span>{item}</span>
-            <span className="ml-6" style={{ transform: "rotate(45deg)", display: "inline-block", color: "#0A0A0F" }}>
-              ◆
-            </span>
+            <TrendingUp className="ml-6" size={18} color="#0A0A0F" strokeWidth={2.5} />
           </div>
         ))}
       </div>

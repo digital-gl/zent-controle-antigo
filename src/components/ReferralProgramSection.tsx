@@ -120,11 +120,11 @@ const ReferralProgramSection = () => {
         >
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-center">
             {[
-              { t: "Você", e: "🧑" },
-              { t: "Indica amigo", e: "👥" },
-              { t: "Amigo investe", e: "💰" },
-              { t: "Você recebe 10%", e: "💸" },
-              { t: "+1% todo mês", e: "🔁" },
+              { t: "Você", Icon: User },
+              { t: "Indica amigo", Icon: Users },
+              { t: "Amigo investe", Icon: Wallet },
+              { t: "Você recebe 10%", Icon: BadgeDollarSign },
+              { t: "+1% todo mês", Icon: Repeat },
             ].map((s, i, arr) => (
               <div key={i} className="flex items-center gap-3 md:gap-4">
                 <motion.div
@@ -132,13 +132,13 @@ const ReferralProgramSection = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.4, delay: i * 0.15 }}
-                  className="rounded-xl px-3 md:px-4 py-3 min-w-[110px]"
+                  className="rounded-xl px-3 md:px-4 py-3 min-w-[110px] flex flex-col items-center"
                   style={{
                     background: "rgba(0,0,0,0.35)",
                     border: "1px solid rgba(245,216,122,0.4)",
                   }}
                 >
-                  <div className="text-2xl mb-1">{s.e}</div>
+                  <s.Icon size={26} color="#F5D87A" strokeWidth={1.75} className="mb-1" />
                   <div className="text-white text-xs md:text-sm font-semibold">{s.t}</div>
                 </motion.div>
                 {i < arr.length - 1 && (
