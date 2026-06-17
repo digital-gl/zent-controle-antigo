@@ -39,6 +39,10 @@ const MetodologiaSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <div id="indicacoes">
+          <ReferralProgramSection embedded />
+        </div>
       </div>
     </section>
   );
