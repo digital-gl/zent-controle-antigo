@@ -4,7 +4,7 @@ const stats = [
   { value: "CNPJ", suffix: "Ativo", icon: "✓" },
   { value: "24", suffix: "Meses de contrato" },
   { value: "4", suffix: "Fontes de receita" },
-  { value: "5% a 8%", suffix: "ao mês" },
+  { value: "5%", suffix: "ao mês" },
 ];
 
 const CompanyTrustSection = () => {
