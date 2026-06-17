@@ -122,7 +122,7 @@ const GoldenCardSection = () => {
                 <div className="text-[10px] md:text-xs font-bold tracking-wider max-w-[60%] leading-tight">
                   RENDIMENTO
                   <br />
-                  ATÉ 8% A.M.
+                  ATÉ 5% A.M.
                 </div>
                 <div
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-display text-lg md:text-xl"
