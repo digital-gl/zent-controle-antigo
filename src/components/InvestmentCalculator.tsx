@@ -112,6 +112,7 @@ const InvestmentCalculator = () => {
 
   return (
     <section
+      id="simulador"
       className="relative py-20 md:py-28 overflow-hidden"
       style={{ background: "#071228" }}
     >
