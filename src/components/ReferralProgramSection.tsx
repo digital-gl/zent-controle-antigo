@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { User, Users, Wallet, BadgeDollarSign, Repeat } from "lucide-react";
+import { User, Users, Wallet, BadgeDollarSign, Repeat, BadgePercent } from "lucide-react";
 
 const CountUp = ({ to, prefix = "", suffix = "", duration = 1400 }: { to: number; prefix?: string; suffix?: string; duration?: number }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -75,7 +75,7 @@ const ReferralProgramSection = ({ embedded = false }: { embedded?: boolean }) =>
               prefix: "",
               label: "DE COMISSÃO DIRETA",
               desc: "Sobre o primeiro aporte do seu indicado, recebida imediatamente.",
-              icon: "💸",
+              Icon: BadgePercent,
               iconClass: "ref-float",
             },
             {
@@ -84,7 +84,7 @@ const ReferralProgramSection = ({ embedded = false }: { embedded?: boolean }) =>
               prefix: "+",
               label: "AO MÊS, PARA SEMPRE",
               desc: "Sobre o volume total investido por todos os seus indicados ativos.",
-              icon: "🔄",
+              Icon: Repeat,
               iconClass: "ref-spin",
             },
           ].map((card, i) => (
@@ -100,7 +100,9 @@ const ReferralProgramSection = ({ embedded = false }: { embedded?: boolean }) =>
                 boxShadow: "0 0 30px rgba(245,216,122,0.15)",
               }}
             >
-              <div className={`text-6xl mb-4 ${card.iconClass}`}>{card.icon}</div>
+              <div className={`mb-4 flex justify-center ${card.iconClass}`}>
+                <card.Icon size={64} color="#F5D87A" strokeWidth={1.5} />
+              </div>
               <div
                 className="gold-text font-display leading-none mb-3"
                 style={{ fontSize: "clamp(56px, 9vw, 80px)" }}
