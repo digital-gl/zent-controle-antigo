@@ -174,7 +174,7 @@ const ReferralProgramSection = ({ embedded = false }: { embedded?: boolean }) =>
           </div>
         </motion.div>
       </div>
-    </section>
+    </Wrapper>
   );
 };
 
