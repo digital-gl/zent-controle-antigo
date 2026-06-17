@@ -24,11 +24,15 @@ const OfertaSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="liquid-glass rounded-3xl p-8 md:p-12 text-center"
+          className="relative overflow-hidden p-8 md:p-12 text-center"
           style={{
+            borderRadius: "28px",
             border: "2px solid rgba(245, 216, 122, 0.85)",
+            background: "rgba(0, 13, 48, 0.72)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
             boxShadow:
-              "0 0 40px rgba(245, 216, 122, 0.45), 0 4px 25px rgba(212, 168, 67, 0.35), inset 0 0 30px rgba(245, 216, 122, 0.06)",
+              "0 0 34px rgba(245, 216, 122, 0.5), 0 6px 26px rgba(212, 168, 67, 0.38), inset 0 0 28px rgba(245, 216, 122, 0.08)",
           }}
         >
           <span className="inline-block px-3 py-1 rounded-full bg-[#22C55E]/20 text-[#86EFAC] text-[11px] uppercase tracking-widest font-semibold mb-5">
