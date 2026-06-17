@@ -95,10 +95,12 @@ const GoldenCardSection = () => {
           className="flex justify-center mb-12 relative z-10"
         >
           <div
-            className="golden-card-3d relative rounded-2xl overflow-hidden"
+            className="golden-card-3d relative overflow-hidden"
             style={{
               width: "min(420px, 90vw)",
               aspectRatio: "420 / 260",
+              borderRadius: "28px",
+              border: "2px solid rgba(245, 216, 122, 0.9)",
               background:
                 "linear-gradient(135deg, #B8860B 0%, #FFD700 35%, #C9A84C 65%, #8B6914 100%)",
               boxShadow:
