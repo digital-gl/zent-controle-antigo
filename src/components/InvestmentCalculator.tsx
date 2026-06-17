@@ -161,7 +161,7 @@ const InvestmentCalculator = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="liquid-glass rounded-2xl p-6 md:p-8"
+            className="liquid-glass rounded-2xl p-6 md:p-8 order-1"
             style={{ border: "1.5px solid rgba(245,216,122,0.4)" }}
           >
             <div className="mb-8">
