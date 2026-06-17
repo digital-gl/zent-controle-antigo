@@ -106,9 +106,9 @@ const RevenueSourcesSection = () => {
     <section
       className="relative py-20 md:py-28 overflow-hidden"
       style={{
-        background: "#000D30",
+        background: "#000000",
         backgroundImage:
-          "linear-gradient(rgba(212,168,67,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,67,0.05) 1px, transparent 1px)",
+          "linear-gradient(rgba(212,168,67,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(212,168,67,0.04) 1px, transparent 1px)",
         backgroundSize: "60px 60px",
       }}
     >
@@ -118,17 +118,18 @@ const RevenueSourcesSection = () => {
         aria-hidden="true"
         loading="lazy"
         width={1920}
-        height={1280}
+        height={1080}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-        style={{ opacity: 0.12, mixBlendMode: "screen" }}
+        style={{ opacity: 0.28 }}
       />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(0,13,48,0.4) 0%, rgba(0,13,48,0.85) 100%)",
+            "radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.85) 100%)",
         }}
       />
+
 
       <style>{`
         @keyframes float-source {
