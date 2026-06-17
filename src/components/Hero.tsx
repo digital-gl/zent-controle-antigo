@@ -69,7 +69,7 @@ const Hero = () => {
               Quero Ser Sócio Investidor
             </a>
             <a
-              href="#resultados"
+              href="#simulador"
               className="px-7 py-4 rounded-md border-2 border-[#D4A843] text-[#F5D87A] font-semibold uppercase tracking-wide text-xs sm:text-sm hover:bg-[#D4A843]/10 transition-colors whitespace-nowrap"
             >
               Ver Rentabilidade

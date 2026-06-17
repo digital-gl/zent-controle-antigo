@@ -369,7 +369,7 @@ const InvestmentCalculator = () => {
               <CountUp value={Math.round(data.diff)} />
             </span>
           </p>
-          <a href="#" className="cta-button text-base md:text-lg">
+          <a href="#oferta" className="cta-button text-base md:text-lg">
             Quero esse rendimento
           </a>
         </motion.div>
