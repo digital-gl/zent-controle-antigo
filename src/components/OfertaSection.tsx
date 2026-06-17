@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import ParallaxStars from "./ParallaxStars";
+import { Component as EtherealShadow } from "./ui/etheral-shadow";
 
 const benefits = [
   "Operação profissional do seu capital pela mesa The W",
@@ -16,8 +16,15 @@ const WHATSAPP_URL =
 
 const OfertaSection = () => {
   return (
-    <section id="oferta" className="relative overflow-hidden bg-dark-alt3 py-20 px-4 md:px-8">
-      <ParallaxStars speed={0.5} className="opacity-50" />
+    <section id="oferta" className="relative overflow-hidden py-20 px-4 md:px-8" style={{ background: "#000005" }}>
+      <div className="absolute inset-0 pointer-events-none">
+        <EtherealShadow
+          color="rgba(212, 168, 67, 0.6)"
+          animation={{ scale: 100, speed: 90 }}
+          noise={{ opacity: 0.5, scale: 1.2 }}
+          sizing="fill"
+        />
+      </div>
       <div className="relative max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
