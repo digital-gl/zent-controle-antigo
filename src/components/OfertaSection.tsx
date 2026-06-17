@@ -45,6 +45,15 @@ const OfertaSection = () => {
           <span className="inline-block px-3 py-1 rounded-full bg-[#22C55E]/20 text-[#86EFAC] text-[11px] uppercase tracking-widest font-semibold mb-5">
             Vagas limitadas
           </span>
+          <div className="flex justify-center mb-6">
+            <img
+              src="https://i.imgur.com/mA7WzCc.png"
+              alt="The W Consultoria e Tecnologia"
+              loading="lazy"
+              className="h-16 md:h-20 w-auto"
+            />
+          </div>
+
           <h2 className="font-display text-4xl md:text-5xl gold-text mb-4">
             Torne-se sócio investidor da The W.
           </h2>
