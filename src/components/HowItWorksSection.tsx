@@ -38,10 +38,10 @@ const HowItWorksSection = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Connecting dashed line (desktop) */}
+          {/* Connecting dashed line (passes through circles) */}
           <svg
-            className="hidden md:block absolute top-12 left-0 right-0 mx-auto pointer-events-none"
-            style={{ width: "75%", height: "4px" }}
+            className="absolute left-0 right-0 mx-auto pointer-events-none hidden md:block"
+            style={{ top: "48px", width: "75%", height: "4px" }}
             viewBox="0 0 1000 4"
             preserveAspectRatio="none"
           >
@@ -56,7 +56,29 @@ const HowItWorksSection = () => {
               initial={{ pathLength: 0, opacity: 0 }}
               whileInView={{ pathLength: 1, opacity: 1 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 1.6, ease: "easeInOut" }}
+              transition={{ duration: 3.2, ease: "easeInOut" }}
+            />
+          </svg>
+
+          {/* Mobile vertical dashed line */}
+          <svg
+            className="md:hidden absolute pointer-events-none"
+            style={{ top: "48px", bottom: "48px", left: "50%", transform: "translateX(-50%)", width: "4px", height: "calc(100% - 96px)" }}
+            viewBox="0 0 4 1000"
+            preserveAspectRatio="none"
+          >
+            <motion.line
+              x1="2"
+              y1="0"
+              x2="2"
+              y2="1000"
+              stroke="#D4A843"
+              strokeWidth="2"
+              strokeDasharray="10 8"
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 3.2, ease: "easeInOut" }}
             />
           </svg>
 
