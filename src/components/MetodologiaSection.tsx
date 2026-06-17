@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import ReferralProgramSection from "./ReferralProgramSection";
+
 
 const steps = [
   { n: "01", title: "Diagnóstico", text: "Entendemos seu perfil, objetivo e capital disponível para sociedade." },
