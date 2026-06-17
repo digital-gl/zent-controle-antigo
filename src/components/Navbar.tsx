@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const LOGO = "https://i.imgur.com/mA7WzCc.png";
 
