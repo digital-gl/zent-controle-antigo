@@ -36,9 +36,9 @@ const MarqueeBand = ({ items, direction = "left", duration = 40 }: MarqueeBandPr
         }}
       >
         {content.map((item, i) => (
-          <div key={i} className="flex items-center px-6 text-sm md:text-base font-semibold tracking-wide gold-text">
+          <div key={i} className="flex items-center px-6 text-sm md:text-base font-bold tracking-wide" style={{ color: "#0A0A0F" }}>
             <span>{item}</span>
-            <span className="ml-6 text-[#F5D87A]" style={{ transform: "rotate(45deg)", display: "inline-block" }}>
+            <span className="ml-6" style={{ transform: "rotate(45deg)", display: "inline-block", color: "#0A0A0F" }}>
               ◆
             </span>
           </div>
