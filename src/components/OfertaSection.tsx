@@ -74,7 +74,7 @@ const OfertaSection = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-button-green w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base text-center"
+            className="cta-button-green w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-base text-center whitespace-nowrap"
           >
             <svg viewBox="0 0 32 32" className="w-5 h-5 flex-shrink-0" aria-hidden="true">
               <path
