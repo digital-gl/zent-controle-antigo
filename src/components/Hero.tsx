@@ -106,19 +106,6 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-            className="inline-flex flex-col items-center md:items-start"
-          >
-            <span className="text-[#A8B8C8] text-[11px] uppercase tracking-widest mb-1">
-              Capital simulado em operação
-            </span>
-            <span className="font-display text-3xl sm:text-4xl gold-text tabular-nums">
-              {formatBRL(counter)}
-            </span>
-          </motion.div>
         </div>
 
         <motion.div
