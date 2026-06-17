@@ -1,37 +1,8 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { TrendingUp, ShieldCheck, Cpu } from "lucide-react";
 import ParallaxStars from "./ParallaxStars";
 
 const WASHINGTON = "https://i.imgur.com/IPOseke.jpeg";
-const TARGET = 847000;
-
-const formatBRL = (n: number) =>
-  n.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
-
-const useCounter = () => {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    let raf = 0;
-    let start = performance.now();
-    const duration = 4000;
-    const tick = (now: number) => {
-      const elapsed = (now - start) % duration;
-      const t = elapsed / duration;
-      const eased = 1 - Math.pow(1 - t, 3);
-      setValue(Math.floor(TARGET * eased));
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-  return value;
-};
 
 const bullets = [
   { Icon: TrendingUp, text: "Rentabilidade consistente operada por traders profissionais" },
@@ -40,7 +11,6 @@ const bullets = [
 ];
 
 const Hero = () => {
-  const counter = useCounter();
 
   return (
     <section id="top" className="relative overflow-hidden bg-dark-radial pt-10 md:pt-16 pb-16 md:pb-24 px-4 md:px-8">
@@ -106,19 +76,6 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-            className="inline-flex flex-col items-center md:items-start"
-          >
-            <span className="text-[#A8B8C8] text-[11px] uppercase tracking-widest mb-1">
-              Capital simulado em operação
-            </span>
-            <span className="font-display text-3xl sm:text-4xl gold-text tabular-nums">
-              {formatBRL(counter)}
-            </span>
-          </motion.div>
         </div>
 
         <motion.div
