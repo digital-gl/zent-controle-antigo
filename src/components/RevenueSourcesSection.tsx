@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { TrendingUp, Handshake, GraduationCap, Landmark, type LucideIcon } from "lucide-react";
 import revenueBg from "@/assets/revenue-bg.jpg";
+import revenueBgMobile from "@/assets/revenue-bg-mobile.jpg";
+
 
 
 const sources: { n: string; Icon: LucideIcon; title: string; desc: string }[] = [
@@ -112,17 +114,20 @@ const RevenueSourcesSection = () => {
         backgroundSize: "60px 60px",
       }}
     >
-      <img
-        src={revenueBg}
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        width={1920}
-        height={1080}
-        className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none"
-        style={{ opacity: 0.28 }}
+      <picture>
+        <source media="(max-width: 767px)" srcSet={revenueBgMobile} />
+        <img
+          src={revenueBg}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 w-full h-full object-cover md:object-contain object-center pointer-events-none"
+          style={{ opacity: 0.28 }}
+        />
+      </picture>
 
-      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
