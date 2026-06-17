@@ -74,9 +74,6 @@ const Index = () => {
         <SectionSeparator />
         <OfertaSection />
         <SectionSeparator />
-        <section id="indicacoes">
-          <ReferralProgramSection />
-        </section>
         <CompanyTrustSection />
         <SectionSeparator />
         <FAQSection />
