@@ -13,7 +13,6 @@ const ResultadosSection = lazy(() => import("@/components/ResultadosSection"));
 const ParaQuemSection = lazy(() => import("@/components/ParaQuemSection"));
 const MetodologiaSection = lazy(() => import("@/components/MetodologiaSection"));
 const AutoridadeSection = lazy(() => import("@/components/AutoridadeSection"));
-const DepoimentosSection = lazy(() => import("@/components/DepoimentosSection"));
 const OfertaSection = lazy(() => import("@/components/OfertaSection"));
 const ReferralProgramSection = lazy(() => import("@/components/ReferralProgramSection"));
 const CompanyTrustSection = lazy(() => import("@/components/CompanyTrustSection"));
@@ -72,8 +71,6 @@ const Index = () => {
         <MetodologiaSection />
         <SectionSeparator />
         <AutoridadeSection />
-        <SectionSeparator />
-        <DepoimentosSection />
         <SectionSeparator />
         <OfertaSection />
         <SectionSeparator />
