@@ -161,7 +161,7 @@ const InvestmentCalculator = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="liquid-glass rounded-2xl p-6 md:p-8"
+            className="liquid-glass rounded-2xl p-6 md:p-8 order-1"
             style={{ border: "1.5px solid rgba(245,216,122,0.4)" }}
           >
             <div className="mb-8">
@@ -237,7 +237,7 @@ const InvestmentCalculator = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-4 order-3 lg:order-2"
           >
             {/* Poupança */}
             <div
@@ -318,39 +318,39 @@ const InvestmentCalculator = () => {
               </div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Bar chart */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mt-12 liquid-glass rounded-2xl p-6 md:p-8"
-        >
-          <div className="flex items-end justify-around gap-4 md:gap-8 h-56 md:h-64">
-            {[
-              { label: "Poupança", v: data.poup, color: "linear-gradient(180deg, #4B5563, #6B7280)", text: "text-[#A8B8C8]" },
-              { label: "CDI", v: data.cdi, color: "linear-gradient(180deg, #001A5E, #0113B7)", text: "text-white" },
-              { label: "The W", v: data.tw, color: "linear-gradient(180deg, #A07830, #F5D87A)", text: "gold-text", glow: true },
-            ].map((b) => (
-              <div key={b.label} className="flex-1 flex flex-col items-center justify-end h-full">
-                <div className={`text-xs md:text-sm mb-2 font-semibold ${b.text}`}>
-                  {formatBRL(Math.round(b.v))}
+          {/* Bar chart — between calculator and results on mobile, full width on desktop */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="liquid-glass rounded-2xl p-6 md:p-8 order-2 lg:order-3 lg:col-span-2"
+          >
+            <div className="flex items-end justify-around gap-4 md:gap-8 h-56 md:h-64">
+              {[
+                { label: "Poupança", v: data.poup, color: "linear-gradient(180deg, #4B5563, #6B7280)", text: "text-[#A8B8C8]" },
+                { label: "CDI", v: data.cdi, color: "linear-gradient(180deg, #001A5E, #0113B7)", text: "text-white" },
+                { label: "The W", v: data.tw, color: "linear-gradient(180deg, #A07830, #F5D87A)", text: "gold-text", glow: true },
+              ].map((b) => (
+                <div key={b.label} className="flex-1 flex flex-col items-center justify-end h-full">
+                  <div className={`text-xs md:text-sm mb-2 font-semibold ${b.text}`}>
+                    {formatBRL(Math.round(b.v))}
+                  </div>
+                  <div
+                    className="w-full rounded-t-lg transition-all duration-700 ease-out"
+                    style={{
+                      height: h(b.v),
+                      background: b.color,
+                      boxShadow: b.glow ? "0 0 25px rgba(245,216,122,0.6)" : "none",
+                    }}
+                  />
+                  <div className="text-xs md:text-sm text-[#A8B8C8] mt-2">{b.label}</div>
                 </div>
-                <div
-                  className="w-full rounded-t-lg transition-all duration-700 ease-out"
-                  style={{
-                    height: h(b.v),
-                    background: b.color,
-                    boxShadow: b.glow ? "0 0 25px rgba(245,216,122,0.6)" : "none",
-                  }}
-                />
-                <div className="text-xs md:text-sm text-[#A8B8C8] mt-2">{b.label}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
 
         {/* Diff statement */}
         <motion.div
