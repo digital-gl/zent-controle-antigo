@@ -113,7 +113,7 @@ const PainSection = () => {
           <TiltCard
             icon="🚀"
             iconClass="icon-float"
-            number="Até 8% ao mês"
+            number="5% ao mês"
             text="Supera qualquer investimento tradicional"
             barClass="bg-gradient-to-r from-[#A07830] via-[#F5D87A] to-[#A07830]"
             highlight

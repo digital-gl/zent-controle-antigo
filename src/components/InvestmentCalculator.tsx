@@ -11,12 +11,7 @@ const formatBRL = (n: number) =>
 const compound = (principal: number, monthlyRate: number, months: number) =>
   principal * Math.pow(1 + monthlyRate, months);
 
-const getTheWRate = (amount: number) => {
-  if (amount > 20000) return 0.08;
-  if (amount > 10000) return 0.07;
-  if (amount > 5000) return 0.06;
-  return 0.05;
-};
+const getTheWRate = (_amount: number) => 0.05;
 
 const PARTICLES = Array.from({ length: 30 }, (_, i) => ({
   left: `${(i * 37) % 100}%`,

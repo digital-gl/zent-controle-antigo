@@ -11,11 +11,11 @@ const MarqueeBand = ({ items, direction = "left", duration = 40 }: MarqueeBandPr
     <div
       className="w-full overflow-hidden relative"
       style={{
-        background: "linear-gradient(180deg, #000D30 0%, #001A5E 50%, #000D30 100%)",
-        borderTop: "1px solid rgba(212, 168, 67, 0.5)",
-        borderBottom: "1px solid rgba(212, 168, 67, 0.5)",
+        background: "linear-gradient(180deg, #A07830 0%, #F5D87A 50%, #A07830 100%)",
+        borderTop: "1px solid rgba(0, 0, 0, 0.4)",
+        borderBottom: "1px solid rgba(0, 0, 0, 0.4)",
         height: "60px",
-        boxShadow: "0 0 20px rgba(212, 168, 67, 0.15)",
+        boxShadow: "0 0 20px rgba(245, 216, 122, 0.35)",
       }}
     >
       <style>{`
@@ -36,9 +36,9 @@ const MarqueeBand = ({ items, direction = "left", duration = 40 }: MarqueeBandPr
         }}
       >
         {content.map((item, i) => (
-          <div key={i} className="flex items-center px-6 text-sm md:text-base font-semibold tracking-wide gold-text">
+          <div key={i} className="flex items-center px-6 text-sm md:text-base font-bold tracking-wide" style={{ color: "#0A0A0F" }}>
             <span>{item}</span>
-            <span className="ml-6 text-[#F5D87A]" style={{ transform: "rotate(45deg)", display: "inline-block" }}>
+            <span className="ml-6" style={{ transform: "rotate(45deg)", display: "inline-block", color: "#0A0A0F" }}>
               ◆
             </span>
           </div>
