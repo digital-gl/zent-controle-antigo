@@ -10,6 +10,10 @@ const benefits = [
   "Suporte direto com o time de gestão",
 ];
 
+const WHATSAPP_URL =
+  "https://wa.me/558399617709?text=" +
+  encodeURIComponent("Olá, quero ser um sócio investidor!");
+
 const OfertaSection = () => {
   return (
     <section id="oferta" className="relative overflow-hidden bg-dark-alt3 py-20 px-4 md:px-8">
@@ -20,7 +24,12 @@ const OfertaSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="liquid-glass rounded-3xl p-8 md:p-12 text-center gold-border-strong"
+          className="liquid-glass rounded-3xl p-8 md:p-12 text-center"
+          style={{
+            border: "2px solid rgba(245, 216, 122, 0.85)",
+            boxShadow:
+              "0 0 40px rgba(245, 216, 122, 0.45), 0 4px 25px rgba(212, 168, 67, 0.35), inset 0 0 30px rgba(245, 216, 122, 0.06)",
+          }}
         >
           <span className="inline-block px-3 py-1 rounded-full bg-[#22C55E]/20 text-[#86EFAC] text-[11px] uppercase tracking-widest font-semibold mb-5">
             Vagas limitadas
@@ -42,7 +51,9 @@ const OfertaSection = () => {
           </ul>
 
           <a
-            href="#"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta-button-green w-full sm:w-auto inline-block text-sm sm:text-base"
           >
             Quero Ser Sócio Investidor
@@ -57,3 +68,4 @@ const OfertaSection = () => {
 };
 
 export default OfertaSection;
+

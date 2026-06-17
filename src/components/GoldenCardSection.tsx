@@ -152,7 +152,7 @@ const GoldenCardSection = () => {
           <p className="text-base md:text-lg text-[#A8B8C8] mb-8">
             Contrato formal · CNPJ ativo · Rentabilidade real
           </p>
-          <a href="#" className="cta-button text-base md:text-lg">
+          <a href="#oferta" className="cta-button text-base md:text-lg">
             Quero Meu Lugar
           </a>
         </motion.div>

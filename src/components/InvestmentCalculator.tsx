@@ -112,6 +112,7 @@ const InvestmentCalculator = () => {
 
   return (
     <section
+      id="simulador"
       className="relative py-20 md:py-28 overflow-hidden"
       style={{ background: "#071228" }}
     >
@@ -368,7 +369,7 @@ const InvestmentCalculator = () => {
               <CountUp value={Math.round(data.diff)} />
             </span>
           </p>
-          <a href="#" className="cta-button text-base md:text-lg">
+          <a href="#oferta" className="cta-button text-base md:text-lg">
             Quero esse rendimento
           </a>
         </motion.div>

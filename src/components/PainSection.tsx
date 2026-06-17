@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { TrendingDown, Scale, Rocket, LucideIcon } from "lucide-react";
 import ParallaxStars from "./ParallaxStars";
 
 interface TiltCardProps {
-  icon: string;
+  Icon: LucideIcon;
   iconClass?: string;
   number: string;
   text: string;
@@ -11,7 +12,7 @@ interface TiltCardProps {
   highlight?: boolean;
 }
 
-const TiltCard = ({ icon, iconClass, number, text, barClass, highlight }: TiltCardProps) => {
+const TiltCard = ({ Icon, iconClass, number, text, barClass, highlight }: TiltCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState("");
 
@@ -49,7 +50,9 @@ const TiltCard = ({ icon, iconClass, number, text, barClass, highlight }: TiltCa
           border: highlight ? "1.5px solid rgba(245, 216, 122, 0.6)" : "1px solid rgba(255,255,255,0.05)",
         }}
       >
-        <div className={`text-6xl mb-4 ${iconClass || ""}`}>{icon}</div>
+        <div className={`mb-4 ${iconClass || ""}`}>
+          <Icon className="w-14 h-14" color="#F5D87A" strokeWidth={1.75} />
+        </div>
         <div className={`text-3xl md:text-4xl font-display mb-3 ${highlight ? "gold-text" : "text-white"}`}>
           {number}
         </div>
@@ -65,15 +68,15 @@ const PainSection = () => {
     <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "#000D30" }}>
       <ParallaxStars className="opacity-40" />
       <style>{`
-        @keyframes pulse-red {
-          0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(239,68,68,0.5)); }
-          50% { transform: scale(1.1); filter: drop-shadow(0 0 16px rgba(239,68,68,0.9)); }
+        @keyframes pulse-gold-icon {
+          0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(245,216,122,0.5)); }
+          50% { transform: scale(1.1); filter: drop-shadow(0 0 16px rgba(245,216,122,0.9)); }
         }
         @keyframes float-icon {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
         }
-        .icon-pulse-red { animation: pulse-red 1.8s ease-in-out infinite; display: inline-block; }
+        .icon-pulse-gold { animation: pulse-gold-icon 1.8s ease-in-out infinite; display: inline-block; }
         .icon-float { animation: float-icon 3s ease-in-out infinite; display: inline-block; }
       `}</style>
 
@@ -98,20 +101,20 @@ const PainSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16">
           <TiltCard
-            icon="📉"
-            iconClass="icon-pulse-red"
+            Icon={TrendingDown}
+            iconClass="icon-pulse-gold"
             number="0,5% ao mês"
             text="Perde para a inflação todo mês"
             barClass="bg-gradient-to-r from-red-700 via-red-500 to-red-700"
           />
           <TiltCard
-            icon="⚖️"
+            Icon={Scale}
             number="~1% ao mês"
             text="Quase empata com a inflação"
             barClass="bg-gradient-to-r from-yellow-700 via-yellow-400 to-yellow-700"
           />
           <TiltCard
-            icon="🚀"
+            Icon={Rocket}
             iconClass="icon-float"
             number="5% ao mês"
             text="Supera qualquer investimento tradicional"
