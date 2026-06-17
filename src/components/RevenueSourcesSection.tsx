@@ -1,28 +1,29 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { TrendingUp, Handshake, GraduationCap, Landmark, type LucideIcon } from "lucide-react";
 
-const sources = [
+const sources: { n: string; Icon: LucideIcon; title: string; desc: string }[] = [
   {
     n: "01",
-    icon: "💹",
+    Icon: TrendingUp,
     title: "Operações Forex",
     desc: "Ganhos diários no maior mercado financeiro global, operando em dólar 24 horas.",
   },
   {
     n: "02",
-    icon: "🤝",
+    Icon: Handshake,
     title: "Parcerias Estratégicas",
     desc: "Comissões diárias de corretoras internacionais parceiras em dólar.",
   },
   {
     n: "03",
-    icon: "🎓",
+    Icon: GraduationCap,
     title: "Mensalidade de Alunos",
     desc: "Receita recorrente de alunos no Brasil e nos Estados Unidos.",
   },
   {
     n: "04",
-    icon: "🏦",
+    Icon: Landmark,
     title: "Microcrédito Estruturado",
     desc: "Juros sobre capital emprestado. Fonte sólida de receita passiva.",
   },
@@ -78,7 +79,7 @@ const TiltCard = ({
         }}
       >
         <div
-          className="text-6xl mb-4 inline-block"
+          className="mb-4 inline-block"
           style={{
             animation: `float-source 3.5s ease-in-out infinite`,
             animationDelay: `${index * 0.4}s`,
@@ -86,7 +87,7 @@ const TiltCard = ({
             transition: "transform 0.3s ease",
           }}
         >
-          {source.icon}
+          <source.Icon size={56} color="#F5D87A" strokeWidth={1.75} />
         </div>
         <div className="gold-text font-display text-2xl mb-2">{source.n}</div>
         <h3 className="text-white font-bold text-xl md:text-2xl mb-3">

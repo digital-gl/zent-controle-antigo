@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const formatBRL = (n: number) =>
   n.toLocaleString("pt-BR", {
@@ -297,7 +298,8 @@ const InvestmentCalculator = () => {
                   color: "#020B18",
                 }}
               >
-                ✨ MELHOR OPÇÃO
+                <Sparkles size={12} color="#020B18" strokeWidth={2.5} className="inline mr-1 -mt-0.5" />
+                MELHOR OPÇÃO
               </div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-white text-sm font-semibold">
