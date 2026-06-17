@@ -111,7 +111,7 @@ const PainSection = () => {
             Icon={Scale}
             number="~1% ao mês"
             text="Quase empata com a inflação"
-            barClass="bg-gradient-to-r from-yellow-700 via-yellow-400 to-yellow-700"
+            barClass="bg-gradient-to-r from-orange-700 via-orange-400 to-orange-700"
           />
           <TiltCard
             Icon={Rocket}
