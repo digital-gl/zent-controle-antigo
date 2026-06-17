@@ -112,12 +112,31 @@ const RevenueSourcesSection = () => {
         backgroundSize: "60px 60px",
       }}
     >
+      <img
+        src={revenueBg}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        width={1920}
+        height={1280}
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ opacity: 0.12, mixBlendMode: "screen" }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0,13,48,0.4) 0%, rgba(0,13,48,0.85) 100%)",
+        }}
+      />
+
       <style>{`
         @keyframes float-source {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-10px); }
         }
       `}</style>
+
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <motion.div
