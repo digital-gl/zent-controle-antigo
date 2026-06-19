@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { TrendingUp, ShieldCheck, Cpu } from "lucide-react";
-import ParallaxStars from "./ParallaxStars";
 
 const WASHINGTON = "https://i.imgur.com/rrlzliG.jpeg";
 
