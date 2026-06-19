@@ -92,6 +92,12 @@ const Hero = () => {
 
       <div className="relative z-[5] flex w-full flex-1 flex-col">
         <img
+          src="https://i.imgur.com/NIO5xgF.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top md:hidden"
+        />
+        <img
           src="https://i.imgur.com/3qiLi50.png"
           alt=""
           aria-hidden="true"
