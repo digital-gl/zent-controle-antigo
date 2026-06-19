@@ -53,6 +53,7 @@ const Index = () => {
       <MarqueeBand items={MARQUEE_1} direction="left" />
       <Suspense fallback={<div className="h-32" />}>
         <PainSection />
+        <SectionSeparator />
         <ComparisonCardSwap />
         <MarqueeBand items={MARQUEE_2} direction="right" />
         <SectionSeparator />
