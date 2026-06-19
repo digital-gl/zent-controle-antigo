@@ -22,6 +22,7 @@ export interface CardSwapProps {
   onCardClick?: (idx: number) => void;
   skewAmount?: number;
   easing?: "linear" | "elastic";
+  stopAtIndex?: number;
   children: ReactNode;
 }
 
