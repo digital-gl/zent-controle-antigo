@@ -12,8 +12,8 @@ const bullets = [
 const Hero = () => {
 
   return (
-    <section id="top" className="relative overflow-hidden bg-dark-radial pt-10 md:pt-16 pb-16 md:pb-24 px-4 md:px-8">
-      <ParallaxStars speed={0.6} className="opacity-60" />
+    <section id="top" className="relative overflow-hidden bg-dark-linear pt-10 md:pt-16 pb-16 md:pb-24 px-4 md:px-8">
+
       <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14">
         <div className="flex-1 text-center md:text-left">
           <motion.span
