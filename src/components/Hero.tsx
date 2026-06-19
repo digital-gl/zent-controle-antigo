@@ -1,100 +1,134 @@
-import { motion } from "framer-motion";
-import { TrendingUp, ShieldCheck, Cpu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 
-const WASHINGTON = "https://i.imgur.com/rrlzliG.jpeg";
+const GOLD = "#F5D87A";
 
-const bullets = [
-  { Icon: TrendingUp, text: "Rentabilidade consistente operada por traders profissionais" },
-  { Icon: ShieldCheck, text: "Gestão de risco com regras claras e transparência total" },
-  { Icon: Cpu, text: "Tecnologia proprietária para execução e monitoramento" },
+const teamAvatars = [
+  { initials: "JD", src: "https://res.cloudinary.com/doonkheo8/image/upload/v1770279333/a1.jpg" },
+  { initials: "HJ", src: "https://res.cloudinary.com/doonkheo8/image/upload/v1770279333/a2.jpg" },
+  { initials: "PI", src: "https://res.cloudinary.com/doonkheo8/image/upload/v1770279333/a3.jpg" },
+  { initials: "KD", src: "https://res.cloudinary.com/doonkheo8/image/upload/v1770279333/a4.jpg" },
+  { initials: "LD", src: "https://res.cloudinary.com/doonkheo8/image/upload/v1770279333/a5.jpg" },
 ];
 
-const Hero = () => {
+const stats = [
+  { emoji: "📈", label: "RENTABILIDADE MÉDIA MENSAL", value: "5%" },
+  { emoji: "🤝", label: "SÓCIOS INVESTIDORES ATIVOS", value: "200+" },
+  { emoji: "🏛️", label: "OPERANDO DESDE", value: "2021" },
+  { emoji: "💼", label: "CONTRATO FORMAL", value: "24 MESES" },
+];
 
+function AvatarStack() {
   return (
-    <section id="top" className="relative overflow-hidden bg-dark-linear pt-10 md:pt-16 pb-16 md:pb-24 px-4 md:px-8">
-
-      <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14">
-        <div className="flex-1 text-center md:text-left">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-block px-4 py-1.5 rounded-full border border-[#D4A843]/50 bg-[#D4A843]/10 text-[#F5D87A] text-[11px] sm:text-xs uppercase tracking-widest font-semibold mb-6"
-          >
-            The W Consultoria e Tecnologia
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] gold-text mb-5"
-          >
-            Seja sócio do capital que opera o mercado.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-[#F0F4F8] text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0 mb-8"
-          >
-            Trading institucional, disciplina de gestão e tecnologia proprietária reunidos em um modelo de sociedade que coloca o seu capital trabalhando ao lado dos nossos traders.
-          </motion.p>
-
-          <ul className="space-y-3 mb-8 max-w-xl mx-auto md:mx-0">
-            {bullets.map((b, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 + i * 0.2, duration: 0.5 }}
-                className="flex items-start gap-3 text-[#F0F4F8] text-sm sm:text-base"
-              >
-                <b.Icon className="w-5 h-5 text-[#F5D87A] mt-0.5 flex-shrink-0" />
-                <span>{b.text}</span>
-              </motion.li>
-            ))}
-          </ul>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2, duration: 0.5 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mb-8"
-          >
-            <a href="#oferta" className="cta-button text-xs sm:text-sm">
-              Quero Ser Sócio Investidor
-            </a>
-            <a
-              href="#simulador"
-              className="px-7 py-4 rounded-md border-2 border-[#D4A843] text-[#F5D87A] font-semibold uppercase tracking-wide text-xs sm:text-sm hover:bg-[#D4A843]/10 transition-colors whitespace-nowrap"
-            >
-              Ver Rentabilidade
-            </a>
-          </motion.div>
-
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-          className="flex-shrink-0 w-full md:w-auto"
+    <div className="flex -space-x-3">
+      {teamAvatars.map((m, i) => (
+        <Avatar
+          key={m.initials}
+          className="size-12 border-2 bg-neutral-800"
+          style={{ zIndex: teamAvatars.length - i, borderColor: GOLD }}
         >
-          <div className="relative w-[260px] sm:w-[320px] md:w-[360px] mx-auto">
-            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-[#D4A843]/40 via-[#0113B7]/30 to-[#F5D87A]/20 blur-2xl" />
-            <img
-              src={WASHINGTON}
-              alt="Washington, fundador da The W Consultoria e Tecnologia"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              className="relative w-full aspect-[4/5] object-cover rounded-3xl border-2 border-[#D4A843]/60 shadow-[0_0_40px_rgba(212,168,67,0.35)]"
-            />
+          <AvatarImage alt={`Sócio ${i + 1}`} src={m.src} />
+          <AvatarFallback className="bg-neutral-700 text-white text-xs">
+            {m.initials}
+          </AvatarFallback>
+        </Avatar>
+      ))}
+    </div>
+  );
+}
+
+function StatsMarquee() {
+  const items = [...stats, ...stats, ...stats, ...stats];
+  return (
+    <div
+      className="relative overflow-hidden border-y bg-black/40 py-2 backdrop-blur-sm"
+      style={{ borderColor: "rgba(245,216,122,0.2)" }}
+    >
+      <style>{`
+        @keyframes hero-marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .hero-marquee-track {
+          display: flex;
+          gap: 2.5rem;
+          width: max-content;
+          animation: hero-marquee 35s linear infinite;
+        }
+      `}</style>
+      <div className="hero-marquee-track">
+        {items.map((s, i) => (
+          <div key={i} className="flex items-center gap-3 whitespace-nowrap">
+            <span className="font-mono font-bold text-sm tracking-wide" style={{ color: GOLD }}>
+              {s.value}
+            </span>
+            <span className="font-mono font-medium text-sm text-white/70 uppercase tracking-[0.15em]">
+              {s.label}
+            </span>
+            <span className="text-base">{s.emoji}</span>
           </div>
-        </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const Hero = () => {
+  return (
+    <section
+      id="top"
+      className="relative flex min-h-screen w-full flex-col items-start justify-end overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=2000&q=80)",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000005]/80 via-[#000005]/70 to-[#000005]/95" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-4xl px-4 pt-28 text-white sm:px-8 lg:px-16">
+        <div className="space-y-4">
+          <AvatarStack />
+        </div>
+      </div>
+
+      <div className="relative z-10 w-full mt-6">
+        <StatsMarquee />
+      </div>
+
+      <div className="relative z-10 w-full px-4 pb-16 pt-10 sm:px-8 sm:pb-24 lg:px-16 lg:pb-28">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
+          <div className="w-full space-y-5 sm:w-1/2">
+            <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              Nós <span style={{ color: GOLD }}>operamos</span>, você{" "}
+              <span style={{ color: GOLD }}>lucra</span>
+              <br />
+              <span className="text-white">esse é o pacto.</span>
+            </h1>
+            <a href="#oferta" className="inline-block">
+              <Button
+                className="rounded-none py-0 pr-0 font-normal text-black text-lg hover:opacity-90"
+                style={{ background: GOLD }}
+              >
+                Quero Ser Sócio
+                <span className="border-l border-neutral-700/60 p-3">
+                  <ArrowRight />
+                </span>
+              </Button>
+            </a>
+          </div>
+          <div className="w-full sm:w-1/2">
+            <p className="text-base italic sm:text-right md:text-2xl" style={{ color: GOLD }}>
+              Trading institucional, gestão de risco e tecnologia proprietária
+              colocando o seu capital para trabalhar ao lado dos nossos traders,
+              com contrato formal de 24 meses.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
