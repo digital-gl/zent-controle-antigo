@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Briefcase, Rocket, Target, type LucideIcon } from "lucide-react";
-import ParallaxStars from "./ParallaxStars";
+
 
 const profiles: { n: string; Icon: LucideIcon; title: string; text: string }[] = [
   {
@@ -84,7 +84,6 @@ const ProfileCard = ({
 const ParaQuemSection = () => {
   return (
     <section className="relative overflow-hidden py-20 px-4 md:px-8" style={{ background: "#000D30" }}>
-      <ParallaxStars speed={0.6} className="opacity-60" />
       <div className="relative max-w-6xl mx-auto">
 
         <motion.h2
