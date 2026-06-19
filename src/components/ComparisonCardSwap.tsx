@@ -47,6 +47,13 @@ const investments: InvestmentData[] = [
 
 const ComparisonCardSwap = () => {
   const goldIdx = investments.findIndex((i) => i.isGold);
+  const isMobile = useIsMobile();
+  const cardW = isMobile ? 280 : 380;
+  const cardH = isMobile ? 230 : 280;
+  const containerW = isMobile ? 320 : 420;
+  const containerH = isMobile ? 280 : 320;
+  const cardDist = isMobile ? 28 : 50;
+  const vertDist = isMobile ? 32 : 55;
 
   return (
     <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "#000005" }}>
