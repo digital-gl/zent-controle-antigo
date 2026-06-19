@@ -91,7 +91,7 @@ const Hero = () => {
       </div>
 
       <img
-        src="https://i.imgur.com/emoev0C.png"
+        src="https://i.imgur.com/3qiLi50.png"
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-[5] hidden h-auto w-full object-contain object-top md:block"
