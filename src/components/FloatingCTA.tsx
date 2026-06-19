@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 
 const WHATSAPP_URL =
   "https://wa.me/558399617709?text=" +
-  encodeURIComponent("Clique aqui para falar com Washington e se tornar um sócio investidor.");
+  encodeURIComponent("Quero ser Sócio Investidor!");
 
 const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
@@ -96,10 +96,10 @@ const FloatingCTA = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-left text-xs text-gray-800 rounded-lg px-3 py-2 shadow-sm hover:opacity-90 transition"
-                style={{ background: "#DCF8C6" }}
+                className="block text-center text-sm font-semibold text-white rounded-lg px-3 py-2 shadow-sm hover:opacity-90 transition"
+                style={{ background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)" }}
               >
-                Clique aqui para falar com Washington e se tornar um sócio investidor.
+                Quero ser Sócio Investidor!
               </a>
             </div>
           </div>

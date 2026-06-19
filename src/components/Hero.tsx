@@ -104,10 +104,17 @@ const Hero = () => {
           className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-top md:block"
         />
         <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-1/2 bg-gradient-to-r from-[#000005] via-[#000005]/70 to-transparent md:block lg:hidden" />
-        <div className="relative z-10 w-full max-w-4xl px-4 pt-28 text-white sm:px-8 lg:px-16">
-          <div className="space-y-4">
-            <AvatarStack />
-          </div>
+        <div className="relative z-10 w-full max-w-5xl px-4 pt-28 text-white sm:px-8 lg:px-16">
+          <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Nós <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>operamos</span>, você{" "}
+            <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>lucra</span>
+            <br />
+            <span className="text-white">esse é o pacto.</span>
+          </h1>
+        </div>
+
+        <div className="relative z-10 mt-auto w-full px-4 pb-4 sm:px-8 lg:px-16">
+          <AvatarStack />
         </div>
       </div>
 
@@ -118,13 +125,7 @@ const Hero = () => {
       <div className="relative z-10 w-full px-4 pb-16 pt-10 sm:px-8 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
           <div className="w-full space-y-5 sm:w-1/2">
-            <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Nós <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>operamos</span>, você{" "}
-              <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>lucra</span>
-              <br />
-              <span className="text-white">esse é o pacto.</span>
-            </h1>
-            <a href="#oferta" className="cta-button text-sm sm:text-base inline-flex items-center gap-3">
+            <a href="#oferta" className="cta-button text-sm sm:text-base inline-flex items-center gap-3 whitespace-nowrap">
               Quero Ser Sócio
               <ArrowRight className="w-5 h-5" />
             </a>
