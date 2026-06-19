@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import ParallaxStars from "./ParallaxStars";
 
 const formatBRL = (n: number) =>
   n.toLocaleString("pt-BR", {
