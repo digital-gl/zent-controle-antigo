@@ -137,7 +137,7 @@ const ComparisonCardSwap = () => {
                 return (
                   <Card
                     key={inv.name}
-                    className="p-7 overflow-hidden"
+                    className="p-5 md:p-7 overflow-hidden"
                     style={{
                       background:
                         "linear-gradient(145deg, #0a0a12 0%, #1a1a24 50%, #050508 100%)",
@@ -147,20 +147,20 @@ const ComparisonCardSwap = () => {
                     }}
                   >
                     <div className="relative h-full flex flex-col text-white">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/5 border border-white/15">
-                          <Icon className="w-7 h-7 text-white" strokeWidth={1.75} />
+                      <div className="flex items-start justify-between mb-3 md:mb-4">
+                        <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg md:rounded-xl flex items-center justify-center bg-white/5 border border-white/15">
+                          <Icon className="w-5 h-5 md:w-7 md:h-7 text-white" strokeWidth={1.75} />
                         </div>
-                        <span className="text-xs font-medium uppercase tracking-widest text-white/50">
+                        <span className="text-[10px] md:text-xs font-medium uppercase tracking-widest text-white/50">
                           Tradicional
                         </span>
                       </div>
-                      <h3 className="font-display text-3xl mb-2 text-white">{inv.name}</h3>
-                      <div className="flex items-baseline gap-3 mb-3">
-                        <span className="text-2xl font-bold text-white">{inv.monthly}</span>
-                        <span className="text-sm text-white/50">/ {inv.yearly}</span>
+                      <h3 className="font-display text-2xl md:text-3xl mb-1 md:mb-2 text-white">{inv.name}</h3>
+                      <div className="flex items-baseline gap-2 md:gap-3 mb-2 md:mb-3">
+                        <span className="text-lg md:text-2xl font-bold text-white">{inv.monthly}</span>
+                        <span className="text-xs md:text-sm text-white/50">/ {inv.yearly}</span>
                       </div>
-                      <p className="text-sm leading-relaxed text-white/70">
+                      <p className="text-xs md:text-sm leading-snug md:leading-relaxed text-white/70 line-clamp-3 md:line-clamp-none">
                         {inv.description}
                       </p>
                       <div className="absolute -top-16 -left-10 w-40 h-40 rounded-full bg-white/[0.04] blur-2xl pointer-events-none" />
