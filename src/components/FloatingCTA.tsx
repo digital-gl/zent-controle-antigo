@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 
 const WHATSAPP_URL =
   "https://wa.me/558399617709?text=" +
-  encodeURIComponent("Clique aqui para falar com Washington e se tornar um sócio investidor.");
+  encodeURIComponent("Quero ser Sócio Investidor!");
 
 const WhatsAppIcon = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
