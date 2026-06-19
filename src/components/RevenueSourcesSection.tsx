@@ -154,9 +154,9 @@ const RevenueSourcesSection = () => {
           className="text-center mb-14"
         >
           <h2 className="font-display text-4xl md:text-5xl text-white mb-4 leading-tight">
-            As <span className="gold-text">4 Fontes</span> que Sustentam Seus Rendimentos
+            As <span className="gold-shine italic">4 Fontes</span> que Sustentam Seus Rendimentos
           </h2>
-          <p className="text-lg md:text-xl text-[#A8B8C8]">
+          <p className="text-lg md:text-xl gold-text">
             Diversificação real. Resultados consistentes.
           </p>
         </motion.div>
