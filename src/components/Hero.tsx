@@ -84,10 +84,10 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=2000&q=80)",
+            "url(https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?auto=format&fit=crop&w=2000&q=80)",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000005]/80 via-[#000005]/70 to-[#000005]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000005]/70 via-[#000005]/55 to-[#000005]/90" />
       </div>
 
       <div className="relative z-10 w-full max-w-4xl px-4 pt-28 text-white sm:px-8 lg:px-16">
@@ -104,25 +104,19 @@ const Hero = () => {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
           <div className="w-full space-y-5 sm:w-1/2">
             <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Nós <span style={{ color: GOLD }}>operamos</span>, você{" "}
-              <span style={{ color: GOLD }}>lucra</span>
+              Nós <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>operamos</span>, você{" "}
+              <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>lucra</span>
               <br />
               <span className="text-white">esse é o pacto.</span>
             </h1>
-            <a href="#oferta" className="inline-block">
-              <Button
-                className="rounded-none py-0 pr-0 font-normal text-black text-lg hover:opacity-90"
-                style={{ background: GOLD }}
-              >
-                Quero Ser Sócio
-                <span className="border-l border-neutral-700/60 p-3">
-                  <ArrowRight />
-                </span>
-              </Button>
+            <a href="#oferta" className="cta-button text-sm sm:text-base inline-flex items-center gap-3">
+              Quero Ser Sócio
+              <ArrowRight className="w-5 h-5" />
             </a>
           </div>
           <div className="w-full sm:w-1/2">
-            <p className="text-base italic sm:text-right md:text-2xl" style={{ color: GOLD }}>
+            <p className="gold-text text-base italic sm:text-right md:text-2xl" style={{ filter: "drop-shadow(0 0 14px rgba(245,216,122,0.4))" }}>
+
               Trading institucional, gestão de risco e tecnologia proprietária
               colocando o seu capital para trabalhar ao lado dos nossos traders,
               com contrato formal de 24 meses.
