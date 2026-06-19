@@ -104,7 +104,7 @@ const Hero = () => {
           className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-top md:block"
         />
         <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-1/2 bg-gradient-to-r from-[#000005] via-[#000005]/70 to-transparent md:block lg:hidden" />
-        <div className="relative z-10 w-full max-w-5xl px-4 pt-28 text-white sm:px-8 lg:px-16">
+        <div className="relative z-10 w-full max-w-5xl px-4 pt-20 text-white sm:px-8 sm:pt-16 lg:px-16 lg:pt-12">
           <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Nós <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>operamos</span>, você{" "}
             <span className="gold-text" style={{ filter: "drop-shadow(0 0 18px rgba(245,216,122,0.55))" }}>lucra</span>
