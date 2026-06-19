@@ -97,6 +97,7 @@ const Hero = () => {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-top md:block"
         />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] hidden w-1/2 bg-gradient-to-r from-[#000005] via-[#000005]/70 to-transparent md:block lg:hidden" />
         <div className="relative z-10 w-full max-w-4xl px-4 pt-28 text-white sm:px-8 lg:px-16">
           <div className="space-y-4">
             <AvatarStack />
