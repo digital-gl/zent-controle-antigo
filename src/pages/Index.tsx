@@ -5,6 +5,7 @@ import MarqueeBand from "@/components/MarqueeBand";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const PainSection = lazy(() => import("@/components/PainSection"));
+const ComparisonCardSwap = lazy(() => import("@/components/ComparisonCardSwap"));
 const HowItWorksSection = lazy(() => import("@/components/HowItWorksSection"));
 const RevenueSourcesSection = lazy(() => import("@/components/RevenueSourcesSection"));
 const GoldenCardSection = lazy(() => import("@/components/GoldenCardSection"));
@@ -52,6 +53,7 @@ const Index = () => {
       <MarqueeBand items={MARQUEE_1} direction="left" />
       <Suspense fallback={<div className="h-32" />}>
         <PainSection />
+        <ComparisonCardSwap />
         <MarqueeBand items={MARQUEE_2} direction="right" />
         <SectionSeparator />
         <HowItWorksSection />
