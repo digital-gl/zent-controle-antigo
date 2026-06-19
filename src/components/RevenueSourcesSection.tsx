@@ -40,20 +40,7 @@ const TiltCard = ({
   source: (typeof sources)[number];
   index: number;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [transform, setTransform] = useState("perspective(900px) rotateX(0) rotateY(0)");
   const [hovered, setHovered] = useState(false);
-
-  const handleMove = (e: React.MouseEvent) => {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    setTransform(
-      `perspective(900px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) scale(1.02)`
-    );
-  };
 
   return (
     <motion.div
@@ -63,41 +50,41 @@ const TiltCard = ({
       transition={{ duration: 0.5, delay: index * 0.15 }}
     >
       <div
-        ref={ref}
-        onMouseMove={handleMove}
         onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => {
-          setHovered(false);
-          setTransform("perspective(900px) rotateX(0) rotateY(0) scale(1)");
-        }}
-        className="liquid-glass rounded-2xl p-8 h-full relative overflow-hidden"
+        onMouseLeave={() => setHovered(false)}
+        className="rounded-xl p-7 md:p-8 h-full relative"
         style={{
-          transform,
+          background: "rgba(10, 14, 28, 0.85)",
+          borderLeft: "4px solid #F5D87A",
+          transform: hovered ? "translateY(-4px)" : "translateY(0)",
           transition: "transform 0.3s ease, box-shadow 0.3s ease",
-          border: hovered
-            ? "1.5px solid rgba(245, 216, 122, 0.6)"
-            : "1px solid rgba(255,255,255,0.06)",
           boxShadow: hovered
-            ? "0 0 40px rgba(245, 216, 122, 0.35)"
-            : "0 4px 20px rgba(0,0,0,0.3)",
+            ? "-12px 0 32px -6px rgba(245, 216, 122, 0.55), inset 4px 0 16px -8px rgba(245, 216, 122, 0.4)"
+            : "-6px 0 18px -6px rgba(245, 216, 122, 0.25)",
         }}
       >
-        <div
-          className="mb-4 inline-block"
-          style={{
-            animation: `float-source 3.5s ease-in-out infinite`,
-            animationDelay: `${index * 0.4}s`,
-            transform: hovered ? "scale(1.2)" : "scale(1)",
-            transition: "transform 0.3s ease",
-          }}
-        >
-          <source.Icon size={56} color="#F5D87A" strokeWidth={1.75} />
+        <div className="flex items-center gap-4 mb-3">
+          <div
+            className="flex items-center justify-center rounded-md shrink-0"
+            style={{
+              width: 44,
+              height: 44,
+              background: "rgba(0, 0, 0, 0.45)",
+              border: "1px solid rgba(245, 216, 122, 0.18)",
+            }}
+          >
+            <source.Icon size={24} color="#F5D87A" strokeWidth={2} />
+          </div>
+          <div className="flex items-baseline gap-3 min-w-0 flex-wrap">
+            <span className="gold-text font-bold text-sm">{source.n}</span>
+            <h3 className="text-white font-bold text-base md:text-lg uppercase tracking-wider">
+              {source.title}
+            </h3>
+          </div>
         </div>
-        <div className="gold-text font-display text-2xl mb-2">{source.n}</div>
-        <h3 className="text-white font-bold text-xl md:text-2xl mb-3">
-          {source.title}
-        </h3>
-        <p className="text-[#A8B8C8] leading-relaxed">{source.desc}</p>
+        <p className="text-[#A8B8C8] text-sm md:text-base leading-relaxed">
+          {source.desc}
+        </p>
       </div>
     </motion.div>
   );
