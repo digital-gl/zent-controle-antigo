@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { PiggyBank, Landmark, LineChart, Crown } from "lucide-react";
 import CardSwap, { Card } from "./CardSwap";
+import { Component as EtherealShadow } from "./ui/etheral-shadow";
 
 interface InvestmentData {
   name: string;
