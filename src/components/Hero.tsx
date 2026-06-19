@@ -90,6 +90,13 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#000005]/70 via-[#000005]/55 to-[#000005]/90" />
       </div>
 
+      <img
+        src="https://i.imgur.com/emoev0C.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[5] hidden h-auto w-full object-contain object-top md:block"
+      />
+
       <div className="relative z-10 w-full max-w-4xl px-4 pt-28 text-white sm:px-8 lg:px-16">
         <div className="space-y-4">
           <AvatarStack />
