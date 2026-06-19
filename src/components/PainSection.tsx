@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { TrendingDown, Scale, Rocket, LucideIcon } from "lucide-react";
-import ParallaxStars from "./ParallaxStars";
+
 
 interface TiltCardProps {
   Icon: LucideIcon;
@@ -65,8 +65,8 @@ const TiltCard = ({ Icon, iconClass, number, text, barClass, highlight }: TiltCa
 
 const PainSection = () => {
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "#000D30" }}>
-      <ParallaxStars className="opacity-40" />
+    <section className="relative py-20 md:py-28 overflow-hidden bg-dark-linear">
+
       <style>{`
         @keyframes pulse-gold-icon {
           0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(245,216,122,0.5)); }

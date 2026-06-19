@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import ParallaxStars from "./ParallaxStars";
 
 const formatBRL = (n: number) =>
   n.toLocaleString("pt-BR", {
@@ -113,10 +114,11 @@ const InvestmentCalculator = () => {
   return (
     <section
       id="simulador"
-      className="relative py-20 md:py-28 overflow-hidden"
-      style={{ background: "#071228" }}
+      className="relative py-20 md:py-28 overflow-hidden bg-dark-radial"
     >
+      <ParallaxStars speed={0.6} className="opacity-60" />
       <style>{sliderStyle}</style>
+
 
       {/* Gold particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
