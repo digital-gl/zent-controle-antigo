@@ -5,6 +5,7 @@ import MarqueeBand from "@/components/MarqueeBand";
 import SectionSeparator from "@/components/SectionSeparator";
 
 const PainSection = lazy(() => import("@/components/PainSection"));
+const ComparisonCardSwap = lazy(() => import("@/components/ComparisonCardSwap"));
 const HowItWorksSection = lazy(() => import("@/components/HowItWorksSection"));
 const RevenueSourcesSection = lazy(() => import("@/components/RevenueSourcesSection"));
 const GoldenCardSection = lazy(() => import("@/components/GoldenCardSection"));
