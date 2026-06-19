@@ -125,7 +125,7 @@ const Hero = () => {
       <div className="relative z-10 w-full px-4 pb-16 pt-10 sm:px-8 sm:pb-24 lg:px-16 lg:pb-28">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
           <div className="w-full space-y-5 sm:w-1/2">
-            <a href="#oferta" className="cta-button text-sm sm:text-base inline-flex items-center gap-3 whitespace-nowrap">
+            <a href="#oferta" className="cta-button text-sm sm:text-base !inline-flex items-center gap-3 whitespace-nowrap">
               Quero Ser Sócio
               <ArrowRight className="w-5 h-5" />
             </a>
