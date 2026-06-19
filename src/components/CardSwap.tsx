@@ -81,6 +81,7 @@ export const CardSwap: React.FC<CardSwapProps> = ({
   onCardClick,
   skewAmount = 6,
   easing = "elastic",
+  stopAtIndex,
   children,
 }) => {
   const config =
