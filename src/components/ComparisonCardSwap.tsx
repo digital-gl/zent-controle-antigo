@@ -84,13 +84,13 @@ const ComparisonCardSwap = () => {
           </p>
         </motion.div>
 
-        <div className="flex justify-center items-center min-h-[480px] md:min-h-[520px]">
-          <div className="relative" style={{ width: 420, height: 320 }}>
+        <div className="flex justify-center items-center min-h-[420px] md:min-h-[520px]">
+          <div className="relative" style={{ width: containerW, height: containerH }}>
             <CardSwap
-              width={380}
-              height={280}
-              cardDistance={50}
-              verticalDistance={55}
+              width={cardW}
+              height={cardH}
+              cardDistance={cardDist}
+              verticalDistance={vertDist}
               delay={2800}
               pauseOnHover
               skewAmount={5}
