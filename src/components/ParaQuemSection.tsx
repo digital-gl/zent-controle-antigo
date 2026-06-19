@@ -22,8 +22,10 @@ const profiles = [
 
 const ParaQuemSection = () => {
   return (
-    <section className="bg-dark-linear py-20 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative overflow-hidden bg-dark-radial py-20 px-4 md:px-8">
+      <ParallaxStars speed={0.6} className="opacity-60" />
+      <div className="relative max-w-6xl mx-auto">
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
