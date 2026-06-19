@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { PiggyBank, Landmark, LineChart, Crown } from "lucide-react";
 import CardSwap, { Card } from "./CardSwap";
+import { Component as EtherealShadow } from "./ui/etheral-shadow";
 
 interface InvestmentData {
   name: string;
@@ -47,7 +48,15 @@ const ComparisonCardSwap = () => {
   const goldIdx = investments.findIndex((i) => i.isGold);
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-dark-linear">
+    <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "#000005" }}>
+      <div className="absolute inset-0 pointer-events-none">
+        <EtherealShadow
+          color="rgba(128, 128, 128, 1)"
+          animation={{ scale: 100, speed: 90 }}
+          noise={{ opacity: 0.5, scale: 1.2 }}
+          sizing="fill"
+        />
+      </div>
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
