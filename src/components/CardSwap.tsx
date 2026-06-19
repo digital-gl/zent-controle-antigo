@@ -155,7 +155,12 @@ export const CardSwap: React.FC<CardSwapProps> = ({
         { x: backSlot.x, y: backSlot.y, z: backSlot.z, duration: config.durReturn, ease: config.ease },
         "return",
       );
-      tl.call(() => { order.current = [...rest, front]; });
+      tl.call(() => {
+        order.current = [...rest, front];
+        if (stopAtIndex !== undefined && order.current[0] === stopAtIndex) {
+          clearInterval(intervalRef.current);
+        }
+      });
     };
 
     intervalRef.current = window.setInterval(swap, delay);
