@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { PiggyBank, Landmark, LineChart, Crown } from "lucide-react";
 import CardSwap, { Card } from "./CardSwap";
 import { Component as EtherealShadow } from "./ui/etheral-shadow";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface InvestmentData {
   name: string;
@@ -46,6 +47,13 @@ const investments: InvestmentData[] = [
 
 const ComparisonCardSwap = () => {
   const goldIdx = investments.findIndex((i) => i.isGold);
+  const isMobile = useIsMobile();
+  const cardW = isMobile ? 280 : 380;
+  const cardH = isMobile ? 230 : 280;
+  const containerW = isMobile ? 320 : 420;
+  const containerH = isMobile ? 280 : 320;
+  const cardDist = isMobile ? 28 : 50;
+  const vertDist = isMobile ? 32 : 55;
 
   return (
     <section className="relative py-20 md:py-28 overflow-hidden" style={{ background: "#000005" }}>
@@ -76,13 +84,13 @@ const ComparisonCardSwap = () => {
           </p>
         </motion.div>
 
-        <div className="flex justify-center items-center min-h-[480px] md:min-h-[520px]">
-          <div className="relative" style={{ width: 420, height: 320 }}>
+        <div className="flex justify-center items-center min-h-[420px] md:min-h-[520px]">
+          <div className="relative" style={{ width: containerW, height: containerH }}>
             <CardSwap
-              width={380}
-              height={280}
-              cardDistance={50}
-              verticalDistance={55}
+              width={cardW}
+              height={cardH}
+              cardDistance={cardDist}
+              verticalDistance={vertDist}
               delay={2800}
               pauseOnHover
               skewAmount={5}
