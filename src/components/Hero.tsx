@@ -60,7 +60,7 @@ function StatsMarquee() {
       <div className="hero-marquee-track">
         {items.map((s, i) => (
           <div key={i} className="flex items-center gap-3 whitespace-nowrap">
-            <span className="font-mono font-bold text-sm tracking-wide" style={{ color: GOLD }}>
+            <span className="gold-text font-mono font-bold text-sm tracking-wide" style={{ filter: "drop-shadow(0 0 8px rgba(245,216,122,0.5))" }}>
               {s.value}
             </span>
             <span className="font-mono font-medium text-sm text-white/70 uppercase tracking-[0.15em]">
