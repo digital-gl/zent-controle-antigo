@@ -158,14 +158,23 @@ export const CardSwap: React.FC<CardSwapProps> = ({
       tl.call(() => {
         order.current = [...rest, front];
         if (stopAtIndex !== undefined && order.current[0] === stopAtIndex) {
+          clearInterval(intervalRef.current);
           const frontEl = refs[order.current[0]].current;
           if (frontEl) {
-            const baseY = 0;
-            gsap.timeline()
-              .to(frontEl, { y: baseY - 40, duration: 0.35, ease: "power2.out" })
-              .to(frontEl, { y: baseY, duration: 0.45, ease: "bounce.out" })
-              .to(frontEl, { y: baseY - 28, duration: 0.3, ease: "power2.out" })
-              .to(frontEl, { y: baseY, duration: 0.4, ease: "bounce.out" });
+            gsap.timeline({
+              delay: delay / 1000,
+              onComplete: () => {
+                intervalRef.current = window.setInterval(swap, delay);
+              },
+            })
+              .to(frontEl, { y: -40, duration: 0.35, ease: "power2.out" })
+              .to(frontEl, { y: 0, duration: 0.45, ease: "bounce.out" })
+              .to(frontEl, { y: -28, duration: 0.3, ease: "power2.out" })
+              .to(frontEl, { y: 0, duration: 0.4, ease: "bounce.out" });
+          } else {
+            window.setTimeout(() => {
+              intervalRef.current = window.setInterval(swap, delay);
+            }, delay);
           }
         }
       });
