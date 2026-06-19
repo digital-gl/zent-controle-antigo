@@ -22,7 +22,7 @@ const profiles = [
 
 const ParaQuemSection = () => {
   return (
-    <section className="relative overflow-hidden bg-dark-radial py-20 px-4 md:px-8">
+    <section className="relative overflow-hidden py-20 px-4 md:px-8" style={{ background: "#000D30" }}>
       <ParallaxStars speed={0.6} className="opacity-60" />
       <div className="relative max-w-6xl mx-auto">
 
