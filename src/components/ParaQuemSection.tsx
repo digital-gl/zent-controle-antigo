@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Briefcase, Rocket, Target, type LucideIcon } from "lucide-react";
-import ParallaxStars from "./ParallaxStars";
+
 
 const profiles: { n: string; Icon: LucideIcon; title: string; text: string }[] = [
   {
