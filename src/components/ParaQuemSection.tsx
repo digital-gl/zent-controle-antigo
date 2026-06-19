@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Briefcase, Rocket, Target } from "lucide-react";
+import ParallaxStars from "./ParallaxStars";
 
 const profiles = [
   {
