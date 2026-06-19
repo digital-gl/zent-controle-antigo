@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { TrendingDown, Scale, Rocket, LucideIcon } from "lucide-react";
-import ParallaxStars from "./ParallaxStars";
+
 
 interface TiltCardProps {
   Icon: LucideIcon;
