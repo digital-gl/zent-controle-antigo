@@ -94,7 +94,7 @@ const Hero = () => {
         src="https://i.imgur.com/3qiLi50.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-[5] hidden w-full object-cover object-top md:block md:h-[45vh] lg:h-[50vh]"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[5] hidden w-full object-cover object-top md:block md:h-[60vh] lg:h-[65vh]"
       />
 
       <div className="relative z-10 w-full max-w-4xl px-4 pt-28 text-white sm:px-8 lg:px-16">
