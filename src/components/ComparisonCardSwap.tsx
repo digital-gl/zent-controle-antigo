@@ -103,7 +103,7 @@ const ComparisonCardSwap = () => {
                   return (
                     <Card
                       key={inv.name}
-                      className="p-7 overflow-hidden"
+                      className="p-5 md:p-7 overflow-hidden"
                       style={{
                         background:
                           "linear-gradient(145deg, #F5D87A 0%, #D4A843 45%, #A07830 100%)",
@@ -113,20 +113,20 @@ const ComparisonCardSwap = () => {
                       }}
                     >
                       <div className="relative h-full flex flex-col text-[#0B0B14]">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-black/15 border border-black/30">
-                            <Icon className="w-7 h-7" strokeWidth={2} />
+                        <div className="flex items-start justify-between mb-3 md:mb-4">
+                          <div className="w-9 h-9 md:w-12 md:h-12 rounded-lg md:rounded-xl flex items-center justify-center bg-black/15 border border-black/30">
+                            <Icon className="w-5 h-5 md:w-7 md:h-7" strokeWidth={2} />
                           </div>
-                          <span className="text-xs font-bold uppercase tracking-widest bg-black/80 text-[#F5D87A] px-3 py-1 rounded-full">
+                          <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest bg-black/80 text-[#F5D87A] px-2 py-0.5 md:px-3 md:py-1 rounded-full">
                             Destaque
                           </span>
                         </div>
-                        <h3 className="font-display text-3xl mb-2">{inv.name}</h3>
-                        <div className="flex items-baseline gap-3 mb-3">
-                          <span className="text-2xl font-bold">{inv.monthly}</span>
-                          <span className="text-sm opacity-70">/ {inv.yearly}</span>
+                        <h3 className="font-display text-2xl md:text-3xl mb-1 md:mb-2">{inv.name}</h3>
+                        <div className="flex items-baseline gap-2 md:gap-3 mb-2 md:mb-3">
+                          <span className="text-lg md:text-2xl font-bold">{inv.monthly}</span>
+                          <span className="text-xs md:text-sm opacity-70">/ {inv.yearly}</span>
                         </div>
-                        <p className="text-sm leading-relaxed opacity-90">
+                        <p className="text-xs md:text-sm leading-snug md:leading-relaxed opacity-90 line-clamp-3 md:line-clamp-none">
                           {inv.description}
                         </p>
                         <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/30 blur-2xl pointer-events-none" />
