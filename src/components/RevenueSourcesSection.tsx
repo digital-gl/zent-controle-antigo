@@ -111,7 +111,7 @@ const RevenueSourcesSection = () => {
           width={1920}
           height={1080}
           className="absolute inset-0 w-full h-full object-cover md:object-contain object-center pointer-events-none"
-          style={{ opacity: 0.28 }}
+          style={{ opacity: 0.5 }}
         />
       </picture>
 
